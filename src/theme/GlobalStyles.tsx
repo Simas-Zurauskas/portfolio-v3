@@ -48,6 +48,13 @@ export const GlobalStyles = createGlobalStyle`
     /* Prevent text size adjustment on orientation change */
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    /* Match overscroll background to theme */
+    background-color: var(--background);
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
   }
 
   html,
