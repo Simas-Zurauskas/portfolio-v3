@@ -183,6 +183,10 @@ const Card = styled(motion.article)<StyledCardProps>`
       padding: ${({ $size }) => ($size === 'large' ? '32px' : '20px')};
       flex: 1;
       background: ${({ theme }) => theme.colors.surface};
+
+      @media (max-width: 600px) {
+        padding: 20px;
+      }
     }
 
     &__header {
