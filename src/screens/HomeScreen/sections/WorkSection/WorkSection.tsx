@@ -130,7 +130,7 @@ const projectsBase: ProjectBase[] = [
     title: 'Withinly',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'Pinecone', 'Stripe'],
     size: 'wide',
-    link: 'https://withinly.com',
+    link: 'https://withinly.app',
     images: ['/images/proj/withinly_1.png', '/images/proj/withinly_2.png', '/images/proj/withinly_3.png'],
   },
   {

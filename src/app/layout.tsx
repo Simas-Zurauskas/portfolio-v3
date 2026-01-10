@@ -49,9 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Theme color for browser chrome - light and dark variants */}
-        <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)" />
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

@@ -53,9 +53,6 @@ export const GlobalStyles = createGlobalStyle`
     color-scheme: light;
   }
 
-  [data-theme="dark"] {
-    color-scheme: dark;
-  }
 
   html,
   body {
