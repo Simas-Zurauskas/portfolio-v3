@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { useKeenSlider } from 'keen-slider/react';
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import 'keen-slider/keen-slider.min.css';
 
 const SliderContainer = styled.div`
@@ -363,6 +364,7 @@ interface ImageSliderProps {
 }
 
 export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
+  const t = useTranslations('ImageSlider');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -419,7 +421,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
     return (
       <SliderContainer>
         <EmptyState>
-          <EmptyStateText>Images coming soon</EmptyStateText>
+          <EmptyStateText>{t('IMAGES_COMING_SOON')}</EmptyStateText>
         </EmptyState>
       </SliderContainer>
     );
@@ -441,7 +443,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
             e.stopPropagation();
             openLightbox(e);
           }}
-          title="Expand image"
+          title={t('EXPAND_IMAGE')}
         >
           <Maximize2 />
         </ExpandButton>
@@ -491,7 +493,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
             <LightboxContent onClick={(e) => e.stopPropagation()}>
               <LightboxHeader>
                 <LightboxTitle>{alt}</LightboxTitle>
-                <LightboxClose onClick={closeLightbox} title="Close (Esc)">
+                <LightboxClose onClick={closeLightbox} title={t('CLOSE_ESC')}>
                   <X />
                 </LightboxClose>
               </LightboxHeader>

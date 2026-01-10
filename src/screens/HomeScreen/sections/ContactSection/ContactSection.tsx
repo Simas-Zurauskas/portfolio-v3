@@ -4,6 +4,7 @@ import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { Send, Check, AlertCircle, Copy } from 'lucide-react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useTranslations } from 'next-intl';
 import { SectionWrapper, Button } from '@/components';
 import { EMAIL } from '@/conf';
 
@@ -221,6 +222,9 @@ const RecaptchaNotice = styled.p`
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 export const ContactSection: React.FC = () => {
+  const t = useTranslations('Contact');
+  const tc = useTranslations('Common');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -262,7 +266,7 @@ export const ContactSection: React.FC = () => {
 
       if (!executeRecaptcha) {
         setStatus('error');
-        setErrorMessage('reCAPTCHA not loaded. Please refresh the page.');
+        setErrorMessage(t('FORM.RECAPTCHA_NOT_READY'));
         setTimeout(() => setStatus('idle'), 5000);
         return;
       }
@@ -299,26 +303,19 @@ export const ContactSection: React.FC = () => {
     [executeRecaptcha, formData],
   );
 
+  const sectionTitle = t.raw('TITLE') as Array<Array<{ text: string; type?: 'normal' | 'accent' | 'muted' }>>;
+
   return (
     <SectionWrapper
       id="contact"
       index="03"
-      label="Get in Touch"
-      title={[
-        [{ text: "Let's" }],
-        [
-          { text: 'Work', type: 'accent' },
-          { text: ' together', type: 'muted' },
-        ],
-      ]}
-      sidebarText="Contact"
-      sidebarRightText="Reach Out"
+      label={t('LABEL')}
+      title={sectionTitle}
+      sidebarText={t('SIDEBAR_LEFT')}
+      sidebarRightText={t('SIDEBAR_RIGHT')}
     >
       <Content>
-        <Description>
-          Have a project in mind or want to discuss an opportunity? I&apos;m always open to new challenges. Drop me a
-          message or reach out directly.
-        </Description>
+        <Description>{t('DESCRIPTION')}</Description>
 
         <EmailRow>
           <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">
@@ -327,8 +324,8 @@ export const ContactSection: React.FC = () => {
           <CopyButton
             $copied={copied}
             onClick={copyEmail}
-            aria-label={copied ? 'Copied!' : 'Copy email'}
-            title={copied ? 'Copied!' : 'Copy email'}
+            aria-label={copied ? tc('COPIED') : tc('COPY_EMAIL')}
+            title={copied ? tc('COPIED') : tc('COPY_EMAIL')}
           >
             {copied ? <Check /> : <Copy />}
           </CopyButton>
@@ -337,12 +334,12 @@ export const ContactSection: React.FC = () => {
         <Form onSubmit={handleSubmit}>
           <FormRow>
             <FormGroup>
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{t('FORM.NAME_LABEL')}</Label>
               <Input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your name"
+                placeholder={t('FORM.NAME_PLACEHOLDER')}
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -351,12 +348,12 @@ export const ContactSection: React.FC = () => {
             </FormGroup>
 
             <FormGroup>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('FORM.EMAIL_LABEL')}</Label>
               <Input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="your@email.com"
+                placeholder={t('FORM.EMAIL_PLACEHOLDER')}
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -366,11 +363,11 @@ export const ContactSection: React.FC = () => {
           </FormRow>
 
           <FormGroup>
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">{t('FORM.MESSAGE_LABEL')}</Label>
             <TextArea
               id="message"
               name="message"
-              placeholder="Tell me about your project..."
+              placeholder={t('FORM.MESSAGE_PLACEHOLDER')}
               value={formData.message}
               onChange={handleChange}
               required
@@ -385,15 +382,16 @@ export const ContactSection: React.FC = () => {
               loading={status === 'loading'}
               icon={status === 'success' ? <Check /> : status === 'error' ? <AlertCircle /> : <Send />}
             >
-              {status === 'success' && 'Sent!'}
-              {status === 'error' && 'Try Again'}
-              {(status === 'idle' || status === 'loading') && 'Send Message'}
+              {status === 'success' && t('FORM.SUBMIT_SUCCESS')}
+              {status === 'error' && t('FORM.SUBMIT_ERROR')}
+              {(status === 'idle' || status === 'loading') &&
+                (status === 'loading' ? t('FORM.SUBMIT_LOADING') : t('FORM.SUBMIT'))}
             </Button>
           </SubmitButtonWrapper>
 
           {status === 'success' && (
             <StatusMessage $type="success">
-              <Check /> Thank you! I&apos;ll get back to you soon.
+              <Check /> {t('FORM.SUCCESS_MESSAGE')}
             </StatusMessage>
           )}
 
@@ -404,13 +402,13 @@ export const ContactSection: React.FC = () => {
           )}
 
           <RecaptchaNotice>
-            Protected by reCAPTCHA.{' '}
+            {t('RECAPTCHA.PROTECTED_BY')}{' '}
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              Privacy
+              {t('RECAPTCHA.PRIVACY')}
             </a>{' '}
             &{' '}
             <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
-              Terms
+              {t('RECAPTCHA.TERMS')}
             </a>
           </RecaptchaNotice>
         </Form>

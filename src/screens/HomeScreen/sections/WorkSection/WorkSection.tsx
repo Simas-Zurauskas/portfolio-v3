@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 import { SectionWrapper } from '@/components';
+import { useTranslations } from 'next-intl';
 import { Project } from './types';
 import { ProjectCard } from './comps';
 
@@ -18,10 +19,66 @@ const Disclaimer = styled.p`
   color: ${({ theme }) => theme.colors.muted};
   margin-bottom: 32px;
   max-width: 600px;
+`;
 
-  strong {
-    color: ${({ theme }) => theme.colors.foreground};
-    font-weight: 600;
+const Industries = styled.div`
+  margin-bottom: 40px;
+  max-width: 900px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 32px;
+  }
+
+  .work-industries {
+    &__title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.muted};
+      margin-bottom: 10px;
+    }
+
+    &__desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: ${({ theme }) => theme.colors.muted};
+      margin-bottom: 16px;
+      max-width: 720px;
+    }
+
+    &__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    &__chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      font-size: 0.65rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.muted};
+      background: ${({ theme }) => theme.colors.surface};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      border-radius: 2px;
+      white-space: nowrap;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease,
+        box-shadow 0.2s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.hex.foreground}22;
+          color: ${({ theme }) => theme.colors.foreground};
+          transform: translateY(-1px);
+        }
+      }
+    }
   }
 `;
 
@@ -49,22 +106,17 @@ const BentoGrid = styled(motion.div)`
   }
 `;
 
-const projects: Project[] = [
+type ProjectId = 'strive' | 'withinly' | 'mcr' | 'dara' | 'uk-tax' | 'circle-of-trust' | 'pp-platforma';
+
+type ProjectBase = Omit<Project, 'description' | 'industry' | 'highlights'> & { id: ProjectId };
+
+const projectsBase: ProjectBase[] = [
   {
     id: 'strive',
     title: 'Strive Learning',
-    description:
-      'Personalized learning platform that transforms any topic into a complete course. AI generates structured roadmaps, modules, and interactive lessons, while a built-in tutor guides learners through their journey.',
-    industry: 'EdTech',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'Stripe', 'MongoDB'],
-    highlights: [
-      '4 AI agents (roadmap, module, lesson, chat)',
-      'Visual course roadmap editor',
-      'Credit-based subscriptions',
-    ],
     size: 'large',
     link: 'https://www.strive-learning.com',
-    linkLabel: 'Visit Site',
     images: [
       '/images/proj/strive_5.png',
       '/images/proj/strive_1.png',
@@ -76,47 +128,27 @@ const projects: Project[] = [
   {
     id: 'withinly',
     title: 'Withinly',
-    description:
-      'Mental wellness companion that helps you understand yourself and your relationships. Take personality assessments, chat with an AI that remembers your journey, and receive beautifully crafted psychological insights.',
-    industry: 'HealthTech',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'Pinecone', 'Stripe'],
     size: 'wide',
-    highlights: [
-      'RAG-powered companion agent',
-      '4 personality assessments',
-      'AI-generated Inner & Relational Portraits',
-    ],
     link: 'https://withinly.com',
     images: ['/images/proj/withinly_1.png', '/images/proj/withinly_2.png', '/images/proj/withinly_3.png'],
   },
   {
     id: 'mcr',
     title: 'MCR Perks',
-    description:
-      'Mobile app for discovering local hotspots and exclusive perks. Browse curated places, save favorites, and let the randomizer surprise you with your next adventure—all with member-only benefits.',
-    industry: 'Lifestyle',
     tech: ['React Native', 'Expo', 'MongoDB', 'RevenueCat'],
-    highlights: ['Place randomizer feature', 'RevenueCat subscriptions', 'WordPress CMS integration'],
     images: ['/images/proj/mcr_phone.png'],
   },
   {
     id: 'dara',
     title: 'Dara INTELLITECH',
-    description:
-      'Document creation platform that turns your content into polished, professional PDFs. Choose from beautifully designed templates, customize with ease, and let AI help you write compelling content.',
-    industry: 'SaaS',
     tech: ['Next.js', 'Puppeteer', 'LangGraph', 'TypeScript'],
-    highlights: ['JSX-to-PDF rendering', 'Multiple template types', 'AI content enhancement'],
     images: ['/images/proj/dara_1.png'],
   },
   {
     id: 'uk-tax',
     title: 'WiseMind AI',
-    description:
-      'Financial guidance platform helping UK businesses and sole traders keep more of what they earn. Get confidential, jargon-free advice on tax savings, smarter pay strategies, and hidden government benefits—all FCA-compliant.',
-    industry: 'FinTech',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'MongoDB', 'Stripe'],
-    highlights: ['AI tax advice agent', 'Document file processing', 'Multi-step onboarding flow'],
     size: 'wide',
     link: 'https://app.wisemindai.co.uk',
     images: ['/images/proj/wise_mind_1.png'],
@@ -124,22 +156,14 @@ const projects: Project[] = [
   {
     id: 'circle-of-trust',
     title: 'Circle of Trust',
-    description:
-      'Professional networking app built on trust. Build meaningful connections through circles, get recommendations from people you already trust, and grow your network with confidence on iOS and Android.',
-    industry: 'Social',
     tech: ['React Native', 'GraphQL', 'Firebase', 'Branch.io'],
-    highlights: ['Trust-based recommendation engine', 'QR code connection system', '52 MJML email templates'],
     size: 'wide',
     images: ['/images/proj/cot_1.png', '/images/proj/cot_2.png', '/images/proj/cot_3.png'],
   },
   {
     id: 'pp-platforma',
     title: 'PP Platform',
-    description:
-      'Construction project management system that keeps teams aligned. Track projects from start to finish, manage payments and bonuses, and give every role—from engineers to accountants—exactly the access they need.',
-    industry: 'Construction',
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.IO', 'AWS S3'],
-    highlights: ['4-tier role system', 'Payment cycle & bonus tracking', 'Real-time project updates'],
   },
 ];
 
@@ -155,27 +179,40 @@ const gridVariants: Variants = {
 };
 
 export const WorkSection: React.FC = () => {
+  const t = useTranslations('Work');
+  const title = t.raw('TITLE') as Array<Array<{ text: string; type?: 'normal' | 'accent' | 'muted' }>>;
+  const projects: Project[] = projectsBase.map((p) => ({
+    ...p,
+    description: t(`PROJECTS.${p.id}.DESCRIPTION`),
+    industry: t(`PROJECTS.${p.id}.INDUSTRY`),
+    highlights: (t.raw(`PROJECTS.${p.id}.HIGHLIGHTS`) as unknown as string[]) || [],
+  }));
+  const industries = (t.raw('INDUSTRIES.ITEMS') as unknown as Array<{ label: string; featured?: boolean }>) || [];
+
   return (
     <SectionWrapper
       id="work"
       index="02"
-      label="Selected Projects"
-      title={[
-        [{ text: 'Real' }],
-        [
-          { text: 'Problems', type: 'accent' },
-          { text: ' solved', type: 'muted' },
-        ],
-      ]}
-      sidebarText="Work"
-      sidebarRightText="Projects"
+      label={t('LABEL')}
+      title={title}
+      sidebarText={t('SIDEBAR_LEFT')}
+      sidebarRightText={t('SIDEBAR_RIGHT')}
       alternate
     >
       <Content>
-        <Disclaimer>
-          Due to <strong>confidentiality agreements</strong> with agencies and clients, many projects cannot be
-          disclosed. The selection below represents publicly shareable work across various industries.
-        </Disclaimer>
+        <Disclaimer>{t('DISCLAIMER')}</Disclaimer>
+
+        <Industries>
+          <div className="work-industries__title">{t('INDUSTRIES.TITLE')}</div>
+          <div className="work-industries__desc">{t('INDUSTRIES.DESCRIPTION')}</div>
+          <div className="work-industries__chips">
+            {industries.map((item) => (
+              <span key={item.label} className="work-industries__chip">
+                {item.label}
+              </span>
+            ))}
+          </div>
+        </Industries>
 
         <BentoGrid
           initial="hidden"

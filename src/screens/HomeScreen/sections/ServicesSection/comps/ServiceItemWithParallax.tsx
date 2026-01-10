@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Service } from '../types';
 
 const ServiceItem = styled.div`
@@ -225,6 +226,7 @@ const wrapperVariants = {
 };
 
 export const ServiceItemWithParallax: React.FC<{ service: Service }> = ({ service }) => {
+  const t = useTranslations('Services');
   const itemRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -274,7 +276,7 @@ export const ServiceItemWithParallax: React.FC<{ service: Service }> = ({ servic
           ))}
         </TechStack>
         <ProjectCount variants={contentVariants}>
-          <span>{service.projectCount}+</span> projects
+          <span>{service.projectCount}+</span> {t('PROJECTS_LABEL')}
         </ProjectCount>
       </ServiceMeta>
     </ServiceItem>

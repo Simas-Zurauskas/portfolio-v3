@@ -287,6 +287,8 @@ const Title = styled.h2`
 const TitleLine = styled.span`
   display: block;
   overflow: hidden;
+  /* Prevent clipping of diacritics (e.g. Lithuanian „į“) on big type */
+  padding-bottom: 0.14em;
 `;
 
 const TitleAccent = styled.span`

@@ -408,7 +408,7 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
 
             <div style={{ height: 32 }} />
             <H1 style={{ fontSize: 72 }}>
-              <span style={{ color: '#ff8a5c' }}>40+</span> projects delivered.
+              <span style={{ color: '#ff8a5c' }}>{COUNT_PROJECTS}+</span> projects delivered.
             </H1>
             <div style={{ height: 22 }} />
             <H2 style={{ maxWidth: 900 }}>

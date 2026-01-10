@@ -5,5 +5,221 @@
     "CONTACT": "Kontaktai",
     "AVAILABLE": "Laisvas",
     "EMAIL_ME": "Susisiekti"
+  },
+  "Common": {
+    "COPY_EMAIL": "Kopijuoti el. paštą",
+    "COPIED": "Nukopijuota!",
+    "OPEN_MENU": "Atidaryti meniu",
+    "CLOSE_MENU": "Uždaryti meniu",
+    "THEME_LIGHT": "Šviesi tema",
+    "THEME_DARK": "Tamsi tema",
+    "THEME_SYSTEM": "Sistemos tema"
+  },
+  "Hero": {
+    "AVAILABLE_FOR_PROJECTS": "Laisvas naujiems projektams",
+    "DESCRIPTION": "Pilnas produkto kūrimas — nuo atradimo ir MVP iki mastelio. Idėjas paverčiu produkcinio lygio programine įranga, prisiimdamas visą techninę atsakomybę.",
+    "CTA_PRIMARY": "Pradėti projektą",
+    "CTA_SECONDARY": "Peržiūrėti paslaugas",
+    "MORE": "Daugiau →",
+    "MARQUEE": {
+      "ITEMS": [
+        "Web aplikacijos",
+        "Mobiliosios programėlės",
+        "AI integracija",
+        "SaaS produktai",
+        "MVP kūrimas",
+        "Verslo sprendimai",
+        "E. prekyba",
+        "Realaus laiko funkcijos",
+        "API kūrimas",
+        "Techninės konsultacijos",
+        "Našumo optimizavimas",
+        "Masteliuojama architektūra"
+      ],
+      "PRODUCTS_DELIVERED": "{count}+ pristatytų produktų",
+      "YEARS_EXPERIENCE": "{count}+ metų patirties",
+      "DOMAINS": "{count}+ sričių",
+      "CLIENTS": "{count}+ klientų"
+    },
+    "METRICS": {
+      "YEARS": "Metai",
+      "PROJECTS": "Projektai",
+      "CLIENTS": "Klientai",
+      "DOMAINS": "Sritys"
+    }
+  },
+  "Services": {
+    "LABEL": "Galimybės",
+    "SIDEBAR_LEFT": "Paslaugos",
+    "SIDEBAR_RIGHT": "Ką darau",
+    "TITLE": [
+      [{ "text": "Padedu" }],
+      [
+        { "text": "greitai", "type": "accent" },
+        { "text": " išleisti produktą", "type": "muted" }
+      ]
+    ],
+    "ITEMS": {
+      "WEB": {
+        "TITLE": "Web aplikacijos",
+        "DESCRIPTION": "Pilno ciklo web produktai — nuo architektūros iki paleidimo. Dashboard’ai, SaaS platformos, e. prekyba — kuriama masteliui."
+      },
+      "MOBILE": {
+        "TITLE": "Mobiliųjų aplikacijų kūrimas",
+        "DESCRIPTION": "Kryžminės platformos iOS ir Android aplikacijos. Nuo idėjos iki App Store — natyvus našumas su bendra kodų baze."
+      },
+      "AI": {
+        "TITLE": "AI integracija",
+        "DESCRIPTION": "Intelektas jūsų produktui. Individualūs AI agentai, chatbot’ai, dokumentų apdorojimas ir automatizavimo workflow’ai."
+      },
+      "BACKEND": {
+        "TITLE": "Backend & infrastruktūra",
+        "DESCRIPTION": "Mastelį išlaikančios API, duomenų bazės ir cloud infrastruktūra. CI/CD, konteinerizacija ir produkcijai paruošti diegimai."
+      },
+      "UIUX": {
+        "TITLE": "UI/UX įgyvendinimas",
+        "DESCRIPTION": "Dizainus paverčiu nušlifuotomis sąsajomis. Dizaino sistemos, responsive layout’ai, animacijos ir prieinamumas."
+      },
+      "CONSULTING": {
+        "TITLE": "Techninės konsultacijos",
+        "DESCRIPTION": "Architektūros peržiūros, našumo optimizavimas ir technologiniai sprendimai. Padedu komandoms pristatyti geresnę programinę įrangą."
+      }
+    },
+    "PROJECTS_LABEL": "įgyvendintų projektų"
+  },
+  "Work": {
+    "LABEL": "Atrinkti projektai",
+    "SIDEBAR_LEFT": "Darbai",
+    "SIDEBAR_RIGHT": "Projektai",
+    "TITLE": [
+      [{ "text": "Tikros" }],
+      [
+        { "text": "problemos", "type": "accent" },
+        { "text": " išspręstos", "type": "muted" }
+      ]
+    ],
+    "DISCLAIMER": "Dalis stipriausių darbų yra po NDA su agentūromis ir klientais, todėl ne viską galima viešinti. Žemiau pateikta atranka yra reprezentatyvi, o patirties spektras platesnis nei šie pavyzdžiai.",
+    "INDUSTRIES": {
+      "TITLE": "Industrijų patirtis",
+      "DESCRIPTION": "Tiek viešuose, tiek privačiuose projektuose esu kūręs sprendimus šiose srityse:",
+      "ITEMS": [
+        { "label": "Kibernetinis saugumas", "featured": true },
+        { "label": "Bankininkystė ir finansinės paslaugos", "featured": true },
+        { "label": "Draudimas", "featured": true },
+        { "label": "FinTech", "featured": true },
+        { "label": "InsurTech / rizikų valdymas", "featured": true },
+        { "label": "Logistika", "featured": true },
+        { "label": "Transporto parko valdymas", "featured": true },
+        { "label": "Sveikata / gerovė" },
+        { "label": "EdTech" },
+        { "label": "Nekilnojamasis turtas" },
+        { "label": "HR / talentų valdymas" },
+        { "label": "B2B SaaS" },
+        { "label": "Socialiniai / bendruomenės sprendimai" },
+        { "label": "Statybos" },
+        { "label": "Vartotojų / lifestyle" },
+        { "label": "Žaidimai / pramogos" },
+        { "label": "Teisė" }
+      ]
+    },
+    "PROJECTS": {
+      "strive": {
+        "INDUSTRY": "EdTech",
+        "DESCRIPTION": "Personalizuoto mokymosi platforma, kuri bet kurią temą paverčia pilnu kursu. AI sugeneruoja struktūruotas gaires, modulius ir interaktyvias pamokas, o integruotas tutorius veda besimokančiuosius per visą kelionę.",
+        "HIGHLIGHTS": [
+          "4 AI agentai (gairės, moduliai, pamokos, chat)",
+          "Vizualus kurso gairių redaktorius",
+          "Prenumeratos pagal kreditus"
+        ]
+      },
+      "withinly": {
+        "INDUSTRY": "HealthTech",
+        "DESCRIPTION": "Psichologinės gerovės asistentas, padedantis geriau suprasti save ir santykius. Atlikite asmenybės testus, bendraukite su AI, kuris prisimena jūsų kelionę, ir gaukite kruopščiai parengtas įžvalgas.",
+        "HIGHLIGHTS": ["RAG paremtas asistentas", "4 asmenybės testai", "AI sugeneruoti vidiniai ir santykių portretai"]
+      },
+      "mcr": {
+        "INDUSTRY": "Lifestyle",
+        "DESCRIPTION": "Mobilioji programėlė vietiniams taškams ir išskirtinėms privilegijoms atrasti. Naršykite atrinktas vietas, žymėkite mėgstamas ir leiskite „randomizer“ pasiūlyti kitą nuotykį — su nariams skirtais privalumais.",
+        "HIGHLIGHTS": ["Atsitiktinio vietos parinkimo funkcija", "RevenueCat prenumeratos", "WordPress CMS integracija"]
+      },
+      "dara": {
+        "INDUSTRY": "SaaS",
+        "DESCRIPTION": "Dokumentų kūrimo platforma, paverčianti turinį profesionaliais PDF. Rinkitės dizaino šablonus, lengvai pritaikykite detales ir pasitelkite AI įtikinamam tekstui kurti.",
+        "HIGHLIGHTS": ["JSX → PDF generavimas", "Keli šablonų tipai", "AI turinio patobulinimai"]
+      },
+      "uk-tax": {
+        "INDUSTRY": "FinTech",
+        "DESCRIPTION": "Finansinių rekomendacijų platforma, padedanti JK verslams ir individualiai dirbantiems išsaugoti daugiau pajamų. Konfidenciali, aiški pagalba mokesčių taupymui, atlygio strategijoms ir valstybės paramoms — laikantis FCA reikalavimų.",
+        "HIGHLIGHTS": ["AI mokesčių konsultavimo agentas", "Dokumentų apdorojimas", "Daugiapakopis onboarding procesas"]
+      },
+      "circle-of-trust": {
+        "INDUSTRY": "Social",
+        "DESCRIPTION": "Profesinio tinklaveikos sprendimas, paremtas pasitikėjimu. Kurkite prasmingus ryšius per „circles“, gaukite rekomendacijas iš patikimų žmonių ir auginkite tinklą iOS ir Android platformose.",
+        "HIGHLIGHTS": [
+          "Rekomendacijų sistema, paremta pasitikėjimu",
+          "QR kodo prisijungimo sistema",
+          "52 MJML el. laiškų šablonai"
+        ]
+      },
+      "pp-platforma": {
+        "INDUSTRY": "Construction",
+        "DESCRIPTION": "Statybos projektų valdymo sistema, padedanti komandai išlikti vienoje linijoje. Sekite projektus nuo pradžios iki pabaigos, valdykite mokėjimus ir premijas, o kiekvienam vaidmeniui — nuo inžinierių iki buhalterių — suteikite tik jam reikalingą prieigą.",
+        "HIGHLIGHTS": [
+          "4 lygių rolėmis paremta prieiga",
+          "Mokėjimų ciklai ir premijų apskaita",
+          "Realaus laiko projekto atnaujinimai"
+        ]
+      }
+    },
+    "LINK": {
+      "VISIT_SITE": "Apsilankyti",
+      "VIEW_PROJECT": "Peržiūrėti projektą"
+    }
+  },
+  "Contact": {
+    "LABEL": "Susisiekime",
+    "SIDEBAR_LEFT": "Kontaktai",
+    "SIDEBAR_RIGHT": "Rašykite",
+    "TITLE": [
+      [{ "text": "Susisiekime" }],
+      [
+        { "text": "dėl projekto", "type": "accent" },
+        { "text": " šiandien", "type": "muted" }
+      ]
+    ],
+    "DESCRIPTION": "Turite idėją ar norite aptarti galimybę? Esu atviras naujiems iššūkiams. Parašykite žinutę arba susisiekite tiesiogiai.",
+    "FORM": {
+      "NAME_LABEL": "Vardas",
+      "NAME_PLACEHOLDER": "Jūsų vardas",
+      "EMAIL_LABEL": "El. paštas",
+      "EMAIL_PLACEHOLDER": "jusu@pastas.lt",
+      "MESSAGE_LABEL": "Žinutė",
+      "MESSAGE_PLACEHOLDER": "Trumpai apie projektą...",
+      "SUBMIT": "Siųsti žinutę",
+      "SUBMIT_LOADING": "Siunčiama...",
+      "SUBMIT_SUCCESS": "Išsiųsta!",
+      "SUBMIT_ERROR": "Bandyti dar kartą",
+      "SUCCESS_MESSAGE": "Ačiū! Netrukus susisieksiu.",
+      "RECAPTCHA_NOT_READY": "reCAPTCHA neįkelta. Prašau atnaujinti puslapį."
+    },
+    "RECAPTCHA": {
+      "PROTECTED_BY": "Apsaugota „reCAPTCHA“.",
+      "PRIVACY": "Privatumas",
+      "TERMS": "Sąlygos"
+    }
+  },
+  "Footer": {
+    "TAGLINE": "Programinės įrangos inžinierius",
+    "CREDENTIAL_TITLE": "AI inžinerija",
+    "CREDENTIAL_ISSUED": "Išduota 2025 m. birželį",
+    "CREDENTIAL_ID_PREFIX": "ID:",
+    "LINK_GROUP_NAV": "Navigacija",
+    "LINK_GROUP_CONTACT": "Kontaktai",
+    "HOME": "Pradžia"
+  },
+  "ImageSlider": {
+    "IMAGES_COMING_SOON": "Nuotraukos jau netrukus",
+    "EXPAND_IMAGE": "Išdidinti",
+    "CLOSE_ESC": "Uždaryti (Esc)"
   }
 }

@@ -5,5 +5,217 @@
     "CONTACT": "Contact",
     "AVAILABLE": "Available",
     "EMAIL_ME": "Email me"
+  },
+  "Common": {
+    "COPY_EMAIL": "Copy email",
+    "COPIED": "Copied!",
+    "OPEN_MENU": "Open menu",
+    "CLOSE_MENU": "Close menu",
+    "THEME_LIGHT": "Light mode",
+    "THEME_DARK": "Dark mode",
+    "THEME_SYSTEM": "System theme"
+  },
+  "Hero": {
+    "AVAILABLE_FOR_PROJECTS": "Available for Projects",
+    "DESCRIPTION": "End-to-end product development — from discovery and MVP to scale. I turn ideas into production-ready software, owning the full technical journey.",
+    "CTA_PRIMARY": "Start a Project",
+    "CTA_SECONDARY": "Explore Services",
+    "MORE": "More →",
+    "MARQUEE": {
+      "ITEMS": [
+        "Web Applications",
+        "Mobile Apps",
+        "AI Integration",
+        "SaaS Products",
+        "MVP Development",
+        "Enterprise Solutions",
+        "E-commerce",
+        "Real-time Features",
+        "API Development",
+        "Technical Consulting",
+        "Performance Optimization",
+        "Scalable Architecture"
+      ],
+      "PRODUCTS_DELIVERED": "{count}+ Products Delivered",
+      "YEARS_EXPERIENCE": "{count}+ Years Experience",
+      "DOMAINS": "{count}+ Domains",
+      "CLIENTS": "{count}+ Clients"
+    },
+    "METRICS": {
+      "YEARS": "Years",
+      "PROJECTS": "Projects",
+      "CLIENTS": "Clients",
+      "DOMAINS": "Domains"
+    }
+  },
+  "Services": {
+    "LABEL": "Capabilities",
+    "SIDEBAR_LEFT": "Services",
+    "SIDEBAR_RIGHT": "What I Do",
+    "TITLE": [
+      [{ "text": "How I Can" }],
+      [
+        { "text": "Help", "type": "accent" },
+        { "text": " you ship", "type": "muted" }
+      ]
+    ],
+    "ITEMS": {
+      "WEB": {
+        "TITLE": "Web Applications",
+        "DESCRIPTION": "Full-stack web products from architecture to deployment. Dashboards, SaaS platforms, e-commerce — built to scale."
+      },
+      "MOBILE": {
+        "TITLE": "Mobile Development",
+        "DESCRIPTION": "Cross-platform iOS and Android apps. From concept to App Store — native performance with shared codebase."
+      },
+      "AI": {
+        "TITLE": "AI Integration",
+        "DESCRIPTION": "Adding intelligence to your product. Custom AI agents, chatbots, document processing, and automation workflows."
+      },
+      "BACKEND": {
+        "TITLE": "Backend & Infrastructure",
+        "DESCRIPTION": "Scalable APIs, databases, and cloud infrastructure. CI/CD pipelines, containerization, and production-ready deployments."
+      },
+      "UIUX": {
+        "TITLE": "UI/UX Implementation",
+        "DESCRIPTION": "Turning designs into polished interfaces. Design systems, responsive layouts, animations, and accessibility."
+      },
+      "CONSULTING": {
+        "TITLE": "Technical Consulting",
+        "DESCRIPTION": "Architecture reviews, performance optimization, and technology decisions. Helping teams ship better software."
+      }
+    },
+    "PROJECTS_LABEL": "projects delivered"
+  },
+  "Work": {
+    "LABEL": "Selected Projects",
+    "SIDEBAR_LEFT": "Work",
+    "SIDEBAR_RIGHT": "Projects",
+    "TITLE": [
+      [{ "text": "Real" }],
+      [
+        { "text": "Problems", "type": "accent" },
+        { "text": " solved", "type": "muted" }
+      ]
+    ],
+    "DISCLAIMER": "Some of my strongest work sits behind NDAs with agencies and clients, so not everything can be shown publicly. The selection below is representative, and the industry experience extends beyond these examples.",
+    "INDUSTRIES": {
+      "TITLE": "Industry experience",
+      "DESCRIPTION": "Across both public and private engagements, I’ve shipped products in these domains:",
+      "ITEMS": [
+        { "label": "Cyber Security", "featured": true },
+        { "label": "Banking & Financial Services", "featured": true },
+        { "label": "Insurance", "featured": true },
+        { "label": "FinTech", "featured": true },
+        { "label": "InsurTech / Risk Management", "featured": true },
+        { "label": "Logistics", "featured": true },
+        { "label": "Fleet Management", "featured": true },
+        { "label": "Healthcare / Wellness" },
+        { "label": "EdTech" },
+        { "label": "Real Estate" },
+        { "label": "HR / Talent Management" },
+        { "label": "B2B SaaS" },
+        { "label": "Social / Community" },
+        { "label": "Construction" },
+        { "label": "Consumer / Lifestyle" },
+        { "label": "Gaming / Entertainment" },
+        { "label": "Legal" }
+      ]
+    },
+    "PROJECTS": {
+      "strive": {
+        "INDUSTRY": "EdTech",
+        "DESCRIPTION": "Personalized learning platform that transforms any topic into a complete course. AI generates structured roadmaps, modules, and interactive lessons, while a built-in tutor guides learners through their journey.",
+        "HIGHLIGHTS": [
+          "4 AI agents (roadmap, module, lesson, chat)",
+          "Visual course roadmap editor",
+          "Credit-based subscriptions"
+        ]
+      },
+      "withinly": {
+        "INDUSTRY": "HealthTech",
+        "DESCRIPTION": "Mental wellness companion that helps you understand yourself and your relationships. Take personality assessments, chat with an AI that remembers your journey, and receive beautifully crafted psychological insights.",
+        "HIGHLIGHTS": [
+          "RAG-powered companion agent",
+          "4 personality assessments",
+          "AI-generated Inner & Relational Portraits"
+        ]
+      },
+      "mcr": {
+        "INDUSTRY": "Lifestyle",
+        "DESCRIPTION": "Mobile app for discovering local hotspots and exclusive perks. Browse curated places, save favorites, and let the randomizer surprise you with your next adventure—all with member-only benefits.",
+        "HIGHLIGHTS": ["Place randomizer feature", "RevenueCat subscriptions", "WordPress CMS integration"]
+      },
+      "dara": {
+        "INDUSTRY": "SaaS",
+        "DESCRIPTION": "Document creation platform that turns your content into polished, professional PDFs. Choose from beautifully designed templates, customize with ease, and let AI help you write compelling content.",
+        "HIGHLIGHTS": ["JSX-to-PDF rendering", "Multiple template types", "AI content enhancement"]
+      },
+      "uk-tax": {
+        "INDUSTRY": "FinTech",
+        "DESCRIPTION": "Financial guidance platform helping UK businesses and sole traders keep more of what they earn. Get confidential, jargon-free advice on tax savings, smarter pay strategies, and hidden government benefits—all FCA-compliant.",
+        "HIGHLIGHTS": ["AI tax advice agent", "Document file processing", "Multi-step onboarding flow"]
+      },
+      "circle-of-trust": {
+        "INDUSTRY": "Social",
+        "DESCRIPTION": "Professional networking app built on trust. Build meaningful connections through circles, get recommendations from people you already trust, and grow your network with confidence on iOS and Android.",
+        "HIGHLIGHTS": ["Trust-based recommendation engine", "QR code connection system", "52 MJML email templates"]
+      },
+      "pp-platforma": {
+        "INDUSTRY": "Construction",
+        "DESCRIPTION": "Construction project management system that keeps teams aligned. Track projects from start to finish, manage payments and bonuses, and give every role—from engineers to accountants—exactly the access they need.",
+        "HIGHLIGHTS": ["4-tier role system", "Payment cycle & bonus tracking", "Real-time project updates"]
+      }
+    },
+    "LINK": {
+      "VISIT_SITE": "Visit Site",
+      "VIEW_PROJECT": "View Project"
+    }
+  },
+  "Contact": {
+    "LABEL": "Get in Touch",
+    "SIDEBAR_LEFT": "Contact",
+    "SIDEBAR_RIGHT": "Reach Out",
+    "TITLE": [
+      [{ "text": "Let's" }],
+      [
+        { "text": "Work", "type": "accent" },
+        { "text": " together", "type": "muted" }
+      ]
+    ],
+    "DESCRIPTION": "Have a project in mind or want to discuss an opportunity? I'm always open to new challenges. Drop me a message or reach out directly.",
+    "FORM": {
+      "NAME_LABEL": "Name",
+      "NAME_PLACEHOLDER": "Your name",
+      "EMAIL_LABEL": "Email",
+      "EMAIL_PLACEHOLDER": "your@email.com",
+      "MESSAGE_LABEL": "Message",
+      "MESSAGE_PLACEHOLDER": "Tell me about your project...",
+      "SUBMIT": "Send Message",
+      "SUBMIT_LOADING": "Send Message",
+      "SUBMIT_SUCCESS": "Sent!",
+      "SUBMIT_ERROR": "Try Again",
+      "SUCCESS_MESSAGE": "Thank you! I'll get back to you soon.",
+      "RECAPTCHA_NOT_READY": "reCAPTCHA not loaded. Please refresh the page."
+    },
+    "RECAPTCHA": {
+      "PROTECTED_BY": "Protected by reCAPTCHA.",
+      "PRIVACY": "Privacy",
+      "TERMS": "Terms"
+    }
+  },
+  "Footer": {
+    "TAGLINE": "Software Engineer",
+    "CREDENTIAL_TITLE": "AI Engineering",
+    "CREDENTIAL_ISSUED": "Issued June 2025",
+    "CREDENTIAL_ID_PREFIX": "ID:",
+    "LINK_GROUP_NAV": "Navigation",
+    "LINK_GROUP_CONTACT": "Contact",
+    "HOME": "Home"
+  },
+  "ImageSlider": {
+    "IMAGES_COMING_SOON": "Images coming soon",
+    "EXPAND_IMAGE": "Expand image",
+    "CLOSE_ESC": "Close (Esc)"
   }
 }

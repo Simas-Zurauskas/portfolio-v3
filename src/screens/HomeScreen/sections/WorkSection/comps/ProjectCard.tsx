@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Project, CardSize } from '../types';
 import { ImageSlider } from './ImageSlider';
 
@@ -333,6 +334,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const t = useTranslations('Work');
   const { title, description, industry, tech, highlights, images, size, link, linkLabel } = project;
   const isLargeCard = size === 'large' || size === 'tall';
   const slideImages = images && images.length > 0 ? images : [];
@@ -380,7 +382,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {hasLink && (
           <div className="project-card__footer">
             <button className="project-card__link-btn" onClick={handleLinkClick}>
-              {linkLabel || 'View Project'}
+              {linkLabel || t('LINK.VISIT_SITE')}
               <ExternalLink />
             </button>
           </div>

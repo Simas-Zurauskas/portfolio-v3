@@ -437,6 +437,7 @@ export const Nav: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const t = useTranslations('Nav');
+  const tc = useTranslations('Common');
 
   useEffect(() => {
     setMounted(true);
@@ -538,16 +539,16 @@ export const Nav: React.FC = () => {
             <button
               className={`theme-switcher__btn ${mounted && theme === 'light' ? 'theme-switcher__btn--active' : ''}`}
               onClick={() => setTheme('light')}
-              aria-label="Light mode"
-              title="Light mode"
+              aria-label={tc('THEME_LIGHT')}
+              title={tc('THEME_LIGHT')}
             >
               <Sun size={15} />
             </button>
             <button
               className={`theme-switcher__btn ${mounted && theme === 'dark' ? 'theme-switcher__btn--active' : ''}`}
               onClick={() => setTheme('dark')}
-              aria-label="Dark mode"
-              title="Dark mode"
+              aria-label={tc('THEME_DARK')}
+              title={tc('THEME_DARK')}
             >
               <Moon size={15} />
             </button>
@@ -556,8 +557,8 @@ export const Nav: React.FC = () => {
                 mounted && (theme === 'system' || theme === undefined) ? 'theme-switcher__btn--active' : ''
               }`}
               onClick={() => setTheme('system')}
-              aria-label="System theme"
-              title="System theme"
+              aria-label={tc('THEME_SYSTEM')}
+              title={tc('THEME_SYSTEM')}
             >
               <Monitor size={15} />
             </button>
@@ -570,7 +571,7 @@ export const Nav: React.FC = () => {
           <button
             className="nav__mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={mobileMenuOpen ? tc('CLOSE_MENU') : tc('OPEN_MENU')}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -607,21 +608,21 @@ export const Nav: React.FC = () => {
                       <button
                         className={mounted && theme === 'light' ? 'active' : ''}
                         onClick={() => setTheme('light')}
-                        aria-label="Light mode"
+                        aria-label={tc('THEME_LIGHT')}
                       >
                         <Sun />
                       </button>
                       <button
                         className={mounted && theme === 'dark' ? 'active' : ''}
                         onClick={() => setTheme('dark')}
-                        aria-label="Dark mode"
+                        aria-label={tc('THEME_DARK')}
                       >
                         <Moon />
                       </button>
                       <button
                         className={mounted && (theme === 'system' || theme === undefined) ? 'active' : ''}
                         onClick={() => setTheme('system')}
-                        aria-label="System theme"
+                        aria-label={tc('THEME_SYSTEM')}
                       >
                         <Monitor />
                       </button>

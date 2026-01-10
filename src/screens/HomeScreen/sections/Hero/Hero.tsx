@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { motion, useMotionValue, useTransform, animate, useSpring, Variants, useInView } from 'framer-motion';
 import { COUNT_CLIENTS, COUNT_DOMAINS, COUNT_PROJECTS, COUNT_YEARS } from '@/conf';
 import { Button } from '@/components';
+import { useTranslations } from 'next-intl';
 
 const Section = styled.section`
   position: relative;
@@ -704,6 +705,7 @@ export const Hero = () => {
   const sideRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations('Hero');
 
   // Single animation controller via useInView
   const isInView = useInView(contentRef, { once: false, margin: '-100px' });
@@ -748,22 +750,11 @@ export const Hero = () => {
   }, [mounted, handleMouseMove]);
 
   const marqueeItems = [
-    'Web Applications',
-    'Mobile Apps',
-    'AI Integration',
-    'SaaS Products',
-    'MVP Development',
-    'Enterprise Solutions',
-    'E-commerce',
-    'Real-time Features',
-    'API Development',
-    'Technical Consulting',
-    'Performance Optimization',
-    'Scalable Architecture',
-    `${COUNT_PROJECTS}+ Products Delivered`,
-    `${COUNT_YEARS}+ Years Experience`,
-    `${COUNT_DOMAINS}+ Domains`,
-    `${COUNT_CLIENTS}+ Clients`,
+    ...((t.raw('MARQUEE.ITEMS') as unknown as string[]) || []),
+    t('MARQUEE.PRODUCTS_DELIVERED', { count: COUNT_PROJECTS }),
+    t('MARQUEE.YEARS_EXPERIENCE', { count: COUNT_YEARS }),
+    t('MARQUEE.DOMAINS', { count: COUNT_DOMAINS }),
+    t('MARQUEE.CLIENTS', { count: COUNT_CLIENTS }),
   ];
 
   return (
@@ -782,7 +773,7 @@ export const Hero = () => {
             <div className="hero-main__content">
               <motion.span className="hero-main__overline" variants={revealUpVariants}>
                 <motion.span className="hero-main__overline-line" variants={lineExpandVariants} />
-                Available for Projects
+                {t('AVAILABLE_FOR_PROJECTS')}
               </motion.span>
 
               <motion.h1 className="hero-main__title" variants={revealUpVariants}>
@@ -803,8 +794,7 @@ export const Hero = () => {
               </motion.h1>
 
               <motion.p className="hero-main__description" variants={revealUpVariants}>
-                End-to-end product development — from discovery and MVP to scale. I turn ideas into production-ready
-                software, owning the full technical journey.
+                {t('DESCRIPTION')}
               </motion.p>
 
               <motion.div className="hero-main__cta-row" variants={revealUpVariants}>
@@ -812,14 +802,14 @@ export const Hero = () => {
                   size="lg"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Start a Project
+                  {t('CTA_PRIMARY')}
                 </Button>
                 <Button
                   variant="ghost"
                   size="lg"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Explore Services
+                  {t('CTA_SECONDARY')}
                 </Button>
               </motion.div>
 
@@ -827,19 +817,19 @@ export const Hero = () => {
               <motion.div className="hero-main__mobile-metrics" variants={revealUpVariants}>
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_YEARS}+</div>
-                  <div className="hero-main__mobile-metric-label">Years</div>
+                  <div className="hero-main__mobile-metric-label">{t('METRICS.YEARS')}</div>
                 </div>
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_PROJECTS}+</div>
-                  <div className="hero-main__mobile-metric-label">Projects</div>
+                  <div className="hero-main__mobile-metric-label">{t('METRICS.PROJECTS')}</div>
                 </div>
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_CLIENTS}+</div>
-                  <div className="hero-main__mobile-metric-label">Clients</div>
+                  <div className="hero-main__mobile-metric-label">{t('METRICS.CLIENTS')}</div>
                 </div>
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_DOMAINS}+</div>
-                  <div className="hero-main__mobile-metric-label">Domains</div>
+                  <div className="hero-main__mobile-metric-label">{t('METRICS.DOMAINS')}</div>
                 </div>
               </motion.div>
             </div>
@@ -895,22 +885,22 @@ export const Hero = () => {
           <div className="hero-main__metric-value">
             <AnimatedCounter value={COUNT_YEARS} delay={0.7} />
           </div>
-          <div className="hero-main__metric-label">Years Exp</div>
+          <div className="hero-main__metric-label">{t('METRICS.YEARS')}</div>
         </div>
         <div className="hero-main__metric">
           <div className="hero-main__metric-value">
             <AnimatedCounter value={COUNT_PROJECTS} delay={0.9} />
           </div>
-          <div className="hero-main__metric-label">Projects</div>
+          <div className="hero-main__metric-label">{t('METRICS.PROJECTS')}</div>
         </div>
         <div className="hero-main__metric">
           <div className="hero-main__metric-value">
             <AnimatedCounter value={COUNT_CLIENTS} delay={1.1} />
           </div>
-          <div className="hero-main__metric-label">Clients</div>
+          <div className="hero-main__metric-label">{t('METRICS.CLIENTS')}</div>
         </div>
 
-        <span className="hero-main__sidebar-text">More →</span>
+        <span className="hero-main__sidebar-text">{t('MORE')}</span>
       </motion.div>
 
       <div className="hero-main__marquee">

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Copy, Check, Award } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { EMAIL } from '@/conf';
 
 const StyledFooter = styled.footer`
@@ -394,6 +395,9 @@ const scrollToSection = (id: string) => {
 };
 
 export const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
+  const tNav = useTranslations('Nav');
+  const tc = useTranslations('Common');
   const currentYear = new Date().getFullYear();
   const [copied, setCopied] = useState(false);
 
@@ -424,17 +428,17 @@ export const Footer: React.FC = () => {
           <div className="footer__top">
             <div className="footer__brand">
               <span className="footer__name">Simas Žurauskas</span>
-              <span className="footer__tagline">Software Engineer</span>
+              <span className="footer__tagline">{t('TAGLINE')}</span>
               <a href="/certificate.pdf" target="_blank" rel="noopener noreferrer" className="footer__credential">
                 <Award />
-                <span>AI Engineering</span>
+                <span>{t('CREDENTIAL_TITLE')}</span>
                 <img src="/turing.svg" alt="Turing College" />
                 <div className="footer__credential-tooltip">
                   <div className="footer__tooltip-row">
-                    <strong>Issued June 2025</strong>
+                    <strong>{t('CREDENTIAL_ISSUED')}</strong>
                   </div>
                   <div className="footer__tooltip-row">
-                    ID: <code>TC2506108004</code>
+                    {t('CREDENTIAL_ID_PREFIX')} <code>TC2506108004</code>
                   </div>
                 </div>
               </a>
@@ -442,23 +446,23 @@ export const Footer: React.FC = () => {
 
             <div className="footer__links">
               <div className="footer__link-group">
-                <span className="footer__link-title">Navigation</span>
+                <span className="footer__link-title">{t('LINK_GROUP_NAV')}</span>
                 <button className="footer__link" onClick={() => scrollToSection('top')}>
-                  Home
+                  {t('HOME')}
                 </button>
                 <button className="footer__link" onClick={() => scrollToSection('services')}>
-                  Services
+                  {tNav('SERVICES')}
                 </button>
                 <button className="footer__link" onClick={() => scrollToSection('work')}>
-                  Work
+                  {tNav('WORK')}
                 </button>
                 <button className="footer__link" onClick={() => scrollToSection('contact')}>
-                  Contact
+                  {tNav('CONTACT')}
                 </button>
               </div>
 
               <div className="footer__link-group">
-                <span className="footer__link-title">Contact</span>
+                <span className="footer__link-title">{t('LINK_GROUP_CONTACT')}</span>
                 <div className="footer__email-row">
                   <a className="footer__link" href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">
                     {EMAIL}
@@ -466,8 +470,8 @@ export const Footer: React.FC = () => {
                   <button
                     className={`footer__copy-btn ${copied ? 'footer__copy-btn--copied' : ''}`}
                     onClick={copyEmail}
-                    aria-label={copied ? 'Copied!' : 'Copy email'}
-                    title={copied ? 'Copied!' : 'Copy email'}
+                    aria-label={copied ? tc('COPIED') : tc('COPY_EMAIL')}
+                    title={copied ? tc('COPIED') : tc('COPY_EMAIL')}
                   >
                     {copied ? <Check /> : <Copy />}
                   </button>
@@ -479,7 +483,7 @@ export const Footer: React.FC = () => {
           <div className="footer__divider" />
 
           <div className="footer__bottom">
-            <span className="footer__copyright">© {currentYear} Simas Žurauskas. All rights reserved.</span>
+            <span className="footer__copyright">© {currentYear} Simas Žurauskas</span>
 
             <div className="footer__social">
               {/* <a
