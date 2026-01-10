@@ -566,19 +566,6 @@ const lineExpandVariants: Variants = {
   },
 };
 
-const sidebarVariants: Variants = {
-  hidden: { opacity: 0, x: 20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: smoothEase,
-      delay: 0.5,
-    },
-  },
-};
-
 const pulseVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {

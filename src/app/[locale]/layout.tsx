@@ -19,12 +19,12 @@ const getMessages = async (locale: string) => {
 
 interface LayoutProps {
   children: ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }
 
 const LocaleLayout = async ({ children, params }: LayoutProps) => {
   const { locale } = await params;
-  const isValidLocale = LOCALES.includes(locale);
+  const isValidLocale = LOCALES.includes(locale as Locale);
   if (!isValidLocale) notFound();
 
   const messages = await getMessages(locale);

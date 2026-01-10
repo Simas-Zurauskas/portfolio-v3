@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Script from 'next/script';
 import Registry from './_registry';
-import { Locale } from '@/types';
 
 const GA_TRACKING_ID = 'G-1SENQVYX6C';
 
@@ -46,16 +45,9 @@ export const metadata: Metadata = {
   },
 };
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
-}
-
-export default async function RootLayout({ children, params }: RootLayoutProps) {
-  const { locale } = await params;
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={locale || 'en'} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

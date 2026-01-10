@@ -20,6 +20,13 @@ const getComputedCSSColors = (): ColorsSet => {
     accent: computedStyle.getPropertyValue('--accent').trim(),
     accentHover: computedStyle.getPropertyValue('--accent-hover').trim(),
     accentMuted: computedStyle.getPropertyValue('--accent-muted').trim(),
+    secondary: computedStyle.getPropertyValue('--secondary').trim(),
+    secondaryHover: computedStyle.getPropertyValue('--secondary-hover').trim(),
+    secondaryMuted: computedStyle.getPropertyValue('--secondary-muted').trim(),
+    success: computedStyle.getPropertyValue('--success').trim(),
+    successMuted: computedStyle.getPropertyValue('--success-muted').trim(),
+    error: computedStyle.getPropertyValue('--error').trim(),
+    errorMuted: computedStyle.getPropertyValue('--error-muted').trim(),
   };
 };
 
@@ -55,5 +62,6 @@ export const useAppTheme = (): DefaultTheme => {
     colors,
     colorsLib,
     scheme: resolvedScheme,
+    hex: themeColors[resolvedScheme === 'dark' ? 'dark' : 'light'],
   };
 };
