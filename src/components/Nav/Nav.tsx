@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
   right: 0;
   z-index: 10000;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  background: ${({ theme }) => theme.hex.background}e6;
+  background: color-mix(in srgb, var(--background) 90%, transparent);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
 
@@ -245,7 +245,7 @@ const MobileMenuOverlay = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  background: ${({ theme }) => theme.hex.background}f5;
+  background: color-mix(in srgb, var(--background) 96%, transparent);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   z-index: 9999;
