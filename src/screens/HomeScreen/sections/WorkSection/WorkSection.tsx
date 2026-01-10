@@ -217,7 +217,7 @@ export const WorkSection: React.FC = () => {
         <BentoGrid
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: '-100px' }}
+          viewport={{ once: true, margin: '-100px' }}
           variants={gridVariants}
         >
           {projects.map((project) => (

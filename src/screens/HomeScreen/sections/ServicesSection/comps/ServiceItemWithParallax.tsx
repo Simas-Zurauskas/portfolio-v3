@@ -243,7 +243,7 @@ export const ServiceItemWithParallax: React.FC<{ service: Service }> = ({ servic
       ref={itemRef}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-50px' }}
+      viewport={{ once: true, margin: '-50px' }}
       variants={wrapperVariants}
     >
       <ServiceIndex style={{ y: indexY }}>{service.index}</ServiceIndex>

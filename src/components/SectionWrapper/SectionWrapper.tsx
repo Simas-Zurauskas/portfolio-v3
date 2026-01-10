@@ -483,7 +483,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
         className="section__main"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, margin: '-100px' }}
+        viewport={{ once: true, margin: '-100px' }}
         variants={containerVariants}
       >
         {label && (
