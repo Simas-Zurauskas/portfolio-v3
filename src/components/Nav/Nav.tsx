@@ -414,20 +414,20 @@ const menuVariants = {
 };
 
 const linkVariants = {
-  closed: { opacity: 0, x: -20 },
+  closed: { opacity: 0, x: -15 },
   open: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.4, ease: smoothEase },
+    transition: { duration: 0.3, ease: smoothEase },
   },
 };
 
 const footerVariants = {
-  closed: { opacity: 0, y: 20 },
+  closed: { opacity: 0, y: 15 },
   open: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: smoothEase, delay: 0.2 },
+    transition: { duration: 0.3, ease: smoothEase, delay: 0.15 },
   },
 };
 

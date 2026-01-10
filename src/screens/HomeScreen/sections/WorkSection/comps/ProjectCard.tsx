@@ -50,7 +50,8 @@ const Card = styled(motion.article)<StyledCardProps>`
   border: 1.5px solid ${({ theme }) => theme.hex.border};
   border-radius: 2px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 
   ${({ $size }) => getGridSpan($size)}

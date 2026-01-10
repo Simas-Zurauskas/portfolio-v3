@@ -110,7 +110,10 @@ const TechPill = styled(motion.span)`
   background: ${({ theme }) => theme.colors.surface};
   border: 1px solid ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.muted};
-  transition: all 0.3s ease;
+  /* Avoid conflicting with Framer Motion opacity animation (mobile flicker) */
+  transition: border-color 0.3s ease, color 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   @media (max-width: 600px) {
     padding: 8px 14px;

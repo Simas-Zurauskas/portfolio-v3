@@ -347,6 +347,9 @@ const Section = styled.section`
       position: absolute;
       border-radius: 8px;
       z-index: 1;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform: translateZ(0);
 
       &--1 {
         top: 0;
@@ -492,6 +495,19 @@ const Section = styled.section`
     &-track {
       display: flex;
       width: max-content;
+      will-change: transform;
+      animation: marquee-scroll 33s linear infinite;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
     }
 
     &-item {
@@ -533,12 +549,12 @@ const containerVariants: Variants = {
 
 // Animation variants - delays now handled by staggerChildren
 const revealUpVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: smoothEase,
     },
   },
@@ -550,7 +566,7 @@ const slideInVariants: Variants = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: smoothEase,
     },
   },
@@ -561,7 +577,7 @@ const lineExpandVariants: Variants = {
   visible: {
     scaleX: 1,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: smoothEase,
     },
   },
@@ -579,16 +595,7 @@ const pulseVariants: Variants = {
   },
 };
 
-const marqueeVariants: Variants = {
-  animate: {
-    x: [0, '-50%'],
-    transition: {
-      duration: 30,
-      ease: 'linear',
-      repeat: Infinity,
-    },
-  },
-};
+// Marquee now uses CSS animation for better mobile GPU performance
 
 // Animated counter component using Framer Motion
 const AnimatedCounter = ({ value, suffix = '+', delay = 0 }: { value: number; suffix?: string; delay?: number }) => {
@@ -671,9 +678,9 @@ const FloatingShape: React.FC<FloatingShapeProps> = ({
     return distance * influence * 0.04 * maxOffset;
   });
 
-  // Smooth the offsets with springs (softer response)
-  const springX = useSpring(offsetX, { stiffness: 80, damping: 25 });
-  const springY = useSpring(offsetY, { stiffness: 80, damping: 25 });
+  // Smooth the offsets with springs (softer response, higher damping = smoother/less CPU)
+  const springX = useSpring(offsetX, { stiffness: 50, damping: 30 });
+  const springY = useSpring(offsetY, { stiffness: 50, damping: 30 });
 
   return (
     <motion.div
@@ -904,13 +911,13 @@ export const Hero = () => {
       </motion.div>
 
       <div className="hero-main__marquee">
-        <motion.div className="hero-main__marquee-track" initial="hidden" animate="animate" variants={marqueeVariants}>
+        <div className="hero-main__marquee-track">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span key={i} className="hero-main__marquee-item">
               {item}
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
     </Section>
   );
