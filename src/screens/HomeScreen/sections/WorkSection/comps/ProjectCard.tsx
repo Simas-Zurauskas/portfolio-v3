@@ -74,13 +74,15 @@ const Card = styled(motion.article)<StyledCardProps>`
     flex-direction: column;
   }
 
-  &:hover {
-    border-color: ${({ theme }) => theme.hex.muted};
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme }) => theme.hex.muted};
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 
-    .project-card__image {
-      transform: scale(1.05);
+      .project-card__image {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -231,11 +233,13 @@ const Card = styled(motion.article)<StyledCardProps>`
       color: ${({ theme }) => theme.colors.muted};
       background: ${({ theme }) => theme.colors.surface};
       border: 1px solid ${({ theme }) => theme.colors.border};
-      transition: all 0.2s ease;
+      transition: border-color 0.2s ease, color 0.2s ease;
 
-      &:hover {
-        border-color: ${({ theme }) => theme.hex.foreground}40;
-        color: ${({ theme }) => theme.colors.foreground};
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.hex.foreground}40;
+          color: ${({ theme }) => theme.colors.foreground};
+        }
       }
     }
 

@@ -165,8 +165,10 @@ const StyledFooter = styled.footer`
       cursor: pointer;
       text-align: left;
 
-      &:hover {
-        color: ${({ theme }) => theme.colors.accent};
+      @media (hover: hover) {
+        &:hover {
+          color: ${({ theme }) => theme.colors.accent};
+        }
       }
     }
 

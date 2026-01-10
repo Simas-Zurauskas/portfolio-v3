@@ -33,8 +33,10 @@ const EmailRow = styled.div`
     font-weight: 600;
     transition: color 0.2s ease;
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.accent};
+    @media (hover: hover) {
+      &:hover {
+        color: ${({ theme }) => theme.colors.accent};
+      }
     }
   }
 `;

@@ -120,9 +120,11 @@ const TechPill = styled(motion.span)`
     font-size: 0.6rem;
   }
 
-  &:hover {
-    border-color: ${({ theme }) => theme.hex.accent}50;
-    color: ${({ theme }) => theme.colors.foreground};
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme }) => theme.hex.accent}50;
+      color: ${({ theme }) => theme.colors.foreground};
+    }
   }
 `;
 
