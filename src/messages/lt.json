@@ -18,7 +18,7 @@
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Laisvas naujiems projektams",
-    "DESCRIPTION": "Visas produkto kelias — nuo koncepcijos iki paleidimo. Jūsų idėją paverčiu veikiančiu produktu, prisiimdamas techninę atsakomybę nuo A iki Z.",
+    "DESCRIPTION": "Visas produkto kelias — nuo koncepcijos iki paleidimo. Kuriu naujus produktus arba tobulinu esamus, prisiimdamas techninę atsakomybę nuo A iki Z.",
     "CTA_PRIMARY": "Pradėti projektą",
     "CTA_SECONDARY": "Peržiūrėti paslaugas",
     "MORE": "Daugiau →",
@@ -84,6 +84,10 @@
       "CONSULTING": {
         "TITLE": "Techninės konsultacijos",
         "DESCRIPTION": "Architektūros peržiūros, našumo optimizavimas ir technologiniai sprendimai. Padedu komandoms pristatyti geresnę programinę įrangą."
+      },
+      "EXISTING": {
+        "TITLE": "Esami projektai",
+        "DESCRIPTION": "Jau turite kodą? Klaidų taisymas, naujų funkcijų kūrimas, refaktoringas ar priežiūros perėmimas. Šviežias žvilgsnis į jūsų produktą."
       }
     },
     "PROJECTS_LABEL": "įgyvendintų projektų"

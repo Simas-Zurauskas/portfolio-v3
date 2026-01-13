@@ -17,7 +17,7 @@ const ServicesList = styled.div`
   flex-direction: column;
 `;
 
-type ServiceI18nKey = 'WEB' | 'MOBILE' | 'AI' | 'BACKEND' | 'UIUX' | 'CONSULTING';
+type ServiceI18nKey = 'WEB' | 'MOBILE' | 'AI' | 'BACKEND' | 'UIUX' | 'CONSULTING' | 'EXISTING';
 
 const servicesBase: Array<{
   key: ServiceI18nKey;
@@ -31,6 +31,7 @@ const servicesBase: Array<{
   { key: 'BACKEND', index: '04', tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'], projectCount: 15 },
   { key: 'UIUX', index: '05', tech: ['Figma', 'Design Systems', 'Framer Motion', 'A11y'], projectCount: 25 },
   { key: 'CONSULTING', index: '06', tech: ['Code Reviews', 'Architecture', 'Mentorship', 'DevOps'], projectCount: 20 },
+  { key: 'EXISTING', index: '07', tech: ['Bug Fixes', 'Refactoring', 'Performance', 'Features'], projectCount: 15 },
 ];
 
 // Animation variants

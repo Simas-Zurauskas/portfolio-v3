@@ -18,7 +18,7 @@
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Available for Projects",
-    "DESCRIPTION": "End-to-end product development — from discovery and MVP to scale. I turn ideas into production-ready software, owning the full technical journey.",
+    "DESCRIPTION": "End-to-end product development — from discovery and MVP to scale. Building new products or improving existing ones, owning the full technical journey.",
     "CTA_PRIMARY": "Start a Project",
     "CTA_SECONDARY": "Explore Services",
     "MORE": "More →",
@@ -84,6 +84,10 @@
       "CONSULTING": {
         "TITLE": "Technical Consulting",
         "DESCRIPTION": "Architecture reviews, performance optimization, and technology decisions. Helping teams ship better software."
+      },
+      "EXISTING": {
+        "TITLE": "Existing Projects",
+        "DESCRIPTION": "Already have a codebase? Bug fixes, feature additions, refactoring, or taking over maintenance. Fresh eyes on your product."
       }
     },
     "PROJECTS_LABEL": "projects delivered"
