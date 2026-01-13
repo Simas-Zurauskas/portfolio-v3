@@ -1,6 +1,7 @@
 {
   "Nav": {
     "SERVICES": "Services",
+    "PROCESS": "Process",
     "WORK": "Work",
     "CONTACT": "Contact",
     "AVAILABLE": "Available",
@@ -86,6 +87,61 @@
       }
     },
     "PROJECTS_LABEL": "projects delivered"
+  },
+  "Process": {
+    "LABEL": "How I Work",
+    "SIDEBAR_LEFT": "Process",
+    "SIDEBAR_RIGHT": "Approach",
+    "TITLE": [[{ "text": "From Idea" }], [{ "text": "to Launch", "type": "accent" }]],
+    "PHASES": {
+      "DISCOVERY": {
+        "TITLE": "Discovery",
+        "DESCRIPTION": "Understanding your goals, users, and constraints. We align on scope, priorities, and what success looks like.",
+        "DURATION": "1–2 days"
+      },
+      "DESIGN": {
+        "TITLE": "Design",
+        "DESCRIPTION": "Architecture decisions, tech stack, and wireframes. Building the blueprint before writing code.",
+        "DURATION": "2–5 days"
+      },
+      "BUILD": {
+        "TITLE": "Build",
+        "DESCRIPTION": "Iterative development with regular demos. You see progress every week, not just at the end.",
+        "DURATION": "2–12 weeks"
+      },
+      "LAUNCH": {
+        "TITLE": "Launch",
+        "DESCRIPTION": "Deployment, monitoring, and handoff. Production-ready with documentation and support.",
+        "DURATION": "1–3 days"
+      }
+    },
+    "EXPECTATIONS": {
+      "LABEL": "What to expect",
+      "FLEXIBLE": {
+        "TITLE": "Flexible Engagement",
+        "DESCRIPTION": "Hourly, fixed price, or retainer"
+      },
+      "ITERATIONS": {
+        "TITLE": "Iterative Delivery",
+        "DESCRIPTION": "Working software every 1–2 weeks"
+      },
+      "DIRECT": {
+        "TITLE": "No Middlemen",
+        "DESCRIPTION": "Direct Slack or email, fast responses"
+      },
+      "OWNERSHIP": {
+        "TITLE": "Full Ownership",
+        "DESCRIPTION": "Your code, your repo, clean handoff"
+      },
+      "TRANSPARENT": {
+        "TITLE": "Transparent Scope",
+        "DESCRIPTION": "Clear pricing, no surprises"
+      },
+      "SUPPORT": {
+        "TITLE": "Post-Launch Support",
+        "DESCRIPTION": "Optional bug fixes and iterations"
+      }
+    }
   },
   "Work": {
     "LABEL": "Selected Projects",
@@ -196,7 +252,8 @@
       "SUBMIT_SUCCESS": "Sent!",
       "SUBMIT_ERROR": "Try Again",
       "SUCCESS_MESSAGE": "Thank you! I'll get back to you soon.",
-      "RECAPTCHA_NOT_READY": "reCAPTCHA not loaded. Please refresh the page."
+      "RECAPTCHA_NOT_READY": "reCAPTCHA not loaded. Please refresh the page.",
+      "REPLY_TIME": "Typical reply within 24h"
     },
     "RECAPTCHA": {
       "PROTECTED_BY": "Protected by reCAPTCHA.",

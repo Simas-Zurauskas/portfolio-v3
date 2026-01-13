@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 import { SectionWrapper } from '@/components';
 import { useTranslations } from 'next-intl';
-import { Project } from './types';
+import { Project, ProjectRole } from './types';
 import { ProjectCard } from './comps';
 
 const Content = styled.div`
@@ -110,11 +110,51 @@ type ProjectId = 'strive' | 'withinly' | 'mcr' | 'dara' | 'uk-tax' | 'circle-of-
 
 type ProjectBase = Omit<Project, 'description' | 'industry' | 'highlights'> & { id: ProjectId };
 
+// Role definitions for each project
+const projectRoles: Record<ProjectId, ProjectRole> = {
+  strive: {
+    title: 'Solo',
+    scope: ['Frontend', 'Backend', 'AI', 'DevOps'],
+    teamSize: 1,
+  },
+  withinly: {
+    title: 'Tech Lead',
+    scope: ['Frontend', 'Backend', 'AI', 'DevOps'],
+    teamSize: 4,
+  },
+  mcr: {
+    title: 'Tech Lead',
+    scope: ['Mobile', 'Backend', 'CMS', 'App Store'],
+    teamSize: 4,
+  },
+  dara: {
+    title: 'Tech Lead',
+    scope: ['Frontend', 'AI Integration'],
+    teamSize: 3,
+  },
+  'uk-tax': {
+    title: 'AI Engineer',
+    scope: ['Frontend AI', 'Backend AI'],
+    teamSize: 6,
+  },
+  'circle-of-trust': {
+    title: 'Mobile Lead',
+    scope: ['Mobile Frontend'],
+    teamSize: 8,
+  },
+  'pp-platforma': {
+    title: 'Solo',
+    scope: ['Frontend', 'Backend', 'Infrastructure', 'DevOps'],
+    teamSize: 1,
+  },
+};
+
 const projectsBase: ProjectBase[] = [
   {
     id: 'strive',
     title: 'Strive Learning',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'Stripe', 'MongoDB'],
+    role: projectRoles.strive,
     size: 'large',
     link: 'https://www.strive-learning.com',
     images: [
@@ -129,26 +169,30 @@ const projectsBase: ProjectBase[] = [
     id: 'withinly',
     title: 'Withinly',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'Pinecone', 'Stripe'],
+    role: projectRoles.withinly,
     size: 'wide',
     link: 'https://withinly.app',
     images: ['/images/proj/withinly_1.png', '/images/proj/withinly_2.png', '/images/proj/withinly_3.png'],
   },
   {
     id: 'mcr',
-    title: 'MCR Perks',
+    title: "Manchester's Finest",
     tech: ['React Native', 'Expo', 'MongoDB', 'RevenueCat'],
+    role: projectRoles.mcr,
     images: ['/images/proj/mcr_phone.png'],
   },
   {
     id: 'dara',
-    title: 'Dara INTELLITECH',
+    title: 'Dara Intellitech',
     tech: ['Next.js', 'Puppeteer', 'LangGraph', 'TypeScript'],
+    role: projectRoles.dara,
     images: ['/images/proj/dara_1.png'],
   },
   {
     id: 'uk-tax',
     title: 'WiseMind AI',
     tech: ['Next.js', 'LangGraph', 'OpenAI', 'MongoDB', 'Stripe'],
+    role: projectRoles['uk-tax'],
     size: 'wide',
     link: 'https://app.wisemindai.co.uk',
     images: ['/images/proj/wise_mind_1.png'],
@@ -157,6 +201,7 @@ const projectsBase: ProjectBase[] = [
     id: 'circle-of-trust',
     title: 'Circle of Trust',
     tech: ['React Native', 'GraphQL', 'Firebase', 'Branch.io'],
+    role: projectRoles['circle-of-trust'],
     size: 'wide',
     images: ['/images/proj/cot_1.png', '/images/proj/cot_2.png', '/images/proj/cot_3.png'],
   },
@@ -164,6 +209,7 @@ const projectsBase: ProjectBase[] = [
     id: 'pp-platforma',
     title: 'PP Platform',
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.IO', 'AWS S3'],
+    role: projectRoles['pp-platforma'],
   },
 ];
 
@@ -192,7 +238,7 @@ export const WorkSection: React.FC = () => {
   return (
     <SectionWrapper
       id="work"
-      index="02"
+      index="03"
       label={t('LABEL')}
       title={title}
       sidebarText={t('SIDEBAR_LEFT')}

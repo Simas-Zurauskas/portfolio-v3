@@ -10,12 +10,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Button } from '@/components';
 import { LanguageSwitch } from './comps';
 
-type NavLinkId = 'services' | 'work' | 'contact';
+type NavLinkId = 'services' | 'process' | 'work' | 'contact';
 
-const NAV_LINK_IDS: NavLinkId[] = ['services', 'work', 'contact'];
+const NAV_LINK_IDS: NavLinkId[] = ['services', 'process', 'work', 'contact'];
 
 const NAV_LINK_KEYS: Record<NavLinkId, string> = {
   services: 'SERVICES',
+  process: 'PROCESS',
   work: 'WORK',
   contact: 'CONTACT',
 };

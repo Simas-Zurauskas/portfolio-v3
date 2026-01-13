@@ -1,6 +1,7 @@
 {
   "Nav": {
     "SERVICES": "Paslaugos",
+    "PROCESS": "Procesas",
     "WORK": "Darbai",
     "CONTACT": "Kontaktai",
     "AVAILABLE": "Laisvas",
@@ -86,6 +87,61 @@
       }
     },
     "PROJECTS_LABEL": "įgyvendintų projektų"
+  },
+  "Process": {
+    "LABEL": "Kaip dirbu",
+    "SIDEBAR_LEFT": "Procesas",
+    "SIDEBAR_RIGHT": "Metodas",
+    "TITLE": [[{ "text": "Nuo idėjos" }], [{ "text": "iki paleidimo", "type": "accent" }]],
+    "PHASES": {
+      "DISCOVERY": {
+        "TITLE": "Analizė",
+        "DESCRIPTION": "Suprantu jūsų tikslus, vartotojus ir apribojimus. Suderinamas apimtis, prioritetai ir sėkmės kriterijai.",
+        "DURATION": "1–2 dienos"
+      },
+      "DESIGN": {
+        "TITLE": "Projektavimas",
+        "DESCRIPTION": "Architektūros sprendimai, technologijų parinkimas ir wireframe'ai. Brėžinys prieš kodą.",
+        "DURATION": "2–5 dienos"
+      },
+      "BUILD": {
+        "TITLE": "Kūrimas",
+        "DESCRIPTION": "Iteratyvus vystymas su reguliariomis demonstracijomis. Progresą matote kas savaitę, ne tik pabaigoje.",
+        "DURATION": "2–12 savaičių"
+      },
+      "LAUNCH": {
+        "TITLE": "Paleidimas",
+        "DESCRIPTION": "Diegimas, stebėsena ir perdavimas. Paruošta produkcijai su dokumentacija ir palaikymu.",
+        "DURATION": "1–3 dienos"
+      }
+    },
+    "EXPECTATIONS": {
+      "LABEL": "Ko tikėtis",
+      "FLEXIBLE": {
+        "TITLE": "Lankstus bendradarbiavimas",
+        "DESCRIPTION": "Valandinis, fiksuotas arba retaineris"
+      },
+      "ITERATIONS": {
+        "TITLE": "Iteratyvus pristatymas",
+        "DESCRIPTION": "Veikianti programinė įranga kas 1–2 savaites"
+      },
+      "DIRECT": {
+        "TITLE": "Be tarpininkų",
+        "DESCRIPTION": "Tiesioginis Slack ar el. paštas, greiti atsakymai"
+      },
+      "OWNERSHIP": {
+        "TITLE": "Pilna nuosavybė",
+        "DESCRIPTION": "Jūsų kodas, jūsų repo, švarus perdavimas"
+      },
+      "TRANSPARENT": {
+        "TITLE": "Skaidri apimtis",
+        "DESCRIPTION": "Aiški kainodara, jokių netikėtumų"
+      },
+      "SUPPORT": {
+        "TITLE": "Palaikymas po paleidimo",
+        "DESCRIPTION": "Papildomas klaidų taisymas ir tobulinimai"
+      }
+    }
   },
   "Work": {
     "LABEL": "Atrinkti projektai",
@@ -200,7 +256,8 @@
       "SUBMIT_SUCCESS": "Išsiųsta!",
       "SUBMIT_ERROR": "Bandyti dar kartą",
       "SUCCESS_MESSAGE": "Ačiū! Netrukus susisieksiu.",
-      "RECAPTCHA_NOT_READY": "reCAPTCHA neįkelta. Prašau atnaujinti puslapį."
+      "RECAPTCHA_NOT_READY": "reCAPTCHA neįkelta. Prašau atnaujinti puslapį.",
+      "REPLY_TIME": "Atsakau per 24 val."
     },
     "RECAPTCHA": {
       "PROTECTED_BY": "Apsaugota „reCAPTCHA“.",

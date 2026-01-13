@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion, Variants } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, User, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Project, CardSize } from '../types';
 import { ImageSlider } from './ImageSlider';
@@ -207,6 +207,88 @@ const Card = styled(motion.article)<StyledCardProps>`
       transition: color 0.3s ease;
     }
 
+    &__role {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 0;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    }
+
+    &__role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.accent};
+      background: ${({ theme }) => theme.hex.accent}12;
+      border: 1px solid ${({ theme }) => theme.hex.accent}30;
+      border-radius: 2px;
+
+      svg {
+        width: 11px;
+        height: 11px;
+        opacity: 0.9;
+      }
+    }
+
+    &__role-team {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: ${({ theme }) => theme.colors.muted};
+      background: ${({ theme }) => theme.colors.surfaceAlt};
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      border-radius: 2px;
+
+      svg {
+        width: 11px;
+        height: 11px;
+        opacity: 0.7;
+      }
+    }
+
+    &__role-scope {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-left: auto;
+
+      @media (max-width: 600px) {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 4px;
+      }
+    }
+
+    &__scope-tag {
+      padding: 3px 8px;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: ${({ theme }) => theme.colors.muted};
+      background: transparent;
+      border: 1px solid ${({ theme }) => theme.hex.border};
+      border-radius: 2px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.hex.muted}60;
+          color: ${({ theme }) => theme.colors.foreground};
+        }
+      }
+    }
+
     &__description {
       font-size: ${({ $size }) => ($size === 'large' ? '0.9375rem' : '0.875rem')};
       line-height: 1.6;
@@ -344,10 +426,11 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const t = useTranslations('Work');
-  const { title, description, industry, tech, highlights, images, size, link, linkLabel } = project;
+  const { title, description, industry, tech, highlights, images, size, link, linkLabel, role } = project;
   const isLargeCard = size === 'large' || size === 'tall';
   const slideImages = images && images.length > 0 ? images : [];
   const hasLink = Boolean(link);
+  const isSolo = role.teamSize === 1;
 
   const handleLinkClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -366,6 +449,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="project-card__content">
         <div className="project-card__header">
           <h3 className="project-card__title">{title}</h3>
+        </div>
+
+        <div className="project-card__role">
+          <span className="project-card__role-badge">
+            {isSolo ? <User /> : <Users />}
+            {role.title}
+          </span>
+          {!isSolo && (
+            <span className="project-card__role-team">
+              <Users />
+              Team of {role.teamSize}
+            </span>
+          )}
         </div>
 
         <p className="project-card__description">{description}</p>

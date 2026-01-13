@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Nav, Footer } from '@/components';
-import { Hero, ServicesSection, WorkSection, ContactSection } from './sections';
+import { Hero, ServicesSection, ProcessSection, WorkSection, ContactSection } from './sections';
 
 const Main = styled.main`
   min-height: 100vh;
@@ -15,6 +15,7 @@ const HomeScreen: React.FC = () => {
       <Nav />
       <Hero />
       <ServicesSection />
+      <ProcessSection />
       <WorkSection />
       <ContactSection />
       <Footer />

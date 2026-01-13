@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import { Send, Check, AlertCircle, Copy } from 'lucide-react';
+import { Send, Check, AlertCircle, Copy, Clock } from 'lucide-react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useTranslations } from 'next-intl';
 import { SectionWrapper, Button } from '@/components';
@@ -157,11 +157,20 @@ const TextArea = styled.textarea`
   }
 `;
 
-const SubmitButtonWrapper = styled.div<{ $status: 'idle' | 'loading' | 'success' | 'error' }>`
-  align-self: flex-start;
+const SubmitRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
   @media (max-width: 480px) {
-    align-self: stretch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+`;
+
+const SubmitButtonWrapper = styled.div<{ $status: 'idle' | 'loading' | 'success' | 'error' }>`
+  @media (max-width: 480px) {
     width: 100%;
 
     button {
@@ -190,6 +199,25 @@ const SubmitButtonWrapper = styled.div<{ $status: 'idle' | 'loading' | 'success'
         border-color: ${theme.hex.error}dd !important;
       }
     `}
+  }
+`;
+
+const ReplyTime = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.muted};
+
+  svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
   }
 `;
 
@@ -310,7 +338,7 @@ export const ContactSection: React.FC = () => {
   return (
     <SectionWrapper
       id="contact"
-      index="03"
+      index="04"
       label={t('LABEL')}
       title={sectionTitle}
       sidebarText={t('SIDEBAR_LEFT')}
@@ -377,19 +405,25 @@ export const ContactSection: React.FC = () => {
             />
           </FormGroup>
 
-          <SubmitButtonWrapper $status={status}>
-            <Button
-              type="submit"
-              size="lg"
-              loading={status === 'loading'}
-              icon={status === 'success' ? <Check /> : status === 'error' ? <AlertCircle /> : <Send />}
-            >
-              {status === 'success' && t('FORM.SUBMIT_SUCCESS')}
-              {status === 'error' && t('FORM.SUBMIT_ERROR')}
-              {(status === 'idle' || status === 'loading') &&
-                (status === 'loading' ? t('FORM.SUBMIT_LOADING') : t('FORM.SUBMIT'))}
-            </Button>
-          </SubmitButtonWrapper>
+          <SubmitRow>
+            <SubmitButtonWrapper $status={status}>
+              <Button
+                type="submit"
+                size="lg"
+                loading={status === 'loading'}
+                icon={status === 'success' ? <Check /> : status === 'error' ? <AlertCircle /> : <Send />}
+              >
+                {status === 'success' && t('FORM.SUBMIT_SUCCESS')}
+                {status === 'error' && t('FORM.SUBMIT_ERROR')}
+                {(status === 'idle' || status === 'loading') &&
+                  (status === 'loading' ? t('FORM.SUBMIT_LOADING') : t('FORM.SUBMIT'))}
+              </Button>
+            </SubmitButtonWrapper>
+            <ReplyTime>
+              <Clock />
+              {t('FORM.REPLY_TIME')}
+            </ReplyTime>
+          </SubmitRow>
 
           {status === 'success' && (
             <StatusMessage $type="success">

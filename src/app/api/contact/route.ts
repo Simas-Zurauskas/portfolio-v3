@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email via Mailjet
-    const lol = await mailjet.post('send', { version: 'v3.1' }).request({
+    await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
         {
           From: {
@@ -147,8 +147,6 @@ Sent from portfolio contact form
         },
       ],
     });
-
-    console.log(lol);
 
     return NextResponse.json({ success: true, message: 'Message sent successfully' });
   } catch (error) {
