@@ -77,9 +77,13 @@
         "TITLE": "Backend & Infrastructure",
         "DESCRIPTION": "Scalable APIs, databases, and cloud infrastructure. CI/CD pipelines, containerization, and production-ready deployments."
       },
+      "DESIGN": {
+        "TITLE": "UI/UX Design",
+        "DESCRIPTION": "Product strategy, user flows, wireframes, and prototypes. Clear UX direction before development starts."
+      },
       "UIUX": {
         "TITLE": "UI/UX Implementation",
-        "DESCRIPTION": "Turning designs into polished interfaces. Design systems, responsive layouts, animations, and accessibility."
+        "DESCRIPTION": "Turning designs into production-ready interfaces. Design systems, responsive UI, motion, and accessibility."
       },
       "CONSULTING": {
         "TITLE": "Technical Consulting",

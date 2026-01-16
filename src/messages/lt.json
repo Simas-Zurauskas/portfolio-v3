@@ -77,9 +77,13 @@
         "TITLE": "Backend & infrastruktūra",
         "DESCRIPTION": "Mastelį išlaikančios API, duomenų bazės ir cloud infrastruktūra. CI/CD, konteinerizacija ir produkcijai paruošti diegimai."
       },
+      "DESIGN": {
+        "TITLE": "UI/UX dizainas",
+        "DESCRIPTION": "Produkto strategija, naudotojų srautai, wireframe'ai ir prototipai. Aiški UX kryptis prieš pradedant kūrimą."
+      },
       "UIUX": {
         "TITLE": "UI/UX įgyvendinimas",
-        "DESCRIPTION": "Dizainus paverčiu nušlifuotomis sąsajomis. Dizaino sistemos, responsive layout’ai, animacijos ir prieinamumas."
+        "DESCRIPTION": "Dizainus paverčiu produkcijai paruoštomis sąsajomis. Dizaino sistemos, responsive UI, animacijos ir prieinamumas."
       },
       "CONSULTING": {
         "TITLE": "Techninės konsultacijos",

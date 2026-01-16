@@ -17,7 +17,7 @@ const ServicesList = styled.div`
   flex-direction: column;
 `;
 
-type ServiceI18nKey = 'WEB' | 'MOBILE' | 'AI' | 'BACKEND' | 'UIUX' | 'CONSULTING' | 'EXISTING';
+type ServiceI18nKey = 'WEB' | 'MOBILE' | 'AI' | 'BACKEND' | 'DESIGN' | 'UIUX' | 'CONSULTING' | 'EXISTING';
 
 const servicesBase: Array<{
   key: ServiceI18nKey;
@@ -29,9 +29,10 @@ const servicesBase: Array<{
   { key: 'MOBILE', index: '02', tech: ['React Native', 'Expo', 'iOS', 'Android'], projectCount: 10 },
   { key: 'AI', index: '03', tech: ['LangChain', 'OpenAI', 'RAG', 'Agents'], projectCount: 8 },
   { key: 'BACKEND', index: '04', tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'], projectCount: 15 },
-  { key: 'UIUX', index: '05', tech: ['Figma', 'Design Systems', 'Framer Motion', 'A11y'], projectCount: 25 },
-  { key: 'CONSULTING', index: '06', tech: ['Code Reviews', 'Architecture', 'Mentorship', 'DevOps'], projectCount: 20 },
-  { key: 'EXISTING', index: '07', tech: ['Bug Fixes', 'Refactoring', 'Performance', 'Features'], projectCount: 15 },
+  { key: 'DESIGN', index: '05', tech: ['Product Strategy', 'UX Flows', 'Wireframes', 'Prototypes'], projectCount: 8 },
+  { key: 'UIUX', index: '06', tech: ['Design Systems', 'Responsive UI', 'Framer Motion', 'A11y'], projectCount: 25 },
+  { key: 'CONSULTING', index: '07', tech: ['Code Reviews', 'Architecture', 'Mentorship', 'DevOps'], projectCount: 20 },
+  { key: 'EXISTING', index: '08', tech: ['Bug Fixes', 'Refactoring', 'Performance', 'Features'], projectCount: 15 },
 ];
 
 // Animation variants
