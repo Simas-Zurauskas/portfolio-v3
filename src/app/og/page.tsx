@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
-import { CVPageClient } from './comps/CVPageClient';
+import { OgImageStudio } from '@/components/OgImageStudio';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export default function CVPage() {
+export default function OgPage() {
   if (!isDev) notFound();
-  return <CVPageClient />;
+  return <OgImageStudio />;
 }

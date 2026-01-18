@@ -9,6 +9,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Exclude api, _next, _vercel, static files, and /cv (dev-only page)
-  matcher: ['/((?!api|_next|_vercel|cv|.*\\..*).*)'],
+  // Exclude api, _next, _vercel, static files, and dev-only pages (/cv, /og)
+  matcher: ['/((?!api|_next|_vercel|cv|og|.*\\..*).*)'],
 };
