@@ -203,7 +203,7 @@ const projectsBase: ProjectBase[] = [
     tech: ['React Native', 'GraphQL', 'Firebase', 'Branch.io'],
     role: projectRoles['circle-of-trust'],
     size: 'wide',
-    images: ['/images/proj/cot_1.png', '/images/proj/cot_2.png', '/images/proj/cot_3.png'],
+    images: ['/images/proj/cot_4.png', '/images/proj/cot_1.png', '/images/proj/cot_2.png', '/images/proj/cot_3.png'],
   },
   {
     id: 'pp-platforma',

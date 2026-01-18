@@ -102,13 +102,16 @@ Services list (with tech tags + project counts):
 4. **Backend & Infrastructure**  
    "Scalable APIs, databases, and cloud infrastructure. CI/CD pipelines, containerization, and production-ready deployments."  
    Tech: Node.js, PostgreSQL, AWS, Docker, CI/CD.
-5. **UI/UX Implementation**  
-   "Turning designs into polished interfaces. Design systems, responsive layouts, animations, and accessibility."  
-   Tech: Figma, Design Systems, Framer Motion, A11y.
-6. **Technical Consulting**  
+5. **UI/UX Design**  
+   "Product strategy, user flows, wireframes, and prototypes. Clear UX direction before development starts."  
+   Tech: Product Strategy, UX Flows, Wireframes, Prototypes.
+6. **UI/UX Implementation**  
+   "Turning designs into production-ready interfaces. Design systems, responsive UI, motion, and accessibility."  
+   Tech: Design Systems, Responsive UI, Framer Motion, A11y.
+7. **Technical Consulting**  
    "Architecture reviews, performance optimization, and technology decisions. Helping teams ship better software."  
    Tech: Code Reviews, Architecture, Mentorship, DevOps.
-7. **Existing Projects**  
+8. **Existing Projects**  
    "Already have a codebase? Bug fixes, feature additions, refactoring, or taking over maintenance. Fresh eyes on your product."  
    Tech: Bug Fixes, Refactoring, Performance, Features.
 
