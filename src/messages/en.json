@@ -18,7 +18,7 @@
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Available for Projects",
-    "DESCRIPTION": "End-to-end product development — from discovery and MVP to scale. Building new products or improving existing ones, owning the full technical journey.",
+    "DESCRIPTION": "I take projects from first conversation to production — whether that's a new product from scratch or making an existing one better. Web, mobile, AI, the full stack.",
     "CTA_PRIMARY": "Start a Project",
     "CTA_SECONDARY": "Explore Services",
     "MORE": "More →",
@@ -71,11 +71,11 @@
       },
       "AI": {
         "TITLE": "AI Integration",
-        "DESCRIPTION": "Adding intelligence to your product. Custom AI agents, chatbots, document processing, and automation workflows."
+        "DESCRIPTION": "Making AI actually useful in your product — not a gimmick. Custom agents, chatbots that answer real questions, document processing, and workflow automation."
       },
       "BACKEND": {
         "TITLE": "Backend & Infrastructure",
-        "DESCRIPTION": "Scalable APIs, databases, and cloud infrastructure. CI/CD pipelines, containerization, and production-ready deployments."
+        "DESCRIPTION": "The stuff that keeps your app running. APIs, databases, cloud setup, and CI/CD so deploys don't keep you up at night."
       },
       "DESIGN": {
         "TITLE": "UI/UX Design",
@@ -189,7 +189,7 @@
     "PROJECTS": {
       "strive": {
         "INDUSTRY": "EdTech",
-        "DESCRIPTION": "Personalized learning platform that transforms any topic into a complete course. AI generates structured roadmaps, modules, and interactive lessons, while a built-in tutor guides learners through their journey.",
+        "DESCRIPTION": "Pick any topic, and the AI builds you a full course — roadmap, modules, lessons, the lot. A built-in tutor walks you through it at your own pace. I built this one for myself.",
         "HIGHLIGHTS": [
           "4 AI agents (roadmap, module, lesson, chat)",
           "Visual course roadmap editor",
@@ -212,7 +212,7 @@
       },
       "dara": {
         "INDUSTRY": "SaaS",
-        "DESCRIPTION": "Document creation platform that turns your content into polished, professional PDFs. Choose from beautifully designed templates, customize with ease, and let AI help you write compelling content.",
+        "DESCRIPTION": "Turn your content into clean, professional PDFs. Pick a template, customise it, and use AI to help with the writing. Reports, proposals, branded docs — it handles all of them.",
         "HIGHLIGHTS": ["JSX-to-PDF rendering", "Multiple template types", "AI content enhancement"]
       },
       "uk-tax": {
@@ -222,7 +222,7 @@
       },
       "circle-of-trust": {
         "INDUSTRY": "Social",
-        "DESCRIPTION": "Professional networking app built on trust. Build meaningful connections through circles, get recommendations from people you already trust, and grow your network with confidence on iOS and Android.",
+        "DESCRIPTION": "Networking app where connections mean something. People vouch for each other, recommendations come from real relationships, and the network grows through trust — not cold requests. iOS and Android.",
         "HIGHLIGHTS": ["Trust-based recommendation engine", "QR code connection system", "52 MJML email templates"]
       },
       "pp-platforma": {

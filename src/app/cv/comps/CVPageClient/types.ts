@@ -1,3 +1,22 @@
+export type SkillGroup = {
+  category: string;
+  items: string[];
+};
+
+export type ExperienceEntry = {
+  role: string;
+  date: string;
+  company: string;
+  points: string[];
+};
+
+export type ProjectEntry = {
+  name: string;
+  meta: string;
+  description: string;
+  featured?: boolean;
+};
+
 export type CV = {
   header: {
     name: string;
@@ -14,21 +33,18 @@ export type CV = {
     githubLabel: string;
     githubUrl: string;
   };
-  skills: string[];
+  skills: SkillGroup[];
   languages: Array<{ name: string; level: string }>;
   education: Array<{ title: string; meta: string }>;
   summary: string;
-  experience: Array<{
-    role: string;
-    date: string;
-    company: string;
-    points: string[];
-  }>;
-  projects: Array<{
-    name: string;
-    meta: string;
-    description: string;
-    featured?: boolean;
-  }>;
+  experience: ExperienceEntry[];
+  projectsNote?: string;
+  projects: ProjectEntry[];
 };
 
+export type VariantId = 'freelance' | 'fulltime' | 'contract' | 'general';
+
+export type CVVariant = {
+  id: VariantId;
+  label: string;
+};
