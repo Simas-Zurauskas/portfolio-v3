@@ -18,7 +18,7 @@
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Available for Projects",
-    "DESCRIPTION": "I take projects from first conversation to production — whether that's a new product from scratch or making an existing one better. Web, mobile, AI, the full stack.",
+    "DESCRIPTION": "I take projects from first conversation to production — web applications, mobile apps, and AI-powered features. Full-stack delivery from architecture to deployment.",
     "CTA_PRIMARY": "Start a Project",
     "CTA_SECONDARY": "Explore Services",
     "MORE": "More →",
@@ -27,14 +27,14 @@
         "Web Applications",
         "Mobile Apps",
         "AI Integration",
+        "AI Agents",
         "SaaS Products",
         "MVP Development",
         "Enterprise Solutions",
-        "E-commerce",
+        "RAG Pipelines",
         "Real-time Features",
         "API Development",
         "Technical Consulting",
-        "Performance Optimization",
         "Scalable Architecture"
       ],
       "PRODUCTS_DELIVERED": "{count}+ Products Delivered",
@@ -70,12 +70,12 @@
         "DESCRIPTION": "Cross-platform iOS and Android apps. From concept to App Store — native performance with shared codebase."
       },
       "AI": {
-        "TITLE": "AI Integration",
-        "DESCRIPTION": "Making AI actually useful in your product — not a gimmick. Custom agents, chatbots that answer real questions, document processing, and workflow automation."
+        "TITLE": "AI & LLM Integration",
+        "DESCRIPTION": "Production-grade AI features — custom agents, RAG-powered chatbots, document intelligence, and multi-agent workflow automation. Built to solve real problems, not just demo well."
       },
       "BACKEND": {
         "TITLE": "Backend & Infrastructure",
-        "DESCRIPTION": "The stuff that keeps your app running. APIs, databases, cloud setup, and CI/CD so deploys don't keep you up at night."
+        "DESCRIPTION": "Scalable APIs, databases, cloud infrastructure, and CI/CD pipelines. Production-ready architecture that supports growth."
       },
       "DESIGN": {
         "TITLE": "UI/UX Design",
@@ -87,7 +87,7 @@
       },
       "CONSULTING": {
         "TITLE": "Technical Consulting",
-        "DESCRIPTION": "Architecture reviews, performance optimization, and technology decisions. Helping teams ship better software."
+        "DESCRIPTION": "Architecture reviews, AI strategy, performance optimization, and technology decisions. Helping teams ship better software."
       },
       "EXISTING": {
         "TITLE": "Existing Projects",
@@ -270,7 +270,7 @@
     }
   },
   "Footer": {
-    "TAGLINE": "Software Engineer",
+    "TAGLINE": "AI & Full-Stack Engineer",
     "CREDENTIAL_TITLE": "AI Engineering",
     "CREDENTIAL_ISSUED": "Issued June 2025",
     "CREDENTIAL_ID_PREFIX": "ID:",

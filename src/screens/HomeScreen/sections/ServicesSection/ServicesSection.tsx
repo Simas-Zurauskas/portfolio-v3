@@ -27,7 +27,7 @@ const servicesBase: Array<{
 }> = [
   { key: 'WEB', index: '01', tech: ['React', 'Next.js', 'TypeScript', 'GraphQL', 'Node.js'], projectCount: 20 },
   { key: 'MOBILE', index: '02', tech: ['React Native', 'Expo', 'iOS', 'Android'], projectCount: 10 },
-  { key: 'AI', index: '03', tech: ['LangChain', 'OpenAI', 'RAG', 'Agents'], projectCount: 8 },
+  { key: 'AI', index: '03', tech: ['LangChain', 'LangGraph', 'OpenAI', 'RAG', 'Multi-Agent Systems'], projectCount: 8 },
   { key: 'BACKEND', index: '04', tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'], projectCount: 15 },
   { key: 'DESIGN', index: '05', tech: ['Product Strategy', 'UX Flows', 'Wireframes', 'Prototypes'], projectCount: 8 },
   { key: 'UIUX', index: '06', tech: ['Design Systems', 'Responsive UI', 'Framer Motion', 'A11y'], projectCount: 25 },

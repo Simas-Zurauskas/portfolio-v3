@@ -27,11 +27,11 @@ const education: CV['education'] = [
 ];
 
 const skills: CV['skills'] = [
-  { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript'] },
+  { category: 'AI & LLM', items: ['LangChain', 'LangGraph', 'OpenAI', 'RAG Pipelines', 'Multi-Agent Systems'] },
+  { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'styled-components'] },
   { category: 'Mobile', items: ['React Native', 'Expo'] },
-  { category: 'Backend', items: ['Node.js', 'GraphQL', 'MongoDB'] },
-  { category: 'AI', items: ['LangChain', 'LangGraph', 'OpenAI', 'RAG'] },
-  { category: 'Infrastructure', items: ['AWS', 'Docker', 'CI/CD'] },
+  { category: 'Backend', items: ['Node.js', 'GraphQL', 'MongoDB', 'Socket.IO', 'Stripe'] },
+  { category: 'Infrastructure', items: ['AWS (S3, EC2)', 'Docker', 'CI/CD', 'Vercel'] },
 ];
 
 // ─── Experience entries ────────────────────────────────────────
@@ -70,7 +70,7 @@ const striveLearning: CV['projects'][number] = {
   name: 'Strive Learning',
   meta: 'Founder · EdTech',
   description:
-    'My own product. I built a learning platform where four LangGraph agents create personalised roadmaps, modules, and lessons from scratch. Users pick a topic, the AI maps out a full course, and they work through it at their own pace. Next.js frontend, Stripe for subscriptions, the whole thing runs on MongoDB. I handle everything — product decisions, code, infrastructure, support.',
+    'AI-powered learning platform with four LangGraph agents that generate personalised course roadmaps, modules, and lessons on demand. Users select a topic and receive a complete structured curriculum adapted to their pace. Built end-to-end: Next.js, Stripe subscriptions, MongoDB. Sole owner of product, engineering, and infrastructure.',
   featured: true,
 };
 
@@ -78,42 +78,42 @@ const withinly: CV['projects'][number] = {
   name: 'Withinly',
   meta: 'Tech Lead · HealthTech',
   description:
-    'Mental wellness app where I owned the full stack. Built a RAG-powered companion chat that references psychology literature, four personality assessments, and a system that generates detailed psychological portraits from the results. Led a team of four. I picked the architecture, set up the infrastructure, and wrote most of the AI integration layer myself.',
+    'Mental wellness application featuring a RAG-powered companion chat grounded in psychology literature, four personality assessments, and AI-generated psychological portraits. Led a team of four. Owned architecture decisions, infrastructure setup, and the full AI integration layer.',
 };
 
 const circleOfTrust: CV['projects'][number] = {
   name: 'Circle of Trust',
   meta: 'Mobile Lead · Social',
   description:
-    'Professional networking app with a trust-based recommendation engine — people vouch for each other and the network grows through real relationships, not cold connections. I built the iOS and Android apps in React Native, integrated a QR code system for in-person connections, and set up deep linking with Branch.io. Team of eight, GraphQL API.',
+    'Professional networking app built on trust-based recommendations — users vouch for connections, growing the network through verified relationships. Built cross-platform iOS and Android apps in React Native with QR-based in-person connections and Branch.io deep linking. Team of eight, GraphQL API.',
 };
 
 const ukTaxAdviser: CV['projects'][number] = {
   name: 'WiseMind AI',
   meta: 'AI Engineer · FinTech',
   description:
-    'Tax consultation platform where I built the advisory agent with LangGraph. Users upload financial documents, the agent reads and interprets them, then walks people through their tax situation step by step. I also handled the multi-step onboarding flow and document processing pipeline. Next.js, Node.js, MongoDB.',
+    'Tax consultation platform with a LangGraph-powered advisory agent. Users upload financial documents; the agent interprets them and provides step-by-step tax guidance. Built the multi-step onboarding flow and document processing pipeline. Next.js, Node.js, MongoDB.',
 };
 
 const ppPlatform: CV['projects'][number] = {
   name: 'PP Platform',
   meta: 'Solo · Construction',
   description:
-    'Project management system I built solo for a construction company. Multiple user roles — site managers, contractors, admin — each see different views. Tracks payment cycles, calculates bonuses, and pushes real-time updates through Socket.IO. React frontend, Node.js backend, files on AWS S3.',
+    'Project management system for a construction company with role-based views for site managers, contractors, and admin. Tracks payment cycles, calculates bonuses, and delivers real-time updates via Socket.IO. Solo-built: React, Node.js, AWS S3.',
 };
 
 const mcrPerks: CV['projects'][number] = {
   name: "Manchester's Finest",
   meta: 'Tech Lead · Lifestyle',
   description:
-    "Local venue discovery app for Manchester. Built the React Native app with a place randomiser (can't decide where to go? shake your phone), favourites, and a subscription tier through RevenueCat. I led the mobile team of four, managed the App Store releases, and integrated a WordPress CMS for the editorial content.",
+    'Local venue discovery app for Manchester with a randomiser feature, favourites, and RevenueCat-powered subscriptions. Led a mobile team of four. Managed App Store releases and integrated WordPress CMS for editorial content. React Native.',
 };
 
 const daraIntellitech: CV['projects'][number] = {
   name: 'Dara Intellitech',
   meta: 'Tech Lead · SaaS',
   description:
-    'Document creation platform that turns content into polished PDFs. I built a JSX-to-PDF rendering engine with Puppeteer, integrated AI content enhancement through LangGraph, and led a team of three. Multiple template types — reports, proposals, branded documents. Next.js and TypeScript throughout.',
+    'Document creation platform that transforms content into polished PDFs via a custom JSX-to-PDF rendering engine (Puppeteer). Integrated LangGraph-powered AI content enhancement. Led a team of three. Supports reports, proposals, and branded documents. Next.js, TypeScript.',
 };
 
 // ─── Variants ──────────────────────────────────────────────────
@@ -130,31 +130,31 @@ export const cvVariants: Record<VariantId, CV> = {
   general: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'Software Engineer — Full-Stack, Mobile & AI',
+      title: 'AI & Full-Stack Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      "I build software across the full stack — web, mobile, and increasingly AI. Over the past five years I've shipped products in banking, insurance, cybersecurity, logistics, healthcare, and edtech, usually taking end-to-end ownership from architecture through to deployment. I'm most useful when a project needs someone who can work across layers without waiting for handoffs.\n\nMy day-to-day is React, Next.js, and TypeScript on the frontend, Node.js and MongoDB on the backend, React Native for mobile. More recently I've been deep in AI integration — RAG pipelines, multi-agent workflows, and LLM-powered features using LangChain and LangGraph.",
+      'Full-stack engineer with five years of production experience across web, mobile, and AI. I build end-to-end — from RAG pipelines and multi-agent systems (LangChain, LangGraph) to React/Next.js frontends and Node.js backends. Shipped products across banking, insurance, cybersecurity, logistics, healthcare, and edtech, typically owning architecture through deployment.\n\nMost effective where projects require someone who operates across the full stack and makes independent technical decisions. Equally comfortable leading small teams, mentoring developers, and shipping as a sole engineer.',
     experience: [
       radicalSenior([
-        'Leading technical delivery across engineering teams. I make the architecture calls, set up CI/CD, run code reviews, and mentor developers who are earlier in their careers.',
-        'Built AI features that actually went to production — RAG chatbots that answer domain-specific questions from real documents, assessment tools that generate psychological profiles, multi-agent workflows that coordinate complex tasks.',
-        'Clients include companies in banking, cyber risk management, and insurance. Most of this work is under NDA, but the pattern is the same: take a messy real-world problem, figure out the right technical approach, and deliver it.',
+        'Lead technical delivery across engineering teams — architecture decisions, CI/CD pipelines, code reviews, and developer mentorship.',
+        'Delivered production AI systems: RAG chatbots for domain-specific Q&A, psychological assessment tools, and multi-agent workflows coordinating complex business processes.',
+        'Served clients in banking, cyber risk management, and insurance — translating complex domain requirements into reliable technical solutions.',
       ]),
       radicalJunior([
-        'Shipped web and mobile apps in React, Next.js, and React Native for clients across multiple industries. Started with feature work, gradually took on more ownership — architecture decisions, client-facing communication, sprint planning.',
-        'Built real-time collaboration features, complex form flows, and data visualisation dashboards. Got comfortable working directly with founders and operations teams, not just product managers.',
+        'Shipped web and mobile applications in React, Next.js, and React Native across multiple industries. Progressed from feature implementation to full project ownership including architecture and client communication.',
+        'Built real-time collaboration features, complex form flows, and data visualisation dashboards. Worked directly with founders and operations teams.',
       ]),
       frontIT([
-        'Building a fleet management mobile app — real-time vehicle tracking with HERE Maps, tachograph compliance features, and driver workflow tools.',
-        'Implemented offline-first data sync and background location tracking so the app works reliably even in areas with patchy signal.',
+        'Building a fleet management mobile app with real-time vehicle tracking (HERE Maps), tachograph compliance, and driver workflow tools.',
+        'Engineered offline-first data sync and background location tracking for reliable operation in low-connectivity environments.',
       ]),
       freelance([
-        'I work directly with founders and small teams. Requirements, development, deployment, ongoing support — the full loop. No project managers in between.',
-        'Built a real-time collaboration platform for construction project management. Live document sync, multi-user editing, the kind of features where latency matters.',
+        'End-to-end delivery for founders and small teams — requirements, architecture, development, deployment, and ongoing support.',
+        'Built a real-time collaboration platform for construction project management with live document sync and multi-user editing.',
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',
@@ -165,30 +165,30 @@ export const cvVariants: Record<VariantId, CV> = {
   freelance: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'Full-Stack & AI Engineer',
+      title: 'AI & Full-Stack Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      "I take ideas from napkin sketch to production. Web, mobile, AI — I don't need a team of specialists to ship a working product. Over five years I've delivered 35+ projects across a dozen industries, and I'm used to being the person who figures out both what to build and how to build it.\n\nI work directly with founders and stakeholders. No middlemen, fast turnaround, and I stick around after launch to make sure things actually work. My sweet spot is projects that need someone who can handle the full stack and make technical decisions independently.",
+      'Full-stack AI engineer who takes products from concept to production without requiring a team of specialists. Five years, 35+ projects across a dozen industries — web, mobile, and AI. Experienced in both building and leading: architecture decisions, hands-on development, deployment, and ongoing support.\n\nWork directly with founders and stakeholders. Specialise in projects that need end-to-end ownership — AI-powered features (RAG, multi-agent systems), full-stack web applications, and cross-platform mobile apps — delivered with fast turnaround and long-term reliability.',
     experience: [
       freelance([
-        'End-to-end delivery for founders and small companies. I handle requirements, architecture, development, deployment, and ongoing support — the whole thing.',
-        'Built a real-time collaboration platform for construction project management with live document sync. Working directly with the operations team, no PMs in between.',
-        "Clients range from solo founders to small teams. I adapt to what they need — sometimes that's a full product build, sometimes it's adding AI features to an existing app.",
+        'End-to-end delivery for founders and small companies — requirements, architecture, development, deployment, and ongoing support.',
+        'Built a real-time collaboration platform for construction project management with live document sync. Direct stakeholder collaboration, no intermediaries.',
+        'Clients range from solo founders to growing teams. Deliver full product builds, AI feature integration, and technical consulting.',
       ]),
       radicalSenior([
-        'Leading technical delivery on client teams. Architecture decisions, CI/CD setup, code reviews, mentoring. The AI work I do here feeds directly into what I offer freelance clients.',
-        'Built production AI systems: RAG chatbots, document processing pipelines, assessment tools, multi-agent workflows. All of it actually used by real people, not demos.',
+        'Lead technical delivery on client teams — architecture decisions, CI/CD, code reviews, and mentoring.',
+        'Delivered production AI systems: RAG chatbots, document processing pipelines, assessment tools, and multi-agent workflows serving real users.',
       ]),
       radicalJunior([
-        'Shipped web and mobile apps across banking, insurance, and cybersecurity. Grew from feature work into full project ownership over two years.',
-        'Got comfortable talking directly to founders and ops teams. Learned to translate business problems into technical solutions without over-engineering.',
+        'Shipped web and mobile apps across banking, insurance, and cybersecurity. Progressed from feature work to full project ownership.',
+        'Developed ability to translate business problems into technical solutions through direct engagement with founders and operations teams.',
       ]),
       frontIT([
-        'Fleet management app — real-time vehicle tracking, HERE Maps, tachograph compliance. Offline-first sync for areas with poor connectivity.',
+        'Fleet management mobile app — real-time vehicle tracking (HERE Maps), tachograph compliance, offline-first sync for low-connectivity environments.',
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',
@@ -199,30 +199,30 @@ export const cvVariants: Record<VariantId, CV> = {
   fulltime: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'Senior Software Engineer',
+      title: 'Senior AI & Full-Stack Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      "I'm a full-stack engineer who's spent the last five years building production software across web, mobile, and AI. I've led small engineering teams, and I'm at the point where I naturally take on architecture decisions, mentorship, and technical direction alongside hands-on coding.\n\nWhat I bring to a team: I can pick up any layer of the stack without a ramp-up period, I write code that other people can actually maintain, and I've got enough AI integration experience to be useful in that space without being a one-trick pony. I care about shipping things that work, not just things that look clever.",
+      'Full-stack engineer with five years building production software across web, mobile, and AI. Led small engineering teams with combined architecture ownership, mentorship, and hands-on delivery. Operate across every layer of the stack without ramp-up.\n\nBring production AI integration experience (RAG pipelines, multi-agent systems, LLM-powered features) alongside deep full-stack proficiency. Write maintainable code, ship reliably, and focus on working systems over clever abstractions.',
     experience: [
       radicalSenior([
-        'Lead technical delivery on engineering teams. I own the architecture, set up CI/CD, run code reviews, and mentor junior and mid-level developers.',
-        'Built AI features for production systems used by real clients — RAG chatbots, document processing, psychological assessment tools, multi-agent coordination. Not prototypes, actual shipped software.',
-        'Worked across banking, cyber risk management, and insurance sectors. Each domain required learning new compliance constraints and adapting the tech approach accordingly.',
+        'Lead technical delivery across engineering teams — architecture ownership, CI/CD pipelines, code reviews, and mentoring junior and mid-level developers.',
+        'Delivered production AI systems for client projects: RAG chatbots, document processing, psychological assessment tools, and multi-agent coordination.',
+        'Served banking, cyber risk management, and insurance sectors — adapting technical approaches to domain-specific compliance constraints.',
       ]),
       radicalJunior([
-        'Delivered web and mobile apps in React, Next.js, and React Native. Progressed from feature implementation to owning full project delivery — architecture, client communication, sprint planning.',
-        'Built real-time collaboration features, complex multi-step forms, and data dashboards. Learned to work directly with stakeholders rather than just taking tickets.',
+        'Delivered web and mobile apps in React, Next.js, and React Native. Progressed from feature implementation to full project ownership — architecture, client communication, sprint planning.',
+        'Built real-time collaboration features, complex multi-step forms, and data dashboards. Engaged directly with stakeholders on requirements.',
       ]),
       frontIT([
-        'Building a fleet management mobile app with real-time tracking, HERE Maps integration, and tachograph compliance for driver workflows.',
+        'Building a fleet management mobile app with real-time tracking (HERE Maps) and tachograph compliance for driver workflows.',
         'Designed offline-first data sync architecture for reliable operation in low-connectivity environments.',
       ]),
       freelance([
-        'Side projects and direct client work. End-to-end delivery including a real-time collaboration platform for construction project management.',
+        'Direct client engagements including a real-time collaboration platform for construction project management. End-to-end delivery.',
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',
@@ -233,29 +233,29 @@ export const cvVariants: Record<VariantId, CV> = {
   contract: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'Software Engineer — Full-Stack, Mobile & AI',
+      title: 'AI & Full-Stack Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      "Five years delivering production software across web, mobile, and AI — and across more industries than most engineers see in a decade. Banking, insurance, cybersecurity, logistics, healthcare, edtech, construction, fintech. I pick up domain context fast and don't need hand-holding.\n\nI've worked embedded in client teams and as the sole engineer on projects. Either way, I take full ownership of delivery. My stack covers the full range: React/Next.js on the frontend, Node.js on the backend, React Native for mobile, and LangChain/LangGraph for AI integration.",
+      'Five years delivering production software across web, mobile, and AI — spanning banking, insurance, cybersecurity, logistics, healthcare, edtech, construction, and fintech. Rapid domain context acquisition. Effective both embedded in client teams and as a sole engineer.\n\nFull ownership of delivery end-to-end. Stack covers React/Next.js, Node.js, React Native, and AI integration via LangChain/LangGraph (RAG pipelines, multi-agent systems, document intelligence). Comfortable with architecture decisions, team leadership, and independent execution.',
     experience: [
       radicalSenior([
-        'Technical lead on client projects across banking, cyber risk, and insurance. I own architecture, CI/CD, code quality, and delivery timelines.',
-        'Delivered production AI systems: RAG chatbots for domain-specific Q&A, document processing pipelines, assessment tools, and multi-agent workflows. All battle-tested with real users.',
-        'Comfortable context-switching between domains. Each client brings different constraints — regulatory, technical, organisational — and I adapt quickly.',
+        'Technical lead on client projects across banking, cyber risk, and insurance — owning architecture, CI/CD, code quality, and delivery timelines.',
+        'Delivered production AI systems: RAG chatbots for domain-specific Q&A, document processing pipelines, assessment tools, and multi-agent workflows.',
+        "Rapid context-switching between domains, adapting to each client's regulatory, technical, and organisational constraints.",
       ]),
       radicalJunior([
-        'Built web and mobile applications across multiple client engagements. Grew from individual contributor to taking on architecture ownership and client-facing communication.',
-        'Delivered real-time features, complex data flows, and cross-platform mobile apps. Consistently reliable on timelines.',
+        'Built web and mobile applications across multiple client engagements. Progressed from individual contributor to architecture ownership and client-facing communication.',
+        'Delivered real-time features, complex data flows, and cross-platform mobile apps. Consistent delivery against timelines.',
       ]),
       frontIT([
-        'Fleet management mobile app — real-time vehicle tracking, HERE Maps, offline-first sync, tachograph compliance. A good example of picking up a niche domain and delivering fast.',
+        'Fleet management mobile app — real-time vehicle tracking (HERE Maps), offline-first sync, tachograph compliance. Rapid domain ramp-up and delivery.',
       ]),
       freelance([
-        'Direct client engagements: requirements through to deployment and support. Built a real-time construction project management platform as a solo engineer.',
+        'Direct client engagements from requirements through deployment. Built a real-time construction project management platform as sole engineer.',
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',

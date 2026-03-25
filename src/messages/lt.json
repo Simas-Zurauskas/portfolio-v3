@@ -18,7 +18,7 @@
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Laisvas naujiems projektams",
-    "DESCRIPTION": "Visas produkto kelias — nuo koncepcijos iki paleidimo. Kuriu naujus produktus arba tobulinu esamus, prisiimdamas techninę atsakomybę nuo A iki Z.",
+    "DESCRIPTION": "Projektai nuo pirmo pokalbio iki produkcijos — web aplikacijos, mobiliosios programėlės ir AI sprendimai. Pilno ciklo kūrimas nuo architektūros iki paleidimo.",
     "CTA_PRIMARY": "Pradėti projektą",
     "CTA_SECONDARY": "Peržiūrėti paslaugas",
     "MORE": "Daugiau →",
@@ -27,14 +27,14 @@
         "Web aplikacijos",
         "Mobiliosios programėlės",
         "AI integracija",
+        "AI agentai",
         "SaaS produktai",
         "MVP kūrimas",
         "Verslo sprendimai",
-        "E. prekyba",
+        "RAG sprendimai",
         "Realaus laiko funkcijos",
         "API kūrimas",
         "Techninės konsultacijos",
-        "Našumo optimizavimas",
         "Masteliuojama architektūra"
       ],
       "PRODUCTS_DELIVERED": "{count}+ pristatytų produktų",
@@ -70,12 +70,12 @@
         "DESCRIPTION": "Kryžminės platformos iOS ir Android aplikacijos. Nuo idėjos iki App Store — natyvus našumas su bendra kodų baze."
       },
       "AI": {
-        "TITLE": "AI integracija",
-        "DESCRIPTION": "Intelektas jūsų produktui. Individualūs AI agentai, chatbot’ai, dokumentų apdorojimas ir automatizavimo workflow’ai."
+        "TITLE": "AI & LLM integracija",
+        "DESCRIPTION": "Produkcijai paruošti AI sprendimai — individualūs agentai, RAG chatbot’ai, dokumentų analizė ir daugiaagenčių darbo eigos automatizavimas."
       },
       "BACKEND": {
         "TITLE": "Backend & infrastruktūra",
-        "DESCRIPTION": "Mastelį išlaikančios API, duomenų bazės ir cloud infrastruktūra. CI/CD, konteinerizacija ir produkcijai paruošti diegimai."
+        "DESCRIPTION": "Mastelį palaikančios API, duomenų bazės, cloud infrastruktūra ir CI/CD pipeline’ai. Produkcijai paruošta architektūra augimui."
       },
       "DESIGN": {
         "TITLE": "UI/UX dizainas",
@@ -87,7 +87,7 @@
       },
       "CONSULTING": {
         "TITLE": "Techninės konsultacijos",
-        "DESCRIPTION": "Architektūros peržiūros, našumo optimizavimas ir technologiniai sprendimai. Padedu komandoms pristatyti geresnę programinę įrangą."
+        "DESCRIPTION": "Architektūros peržiūros, AI strategija, našumo optimizavimas ir technologiniai sprendimai. Padedu komandoms pristatyti geresnę programinę įrangą."
       },
       "EXISTING": {
         "TITLE": "Esami projektai",
@@ -274,7 +274,7 @@
     }
   },
   "Footer": {
-    "TAGLINE": "Programinės įrangos inžinierius",
+    "TAGLINE": "AI ir Full-Stack inžinierius",
     "CREDENTIAL_TITLE": "AI inžinerija",
     "CREDENTIAL_ISSUED": "Išduota 2025 m. birželį",
     "CREDENTIAL_ID_PREFIX": "ID:",

@@ -138,7 +138,7 @@ export const ContactBar = styled.div`
   gap: 8px 20px;
   margin-bottom: 32px;
   font-size: 13px;
-  color: ${cvColors.muted};
+  color: ${cvColors.text};
 `;
 
 export const ContactItem = styled.span`
@@ -248,7 +248,7 @@ export const ExperienceHeader = styled.div`
 `;
 
 export const ExperienceRole = styled.h4`
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: ${cvColors.text};
   margin: 0;
@@ -313,7 +313,7 @@ export const SkillLabel = styled.span`
 `;
 
 export const SkillList = styled.span`
-  color: ${cvColors.muted};
+  color: ${cvColors.text};
 `;
 
 // Languages - inline
@@ -358,7 +358,7 @@ export const ProjectMeta = styled.span`
 export const ProjectDesc = styled.p`
   font-size: 13px;
   line-height: 1.6;
-  color: ${cvColors.muted};
+  color: ${cvColors.text};
   margin: 0;
 `;
 
