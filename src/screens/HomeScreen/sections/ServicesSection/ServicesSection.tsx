@@ -25,13 +25,13 @@ const servicesBase: Array<{
   tech: Service['tech'];
   projectCount: Service['projectCount'];
 }> = [
-  { key: 'WEB', index: '01', tech: ['React', 'Next.js', 'TypeScript', 'GraphQL', 'Node.js'], projectCount: 20 },
-  { key: 'MOBILE', index: '02', tech: ['React Native', 'Expo', 'iOS', 'Android'], projectCount: 10 },
-  { key: 'AI', index: '03', tech: ['LangChain', 'LangGraph', 'OpenAI', 'RAG', 'Multi-Agent Systems'], projectCount: 8 },
-  { key: 'BACKEND', index: '04', tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'], projectCount: 15 },
-  { key: 'DESIGN', index: '05', tech: ['Product Strategy', 'UX Flows', 'Wireframes', 'Prototypes'], projectCount: 8 },
-  { key: 'UIUX', index: '06', tech: ['Design Systems', 'Responsive UI', 'Framer Motion', 'A11y'], projectCount: 25 },
-  { key: 'CONSULTING', index: '07', tech: ['Code Reviews', 'Architecture', 'Mentorship', 'DevOps'], projectCount: 20 },
+  { key: 'AI', index: '01', tech: ['LangGraph', 'OpenAI', 'Anthropic', 'RAG', 'Multi-Agent Systems'], projectCount: 8 },
+  { key: 'CONSULTING', index: '02', tech: ['AI Strategy', 'Agent Workflows', 'Code Reviews', 'Architecture', 'Mentorship'], projectCount: 10 },
+  { key: 'WEB', index: '03', tech: ['React', 'Next.js', 'TypeScript', 'GraphQL', 'Node.js'], projectCount: 20 },
+  { key: 'MOBILE', index: '04', tech: ['React Native', 'Expo', 'iOS', 'Android'], projectCount: 8 },
+  { key: 'BACKEND', index: '05', tech: ['Node.js', 'PostgreSQL', 'AWS', 'Docker', 'CI/CD'], projectCount: 15 },
+  { key: 'DESIGN', index: '06', tech: ['Product Strategy', 'UX Flows', 'Wireframes', 'Prototypes'], projectCount: 8 },
+  { key: 'UIUX', index: '07', tech: ['Design Systems', 'Responsive UI', 'Framer Motion', 'A11y'], projectCount: 25 },
   { key: 'EXISTING', index: '08', tech: ['Bug Fixes', 'Refactoring', 'Performance', 'Features'], projectCount: 15 },
 ];
 

@@ -55,10 +55,12 @@ const variantStyles = {
     color: ${({ theme }) => theme.colors.background};
     border: none;
 
-    &:hover:not(:disabled) {
-      background: ${({ theme }) => theme.colors.accent};
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px ${({ theme }) => theme.hex.accent}25;
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        background: ${({ theme }) => theme.colors.accent};
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px ${({ theme }) => theme.hex.accent}25;
+      }
     }
   `,
   ghost: css`
@@ -66,9 +68,11 @@ const variantStyles = {
     color: ${({ theme }) => theme.colors.foreground};
     border: 2px solid ${({ theme }) => theme.colors.border};
 
-    &:hover:not(:disabled) {
-      border-color: ${({ theme }) => theme.colors.foreground};
-      background: ${({ theme }) => theme.colors.surfaceAlt};
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        border-color: ${({ theme }) => theme.colors.foreground};
+        background: ${({ theme }) => theme.colors.surfaceAlt};
+      }
     }
   `,
 };

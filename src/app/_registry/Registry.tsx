@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
+import { MotionConfig } from 'framer-motion';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { StyledRegistry } from './comps';
 import { ColorScheme } from '@/theme';
@@ -23,7 +24,9 @@ const Registry = ({ children }: { children: React.ReactNode }) => {
           appendTo: 'head',
         }}
       >
-        <StyledRegistry>{children}</StyledRegistry>
+        <MotionConfig reducedMotion="user">
+          <StyledRegistry>{children}</StyledRegistry>
+        </MotionConfig>
       </GoogleReCaptchaProvider>
     </NextThemeProvider>
   );

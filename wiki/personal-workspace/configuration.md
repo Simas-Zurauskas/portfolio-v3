@@ -112,16 +112,13 @@ For details on how these variables are consumed, see [Contact Form](contact-form
 
 ---
 
-## Google Analytics
+## Web Analytics
 
 **File:** `src/app/layout.tsx`
 
-Google Analytics 4 is loaded in the root layout with tracking ID **`G-1SENQVYX6C`**.
+Vercel Web Analytics (`@vercel/analytics`) is mounted in the root layout via the `<Analytics />` component imported from `@vercel/analytics/next`, rendered inside `<body>` after `<Registry>`.
 
-Two `<Script>` tags from `next/script` are used, both with the `afterInteractive` strategy so they do not block the initial page render:
-
-1. The gtag.js library loader (`https://www.googletagmanager.com/gtag/js?id=G-1SENQVYX6C`).
-2. An inline script that initialises the data layer and calls `gtag('config', ...)`.
+It is cookieless — visitors are identified by a short-lived request hash discarded after 24 hours, and only aggregated data is stored. Web Analytics must be enabled per-project in the Vercel dashboard (Project → Analytics → Enable); data collection begins on the next deployment after enabling. Beacons go to `/_vercel/insights/*`, which the `src/middleware.ts` matcher already excludes.
 
 ---
 

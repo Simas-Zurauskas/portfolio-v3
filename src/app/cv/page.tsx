@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { CVPageClient } from './comps/CVPageClient';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isEnabled = process.env.NODE_ENV === 'development' || process.env.CV_ENABLED === 'true';
 
 export default function CVPage() {
-  if (!isDev) notFound();
+  if (!isEnabled) notFound();
   return <CVPageClient />;
 }

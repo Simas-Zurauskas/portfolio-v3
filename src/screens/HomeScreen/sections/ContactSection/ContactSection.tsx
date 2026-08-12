@@ -10,7 +10,20 @@ import { EMAIL } from '@/conf';
 
 const Content = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 1140px;
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: clamp(48px, 6vw, 96px);
+  align-items: start;
+
+  @media (max-width: 1024px) {
+    display: block;
+    max-width: 800px;
+  }
+`;
+
+const IntroCol = styled.div`
+  min-width: 0;
 `;
 
 const Description = styled.p`
@@ -32,6 +45,12 @@ const EmailRow = styled.div`
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
+
+    @media (pointer: coarse) {
+      display: inline-block;
+      padding: 8px 0;
+      margin: -8px 0;
+    }
 
     @media (hover: hover) {
       &:hover {
@@ -57,9 +76,16 @@ const CopyButton = styled.button<{ $copied: boolean }>`
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &:hover {
-    border-color: ${({ theme, $copied }) => ($copied ? theme.colors.success : theme.colors.accent)};
-    color: ${({ theme, $copied }) => ($copied ? theme.colors.success : theme.colors.accent)};
+  @media (pointer: coarse) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: ${({ theme, $copied }) => ($copied ? theme.colors.success : theme.colors.accent)};
+      color: ${({ theme, $copied }) => ($copied ? theme.colors.success : theme.colors.accent)};
+    }
   }
 
   svg {
@@ -184,9 +210,11 @@ const SubmitButtonWrapper = styled.div<{ $status: 'idle' | 'loading' | 'success'
       `
       background: ${theme.colors.success} !important;
       border-color: ${theme.colors.success} !important;
-      &:hover { 
-        background: ${theme.hex.success}dd !important;
-        border-color: ${theme.hex.success}dd !important;
+      @media (hover: hover) {
+        &:hover { 
+          background: ${theme.hex.success}dd !important;
+          border-color: ${theme.hex.success}dd !important;
+        }
       }
     `}
     ${({ $status, theme }) =>
@@ -194,9 +222,11 @@ const SubmitButtonWrapper = styled.div<{ $status: 'idle' | 'loading' | 'success'
       `
       background: ${theme.colors.error} !important;
       border-color: ${theme.colors.error} !important;
-      &:hover { 
-        background: ${theme.hex.error}dd !important;
-        border-color: ${theme.hex.error}dd !important;
+      @media (hover: hover) {
+        &:hover { 
+          background: ${theme.hex.error}dd !important;
+          border-color: ${theme.hex.error}dd !important;
+        }
       }
     `}
   }
@@ -243,8 +273,16 @@ const RecaptchaNotice = styled.p`
     color: ${({ theme }) => theme.colors.muted};
     text-decoration: underline;
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.foreground};
+    @media (pointer: coarse) {
+      display: inline-block;
+      padding: 8px 4px;
+      margin: -8px -4px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: ${({ theme }) => theme.colors.foreground};
+      }
     }
   }
 `;
@@ -314,7 +352,7 @@ export const ContactSection: React.FC = () => {
         const data = await response.json();
 
         if (!response.ok) {
-          throw new Error(data.error || 'Failed to send message');
+          throw new Error(data.error || t('FORM.GENERIC_ERROR'));
         }
 
         setStatus('success');
@@ -324,13 +362,13 @@ export const ContactSection: React.FC = () => {
         setTimeout(() => setStatus('idle'), 5000);
       } catch (error) {
         setStatus('error');
-        setErrorMessage(error instanceof Error ? error.message : 'Something went wrong');
+        setErrorMessage(error instanceof Error ? error.message : t('FORM.GENERIC_ERROR'));
 
         // Reset to idle after 5 seconds
         setTimeout(() => setStatus('idle'), 5000);
       }
     },
-    [executeRecaptcha, formData],
+    [executeRecaptcha, formData, t],
   );
 
   const sectionTitle = t.raw('TITLE') as Array<Array<{ text: string; type?: 'normal' | 'accent' | 'muted' }>>;
@@ -345,21 +383,23 @@ export const ContactSection: React.FC = () => {
       sidebarRightText={t('SIDEBAR_RIGHT')}
     >
       <Content>
-        <Description>{t('DESCRIPTION')}</Description>
+        <IntroCol>
+          <Description>{t('DESCRIPTION')}</Description>
 
-        <EmailRow>
-          <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">
-            {EMAIL}
-          </a>
-          <CopyButton
-            $copied={copied}
-            onClick={copyEmail}
-            aria-label={copied ? tc('COPIED') : tc('COPY_EMAIL')}
-            title={copied ? tc('COPIED') : tc('COPY_EMAIL')}
-          >
-            {copied ? <Check /> : <Copy />}
-          </CopyButton>
-        </EmailRow>
+          <EmailRow>
+            <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">
+              {EMAIL}
+            </a>
+            <CopyButton
+              $copied={copied}
+              onClick={copyEmail}
+              aria-label={copied ? tc('COPIED') : tc('COPY_EMAIL')}
+              title={copied ? tc('COPIED') : tc('COPY_EMAIL')}
+            >
+              {copied ? <Check /> : <Copy />}
+            </CopyButton>
+          </EmailRow>
+        </IntroCol>
 
         <Form onSubmit={handleSubmit}>
           <FormRow>
@@ -369,6 +409,7 @@ export const ContactSection: React.FC = () => {
                 id="name"
                 name="name"
                 type="text"
+                autoComplete="name"
                 placeholder={t('FORM.NAME_PLACEHOLDER')}
                 value={formData.name}
                 onChange={handleChange}
@@ -383,6 +424,7 @@ export const ContactSection: React.FC = () => {
                 id="email"
                 name="email"
                 type="email"
+                autoComplete="email"
                 placeholder={t('FORM.EMAIL_PLACEHOLDER')}
                 value={formData.email}
                 onChange={handleChange}

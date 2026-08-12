@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useRouter, usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Locale, LOCALES, DEFAULT_LOCALE } from '@/types';
 
 const StyledLanguageSwitch = styled.div`
@@ -30,8 +30,15 @@ const StyledLanguageSwitch = styled.div`
     min-height: unset; /* Override global touch target */
     height: auto;
 
-    &:hover:not(.lang-btn--active) {
-      color: ${({ theme }) => theme.colors.foreground};
+    /* Comfortable touch target on coarse pointers; desktop visuals unchanged */
+    @media (pointer: coarse) {
+      padding: 10px 12px;
+    }
+
+    @media (hover: hover) {
+      &:hover:not(.lang-btn--active) {
+        color: ${({ theme }) => theme.colors.foreground};
+      }
     }
 
     &--active {
@@ -43,6 +50,7 @@ const StyledLanguageSwitch = styled.div`
 
 export const LanguageSwitch: React.FC = () => {
   const locale = useLocale() as Locale;
+  const tc = useTranslations('Common');
   const router = useRouter();
   const pathname = usePathname();
 
@@ -83,7 +91,7 @@ export const LanguageSwitch: React.FC = () => {
           key={loc}
           className={`lang-btn ${locale === loc ? 'lang-btn--active' : ''}`}
           onClick={() => handleLocaleChange(loc)}
-          aria-label={`Switch to ${loc === 'en' ? 'English' : 'Lithuanian'}`}
+          aria-label={loc === 'en' ? tc('SWITCH_TO_EN') : tc('SWITCH_TO_LT')}
           title={loc === 'en' ? 'English' : 'Lietuvių'}
         >
           {loc.toUpperCase()}

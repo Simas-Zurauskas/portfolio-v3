@@ -53,6 +53,10 @@ export const GlobalStyles = createGlobalStyle`
     color-scheme: light;
   }
 
+  html[data-theme='dark'] {
+    color-scheme: dark;
+  }
+
 
   html,
   body {
@@ -104,7 +108,7 @@ export const GlobalStyles = createGlobalStyle`
 
   ::selection {
     background: var(--accent);
-    color: ${themeColors.light.background};
+    color: ${themeColors.dark.background};
   }
 
   /* Ensure images scale properly */
@@ -125,13 +129,6 @@ export const GlobalStyles = createGlobalStyle`
   /* Hide reCAPTCHA badge - branding text shown in form instead */
   .grecaptcha-badge {
     display: none !important;
-  }
-
-  /* GPU acceleration hints for animated elements */
-  [data-framer-component-type],
-  [style*="transform"] {
-    will-change: transform;
-    backface-visibility: hidden;
   }
 
   /* Respect reduced motion preferences */

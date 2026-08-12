@@ -4,7 +4,7 @@
 
 ```
 RootLayout (server)                    [src/app/layout.tsx]
-  html + body + Google Analytics
+  html + body + Vercel Web Analytics
   fonts: Geist Sans, Geist Mono
   │
   └─ Registry (client boundary)        [src/app/_registry/Registry.tsx]

@@ -44,14 +44,21 @@ const StyledNav = styled.nav`
 
   .nav {
     &__inner {
-      /* Align with section grid: 80px sidebar + content padding */
+      /* Align with the section frame: gutter (grows past 80px on wide viewports) + content padding */
       padding: 0 80px;
-      padding-left: calc(80px + clamp(24px, 5vw, 80px));
-      padding-right: calc(80px + clamp(24px, 5vw, 80px));
+      padding-left: calc(max(80px, (100% - 1300px) / 2) + clamp(24px, 5vw, 80px));
+      padding-right: calc(max(80px, (100% - 1300px) / 2) + clamp(24px, 5vw, 80px));
       height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      /* Squeeze window: desktop links still visible but space is tight —
+         drop the gutter alignment rather than let the brand collide with the links */
+      @media (max-width: 1180px) and (min-width: 1025px) {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
 
       @media (max-width: 1024px) {
         padding-left: calc(60px + clamp(24px, 5vw, 60px));
@@ -81,6 +88,7 @@ const StyledNav = styled.nav`
       font-weight: 700;
       font-size: 0.875rem;
       letter-spacing: -0.02em;
+      white-space: nowrap;
       color: ${({ theme }) => theme.colors.foreground};
     }
 
@@ -121,8 +129,10 @@ const StyledNav = styled.nav`
       border: none;
       padding: 0;
 
-      &:hover:not(.nav__link--active) {
-        color: ${({ theme }) => theme.colors.foreground};
+      @media (hover: hover) {
+        &:hover:not(.nav__link--active) {
+          color: ${({ theme }) => theme.colors.foreground};
+        }
       }
 
       &--active {
@@ -228,8 +238,16 @@ const StyledNav = styled.nav`
       color: ${({ theme }) => theme.colors.muted};
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
-      &:hover:not(.theme-switcher__btn--active) {
-        color: ${({ theme }) => theme.colors.foreground};
+      /* Comfortable touch target on coarse pointers */
+      @media (pointer: coarse) {
+        width: 40px;
+        height: 40px;
+      }
+
+      @media (hover: hover) {
+        &:hover:not(.theme-switcher__btn--active) {
+          color: ${({ theme }) => theme.colors.foreground};
+        }
       }
 
       &--active {
@@ -279,8 +297,10 @@ const MobileNavLink = styled(motion.button)`
   text-align: left;
   transition: color 0.3s ease;
 
-  &:hover {
-    color: ${({ theme }) => theme.colors.accent};
+  @media (hover: hover) {
+    &:hover {
+      color: ${({ theme }) => theme.colors.accent};
+    }
   }
 
   &.active {
@@ -375,8 +395,10 @@ const MobileThemeSwitcher = styled.div`
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 
-    &:hover:not(.active) {
-      color: ${({ theme }) => theme.colors.foreground};
+    @media (hover: hover) {
+      &:hover:not(.active) {
+        color: ${({ theme }) => theme.colors.foreground};
+      }
     }
 
     &.active {

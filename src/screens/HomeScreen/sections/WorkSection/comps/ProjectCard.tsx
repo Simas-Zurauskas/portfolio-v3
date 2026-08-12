@@ -56,6 +56,11 @@ const Card = styled(motion.article)<StyledCardProps>`
 
   ${({ $size }) => getGridSpan($size)}
 
+  /* 4-column grid window: a span-5 card would create a phantom 0px implicit track */
+  @media (max-width: 1200px) and (min-width: 1025px) {
+    grid-column: ${({ $size }) => ($size === 'large' ? 'span 4' : 'span 2')};
+  }
+
   @media (max-width: 1024px) {
     grid-column: ${({ $size }) => ($size === 'large' ? 'span 3' : $size === 'wide' ? 'span 2' : 'span 1')};
     grid-row: span 1;
@@ -382,12 +387,14 @@ const Card = styled(motion.article)<StyledCardProps>`
         padding: 14px 20px;
       }
 
-      &:hover {
-        background: ${({ theme }) => theme.colors.accent};
-        border-color: ${({ theme }) => theme.colors.accent};
-        color: ${({ theme }) => theme.colors.background};
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px ${({ theme }) => theme.hex.accent}30;
+      @media (hover: hover) {
+        &:hover {
+          background: ${({ theme }) => theme.colors.accent};
+          border-color: ${({ theme }) => theme.colors.accent};
+          color: ${({ theme }) => theme.colors.background};
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px ${({ theme }) => theme.hex.accent}30;
+        }
       }
 
       &:active {
@@ -400,8 +407,10 @@ const Card = styled(motion.article)<StyledCardProps>`
         transition: transform 0.3s ease;
       }
 
-      &:hover svg {
-        transform: translateX(2px);
+      @media (hover: hover) {
+        &:hover svg {
+          transform: translateX(2px);
+        }
       }
     }
   }
@@ -459,7 +468,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {!isSolo && (
             <span className="project-card__role-team">
               <Users />
-              Team of {role.teamSize}
+              {t('TEAM_OF', { count: role.teamSize })}
             </span>
           )}
         </div>

@@ -3,7 +3,7 @@
 import { useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { toPng } from 'html-to-image';
-import { COUNT_CLIENTS, COUNT_PROJECTS, COUNT_YEARS } from '@/conf';
+import { COUNT_DOMAINS, COUNT_PROJECTS, COUNT_YEARS } from '@/conf';
 
 // OG recommendations:
 // - Open Graph: 1200x630 (1.91:1)
@@ -309,14 +309,14 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
           <div style={{ flex: 1, maxHeight: h - 160, overflow: 'hidden' }}>
             <AccentPill>
               <Dot />
-              <span>Software Engineer</span>
+              <span>AI Engineer</span>
             </AccentPill>
 
             <div style={{ height: 36 }} />
             <H1 style={{ fontSize: 76 }}>Simas Žurauskas</H1>
             <div style={{ height: 22 }} />
             <H2 style={{ maxWidth: 900 }}>
-              Building web applications, mobile products, and AI workflows. Modern stack, clean code, reliable delivery.
+              Production AI features — RAG pipelines, LLM agents, chatbots — plus web and mobile apps in TypeScript.
             </H2>
           </div>
 
@@ -331,8 +331,8 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
                 <MetricLabel>Projects</MetricLabel>
               </Metric>
               <Metric>
-                <MetricNum>{COUNT_CLIENTS}+</MetricNum>
-                <MetricLabel>Clients</MetricLabel>
+                <MetricNum>{COUNT_DOMAINS}+</MetricNum>
+                <MetricLabel>Domains</MetricLabel>
               </Metric>
             </MetricRow>
             <Url>simaszurauskas.com</Url>
@@ -381,7 +381,7 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
             <MetricRow>
               <Metric>
                 <MetricNum>Simas Žurauskas</MetricNum>
-                <MetricLabel>· Software Engineer</MetricLabel>
+                <MetricLabel>· AI Engineer</MetricLabel>
               </Metric>
             </MetricRow>
             <Url>simaszurauskas.com</Url>
@@ -417,10 +417,9 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
 
             <div style={{ height: 32 }} />
             <Chips>
-              <ChipAccent>25+ Web Apps</ChipAccent>
+              <ChipAccent>20+ Web Apps</ChipAccent>
               <Chip>8+ Mobile Apps</Chip>
               <ChipAccent>6+ AI Products</ChipAccent>
-              <Chip>15+ Clients</Chip>
             </Chips>
           </div>
 
@@ -428,7 +427,7 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
             <MetricRow>
               <Metric>
                 <MetricNum>Simas Žurauskas</MetricNum>
-                <MetricLabel>· Software Engineer</MetricLabel>
+                <MetricLabel>· AI Engineer</MetricLabel>
               </Metric>
             </MetricRow>
             <Url>simaszurauskas.com</Url>
@@ -478,7 +477,7 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
             <MetricRow>
               <Metric>
                 <MetricNum>Simas Žurauskas</MetricNum>
-                <MetricLabel>· Software Engineer</MetricLabel>
+                <MetricLabel>· AI Engineer</MetricLabel>
               </Metric>
             </MetricRow>
             <Url>simaszurauskas.com</Url>
@@ -526,7 +525,7 @@ function OgVariant({ id, w, h }: { id: VariantId; w: number; h: number }) {
             <MetricRow>
               <Metric>
                 <MetricNum>Simas Žurauskas</MetricNum>
-                <MetricLabel>· Software Engineer</MetricLabel>
+                <MetricLabel>· AI Engineer</MetricLabel>
               </Metric>
             </MetricRow>
             <Url>simaszurauskas.com</Url>

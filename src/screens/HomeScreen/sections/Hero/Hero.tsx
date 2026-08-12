@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { motion, useMotionValue, useTransform, animate, useSpring, Variants, useInView } from 'framer-motion';
-import { COUNT_CLIENTS, COUNT_DOMAINS, COUNT_PROJECTS, COUNT_YEARS } from '@/conf';
+import { COUNT_DOMAINS, COUNT_PROJECTS, COUNT_YEARS } from '@/conf';
 import { Button } from '@/components';
 import { useTranslations } from 'next-intl';
 
@@ -12,17 +12,18 @@ const Section = styled.section`
   min-height: 100vh;
   min-height: 100dvh;
   padding-top: 64px; /* Account for fixed navbar */
+  --gutter: max(80px, calc((100% - 1300px) / 2));
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 80px;
+  grid-template-columns: minmax(0, 1fr) var(--gutter);
   overflow: hidden;
   background: ${({ theme }) => theme.colors.background};
 
   @media (max-width: 1024px) {
-    grid-template-columns: minmax(0, 1fr) 60px;
+    --gutter: 60px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: minmax(0, 1fr) 40px;
+    --gutter: 40px;
   }
 
   @media (max-width: 480px) {
@@ -35,7 +36,7 @@ const Section = styled.section`
     position: absolute;
     top: 0;
     bottom: 60px; /* Stop before marquee */
-    right: 80px;
+    right: var(--gutter);
     width: 1px;
     background: ${({ theme }) => theme.colors.border};
 
@@ -97,18 +98,18 @@ const Section = styled.section`
     &__container {
       position: relative;
       width: 100%;
-      /* Align with section content: 80px left margin + content padding */
-      padding-left: calc(80px + clamp(24px, 5vw, 80px));
+      /* Align with the section frame: gutter + content padding */
+      padding-left: calc(var(--gutter) + clamp(24px, 5vw, 80px));
       padding-right: clamp(24px, 5vw, 80px);
       z-index: 2;
 
       @media (max-width: 1024px) {
-        padding-left: calc(60px + clamp(24px, 5vw, 60px));
+        padding-left: calc(var(--gutter) + clamp(24px, 5vw, 60px));
         padding-right: clamp(24px, 5vw, 60px);
       }
 
       @media (max-width: 768px) {
-        padding-left: calc(40px + clamp(24px, 5vw, 40px));
+        padding-left: calc(var(--gutter) + clamp(24px, 5vw, 40px));
         padding-right: clamp(24px, 5vw, 40px);
       }
 
@@ -291,7 +292,7 @@ const Section = styled.section`
     /* Mobile metrics - shown only on mobile when sidebar is hidden */
     &__mobile-metrics {
       display: none;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       padding: 24px 0;
       padding-bottom: 80px; /* Space for marquee */
@@ -350,6 +351,12 @@ const Section = styled.section`
       will-change: transform;
       backface-visibility: hidden;
       transform: translateZ(0);
+
+      /* Pastel gradients wash out on the light background — give them body */
+      [data-theme='light'] & {
+        filter: saturate(1.2);
+        box-shadow: 0 12px 40px ${({ theme }) => theme.hex.accent}26;
+      }
 
       &--1 {
         top: 0;
@@ -432,6 +439,12 @@ const Section = styled.section`
       padding: 80px 0;
       margin-bottom: 60px; /* Leave space for marquee */
       z-index: 2;
+
+      /* Wide gutters: keep the metrics near the inner rail, not floating mid-gutter */
+      @media (min-width: 1461px) {
+        align-items: flex-start;
+        padding-left: 14px;
+      }
 
       @media (max-width: 768px) {
         gap: 32px;
@@ -715,7 +728,7 @@ export const Hero = () => {
   const t = useTranslations('Hero');
 
   // Single animation controller via useInView
-  const isInView = useInView(contentRef, { once: false, margin: '-100px' });
+  const isInView = useInView(contentRef, { once: true, margin: '-100px' });
 
   // Mouse position for floating shapes
   const mouseX = useMotionValue(0);
@@ -761,7 +774,6 @@ export const Hero = () => {
     t('MARQUEE.PRODUCTS_DELIVERED', { count: COUNT_PROJECTS }),
     t('MARQUEE.YEARS_EXPERIENCE', { count: COUNT_YEARS }),
     t('MARQUEE.DOMAINS', { count: COUNT_DOMAINS }),
-    t('MARQUEE.CLIENTS', { count: COUNT_CLIENTS }),
   ];
 
   return (
@@ -783,18 +795,22 @@ export const Hero = () => {
                 {t('AVAILABLE_FOR_PROJECTS')}
               </motion.span>
 
-              <motion.h1 className="hero-main__title" variants={revealUpVariants}>
-                <span className="hero-main__title-line">
+              <motion.h1
+                className="hero-main__title"
+                variants={revealUpVariants}
+                aria-label={`${t('TITLE_LINE1')} ${t('TITLE_ACCENT')}${t('TITLE_SKETCH')}`}
+              >
+                <span className="hero-main__title-line" aria-hidden="true">
                   <motion.span style={{ display: 'inline-block' }} variants={slideInVariants}>
-                    I build
+                    {t('TITLE_LINE1')}
                   </motion.span>
                 </span>
-                <span className="hero-main__title-line">
+                <span className="hero-main__title-line" aria-hidden="true">
                   <motion.span style={{ display: 'inline-block' }} variants={slideInVariants}>
-                    <span className="hero-main__title-accent">Soft</span>
+                    <span className="hero-main__title-accent">{t('TITLE_ACCENT')}</span>
                     <span className="hero-main__title-sketch">
                       <span className="hero-main__sketch-marks" />
-                      ware
+                      {t('TITLE_SKETCH')}
                     </span>
                   </motion.span>
                 </span>
@@ -829,10 +845,6 @@ export const Hero = () => {
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_PROJECTS}+</div>
                   <div className="hero-main__mobile-metric-label">{t('METRICS.PROJECTS')}</div>
-                </div>
-                <div className="hero-main__mobile-metric">
-                  <div className="hero-main__mobile-metric-value">{COUNT_CLIENTS}+</div>
-                  <div className="hero-main__mobile-metric-label">{t('METRICS.CLIENTS')}</div>
                 </div>
                 <div className="hero-main__mobile-metric">
                   <div className="hero-main__mobile-metric-value">{COUNT_DOMAINS}+</div>
@@ -902,9 +914,9 @@ export const Hero = () => {
         </div>
         <div className="hero-main__metric">
           <div className="hero-main__metric-value">
-            <AnimatedCounter value={COUNT_CLIENTS} delay={1.1} />
+            <AnimatedCounter value={COUNT_DOMAINS} delay={1.1} />
           </div>
-          <div className="hero-main__metric-label">{t('METRICS.CLIENTS')}</div>
+          <div className="hero-main__metric-label">{t('METRICS.DOMAINS')}</div>
         </div>
 
         <span className="hero-main__sidebar-text">{t('MORE')}</span>
@@ -912,8 +924,14 @@ export const Hero = () => {
 
       <div className="hero-main__marquee">
         <div className="hero-main__marquee-track">
-          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+          {marqueeItems.map((item, i) => (
             <span key={i} className="hero-main__marquee-item">
+              {item}
+            </span>
+          ))}
+          {/* Visual loop duplicate — hidden from screen readers */}
+          {marqueeItems.map((item, i) => (
+            <span key={`dup-${i}`} className="hero-main__marquee-item" aria-hidden="true">
               {item}
             </span>
           ))}

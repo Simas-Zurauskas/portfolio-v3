@@ -8,17 +8,18 @@ import { EMAIL } from '@/conf';
 
 const StyledFooter = styled.footer`
   position: relative;
+  --gutter: max(80px, calc((100% - 1300px) / 2));
   display: grid;
-  grid-template-columns: 80px 1fr 80px;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
   background: ${({ theme }) => theme.colors.surface};
   border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   @media (max-width: 1024px) {
-    grid-template-columns: 60px 1fr 60px;
+    --gutter: 60px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 40px 1fr 40px;
+    --gutter: 40px;
   }
 
   @media (max-width: 480px) {
@@ -37,26 +38,14 @@ const StyledFooter = styled.footer`
   }
 
   &::before {
-    left: 80px;
-    @media (max-width: 1024px) {
-      left: 60px;
-    }
-    @media (max-width: 768px) {
-      left: 40px;
-    }
+    left: var(--gutter);
     @media (max-width: 480px) {
       display: none;
     }
   }
 
   &::after {
-    right: 80px;
-    @media (max-width: 1024px) {
-      right: 60px;
-    }
-    @media (max-width: 768px) {
-      right: 40px;
-    }
+    right: var(--gutter);
     @media (max-width: 480px) {
       display: none;
     }
@@ -156,6 +145,11 @@ const StyledFooter = styled.footer`
     &__link {
       font-size: 0.8rem;
       font-weight: 500;
+
+      @media (pointer: coarse) {
+        padding: 8px 0;
+        margin: -4px 0;
+      }
       color: ${({ theme }) => theme.colors.foreground};
       text-decoration: none;
       transition: color 0.2s ease;
@@ -188,15 +182,22 @@ const StyledFooter = styled.footer`
       min-width: unset;
       flex-shrink: 0;
       padding: 0;
+
+      @media (pointer: coarse) {
+        width: 40px;
+        height: 40px;
+      }
       background: transparent;
       border: 1px solid ${({ theme }) => theme.colors.border};
       color: ${({ theme }) => theme.colors.muted};
       cursor: pointer;
       transition: all 0.2s ease;
 
-      &:hover {
-        border-color: ${({ theme }) => theme.colors.accent};
-        color: ${({ theme }) => theme.colors.accent};
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.colors.accent};
+          color: ${({ theme }) => theme.colors.accent};
+        }
       }
 
       &--copied {
@@ -253,13 +254,20 @@ const StyledFooter = styled.footer`
       width: 32px;
       height: 32px;
       min-height: unset;
+
+      @media (pointer: coarse) {
+        width: 44px;
+        height: 44px;
+      }
       border: 1px solid ${({ theme }) => theme.colors.border};
       color: ${({ theme }) => theme.colors.muted};
       transition: all 0.2s ease;
 
-      &:hover {
-        border-color: ${({ theme }) => theme.colors.accent};
-        color: ${({ theme }) => theme.colors.accent};
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.colors.accent};
+          color: ${({ theme }) => theme.colors.accent};
+        }
       }
 
       svg {
@@ -283,14 +291,16 @@ const StyledFooter = styled.footer`
       background: ${({ theme }) => theme.colors.surface};
       transition: all 0.2s ease;
 
-      &:hover {
-        border-color: ${({ theme }) => theme.colors.accent};
-        background: ${({ theme }) => theme.hex.accent}08;
-
-        .footer__credential-tooltip {
-          opacity: 1;
-          visibility: visible;
-          transform: translateX(-50%) translateY(0);
+      @media (hover: hover) {
+        &:hover {
+          border-color: ${({ theme }) => theme.colors.accent};
+          background: ${({ theme }) => theme.hex.accent}08;
+  
+          .footer__credential-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+          }
         }
       }
 
@@ -488,8 +498,8 @@ export const Footer: React.FC = () => {
             <span className="footer__copyright">© {currentYear} Simas Žurauskas</span>
 
             <div className="footer__social">
-              {/* <a
-                href="https://github.com"
+              <a
+                href="https://github.com/Simas-Zurauskas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
@@ -498,7 +508,7 @@ export const Footer: React.FC = () => {
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-              </a> */}
+              </a>
               <a
                 href="https://www.linkedin.com/in/simas-zurauskas"
                 target="_blank"

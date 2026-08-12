@@ -11,21 +11,26 @@ interface StyledSectionProps {
 const Section = styled.section<StyledSectionProps>`
   position: relative;
   min-height: 100dvh;
+  /* Frame cap: the gutter grows past 80px on wide viewports so the whole frame
+     (rails, watermark, corners, content) stays centered around a ~1300px column. */
+  --gutter: max(80px, calc((100% - 1300px) / 2));
+  --corner-inset: 24px;
   display: grid;
-  grid-template-columns: 80px 1fr 80px;
+  grid-template-columns: var(--gutter) 1fr var(--gutter);
   background: ${({ theme, $alternate }) => ($alternate ? theme.colors.surface : theme.colors.background)};
 
   @media (max-width: 1024px) {
-    grid-template-columns: 60px 1fr 60px;
+    --gutter: 60px;
+    --corner-inset: 16px;
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 40px 1fr 40px;
+    --gutter: 40px;
     min-height: 100svh;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: 0 1fr 0;
+    --gutter: 0px;
     min-height: auto;
   }
 
@@ -41,26 +46,14 @@ const Section = styled.section<StyledSectionProps>`
   }
 
   &::before {
-    left: 80px;
-    @media (max-width: 1024px) {
-      left: 60px;
-    }
-    @media (max-width: 768px) {
-      left: 40px;
-    }
+    left: var(--gutter);
     @media (max-width: 480px) {
       display: none;
     }
   }
 
   &::after {
-    right: 80px;
-    @media (max-width: 1024px) {
-      right: 60px;
-    }
-    @media (max-width: 768px) {
-      right: 40px;
-    }
+    right: var(--gutter);
     @media (max-width: 480px) {
       display: none;
     }
@@ -70,7 +63,7 @@ const Section = styled.section<StyledSectionProps>`
     &__index {
       position: absolute;
       top: 100px;
-      left: 80px;
+      left: var(--gutter);
       transform: translateX(-50%);
       font-size: clamp(6rem, 15vw, 12rem);
       font-weight: 900;
@@ -81,13 +74,16 @@ const Section = styled.section<StyledSectionProps>`
       user-select: none;
       pointer-events: none;
 
+      /* Light borders are much fainter than dark ones — boost so the numeral rhythm survives */
+      [data-theme='light'] & {
+        opacity: ${({ $alternate }) => ($alternate ? 0.22 : 0.85)};
+      }
+
       @media (max-width: 1024px) {
-        left: 60px;
         font-size: clamp(5rem, 12vw, 10rem);
       }
 
       @media (max-width: 768px) {
-        left: 40px;
         top: 80px;
         font-size: clamp(4rem, 12vw, 8rem);
       }
@@ -136,6 +132,17 @@ const Section = styled.section<StyledSectionProps>`
       }
     }
 
+    /* Wide gutters: keep the labels near the inner rails, not floating mid-gutter */
+    @media (min-width: 1461px) {
+      &__sidebar .section__sidebar-text {
+        margin-right: 32px;
+      }
+
+      &__sidebar-right .section__sidebar-text {
+        margin-left: 32px;
+      }
+    }
+
     &__sidebar-right {
       grid-column: 3;
       grid-row: 1 / -1; /* Stretch full height */
@@ -167,32 +174,16 @@ const Section = styled.section<StyledSectionProps>`
 
       &--tl {
         top: 24px;
-        left: 104px;
+        left: calc(var(--gutter) + var(--corner-inset));
         border-right: none;
         border-bottom: none;
-
-        @media (max-width: 1024px) {
-          left: 76px;
-        }
-
-        @media (max-width: 768px) {
-          left: 56px;
-        }
       }
 
       &--br {
         bottom: 24px;
-        right: 104px;
+        right: calc(var(--gutter) + var(--corner-inset));
         border-left: none;
         border-top: none;
-
-        @media (max-width: 1024px) {
-          right: 76px;
-        }
-
-        @media (max-width: 768px) {
-          right: 56px;
-        }
       }
 
       @media (max-width: 1024px) {
@@ -213,27 +204,15 @@ const Section = styled.section<StyledSectionProps>`
     &__accent-bar {
       position: absolute;
       bottom: 0;
-      left: 80px;
-      right: 80px;
+      left: var(--gutter);
+      right: var(--gutter);
       height: 3px;
       background: ${({ theme, $alternate }) =>
         $alternate
           ? `linear-gradient(90deg, transparent 0%, ${theme.colors.border} 50%, ${theme.colors.accent} 100%)`
           : `linear-gradient(90deg, ${theme.colors.accent} 0%, ${theme.colors.border} 50%, transparent 100%)`};
 
-      @media (max-width: 1024px) {
-        left: 60px;
-        right: 60px;
-      }
-
-      @media (max-width: 768px) {
-        left: 40px;
-        right: 40px;
-      }
-
       @media (max-width: 480px) {
-        left: 0;
-        right: 0;
         height: 2px;
       }
     }

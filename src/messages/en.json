@@ -1,4 +1,8 @@
 {
+  "Meta": {
+    "TITLE": "Simas Žurauskas | AI Engineer & Full-Stack Developer",
+    "DESCRIPTION": "Production AI features — RAG pipelines, LLM agents, chatbots — plus web and mobile apps in TypeScript, Next.js, Node.js, and React Native. Available for contract and freelance work."
+  },
   "Nav": {
     "SERVICES": "Services",
     "PROCESS": "Process",
@@ -14,38 +18,41 @@
     "CLOSE_MENU": "Close menu",
     "THEME_LIGHT": "Light mode",
     "THEME_DARK": "Dark mode",
-    "THEME_SYSTEM": "System theme"
+    "THEME_SYSTEM": "System theme",
+    "SWITCH_TO_EN": "Switch to English",
+    "SWITCH_TO_LT": "Switch to Lithuanian"
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Available for Projects",
-    "DESCRIPTION": "I take projects from first conversation to production — web applications, mobile apps, and AI-powered features. Full-stack delivery from architecture to deployment.",
+    "TITLE_LINE1": "I build",
+    "TITLE_ACCENT": "AI Soft",
+    "TITLE_SKETCH": "ware",
+    "DESCRIPTION": "AI engineering, shipped to production — RAG pipelines, LLM agents, and chatbots with real cost control. Backed by full-stack breadth: web and mobile apps, from architecture to deployment.",
     "CTA_PRIMARY": "Start a Project",
     "CTA_SECONDARY": "Explore Services",
     "MORE": "More →",
     "MARQUEE": {
       "ITEMS": [
-        "Web Applications",
-        "Mobile Apps",
         "AI Integration",
         "AI Agents",
+        "RAG Pipelines",
+        "Web Applications",
+        "Mobile Apps",
         "SaaS Products",
         "MVP Development",
         "Enterprise Solutions",
-        "RAG Pipelines",
         "Real-time Features",
         "API Development",
-        "Technical Consulting",
+        "AI Strategy",
         "Scalable Architecture"
       ],
       "PRODUCTS_DELIVERED": "{count}+ Products Delivered",
       "YEARS_EXPERIENCE": "{count}+ Years Experience",
-      "DOMAINS": "{count}+ Domains",
-      "CLIENTS": "{count}+ Clients"
+      "DOMAINS": "{count}+ Domains"
     },
     "METRICS": {
       "YEARS": "Years",
-      "PROJECTS": "Projects",
-      "CLIENTS": "Clients",
+      "PROJECTS": "Products",
       "DOMAINS": "Domains"
     }
   },
@@ -71,11 +78,11 @@
       },
       "AI": {
         "TITLE": "AI & LLM Integration",
-        "DESCRIPTION": "Production-grade AI features — custom agents, RAG-powered chatbots, document intelligence, and multi-agent workflow automation. Built to solve real problems, not just demo well."
+        "DESCRIPTION": "Production-grade AI — LLM agents, RAG-powered chatbots, document intelligence, and multi-agent workflow automation, with cost metering and evaluation built in. Built to solve real problems, not just demo well."
       },
       "BACKEND": {
         "TITLE": "Backend & Infrastructure",
-        "DESCRIPTION": "Scalable APIs, databases, cloud infrastructure, and CI/CD pipelines. Production-ready architecture that supports growth."
+        "DESCRIPTION": "APIs, databases, cloud infrastructure, and CI/CD pipelines. Set up properly, so deploys are a non-event and scaling isn't a rewrite."
       },
       "DESIGN": {
         "TITLE": "UI/UX Design",
@@ -86,8 +93,8 @@
         "DESCRIPTION": "Turning designs into production-ready interfaces. Design systems, responsive UI, motion, and accessibility."
       },
       "CONSULTING": {
-        "TITLE": "Technical Consulting",
-        "DESCRIPTION": "Architecture reviews, AI strategy, performance optimization, and technology decisions. Helping teams ship better software."
+        "TITLE": "AI Strategy & Consulting",
+        "DESCRIPTION": "Architecture reviews, performance optimization, and technology decisions — plus AI adoption for teams: development policies, agent workflows, and standards that keep quality up while AI writes more of the code."
       },
       "EXISTING": {
         "TITLE": "Existing Projects",
@@ -125,6 +132,8 @@
     },
     "EXPECTATIONS": {
       "LABEL": "What to expect",
+      "TAGLINE_LINE1": "Clear terms,",
+      "TAGLINE_LINE2": "no surprises.",
       "FLEXIBLE": {
         "TITLE": "Flexible Engagement",
         "DESCRIPTION": "Hourly, fixed price, or retainer"
@@ -143,7 +152,7 @@
       },
       "TRANSPARENT": {
         "TITLE": "Transparent Scope",
-        "DESCRIPTION": "Clear pricing, no surprises"
+        "DESCRIPTION": "Scope and price agreed before work starts"
       },
       "SUPPORT": {
         "TITLE": "Post-Launch Support",
@@ -162,7 +171,7 @@
         { "text": " solved", "type": "muted" }
       ]
     ],
-    "DISCLAIMER": "Some of my strongest work sits behind NDAs with agencies and clients, so not everything can be shown publicly. The selection below is representative, and the industry experience extends beyond these examples.",
+    "DISCLAIMER": "Some of my strongest work sits behind NDAs with agencies and clients, so not everything can be shown publicly. What follows is the part I can show — ask me about the rest.",
     "INDUSTRIES": {
       "TITLE": "Industry experience",
       "DESCRIPTION": "Across both public and private engagements, I’ve shipped products in these domains:",
@@ -176,48 +185,46 @@
         { "label": "Fleet Management", "featured": true },
         { "label": "Healthcare / Wellness" },
         { "label": "EdTech" },
-        { "label": "Real Estate" },
         { "label": "HR / Talent Management" },
         { "label": "B2B SaaS" },
         { "label": "Social / Community" },
         { "label": "Construction" },
         { "label": "Consumer / Lifestyle" },
-        { "label": "Gaming / Entertainment" },
-        { "label": "Legal" }
+        { "label": "Entertainment" }
       ]
     },
     "PROJECTS": {
       "strive": {
         "INDUSTRY": "EdTech",
-        "DESCRIPTION": "Pick any topic, and the AI builds you a full course — roadmap, modules, lessons, the lot. A built-in tutor walks you through it at your own pace. I built this one for myself.",
+        "DESCRIPTION": "Tell it what you want to learn — or upload your own material — and a chain of LangGraph agents designs the course and writes every lesson. An AI mentor sits inside each one, and spaced review makes it stick. I built this one for myself.",
         "HIGHLIGHTS": [
-          "4 AI agents (roadmap, module, lesson, chat)",
-          "Visual course roadmap editor",
-          "Credit-based subscriptions"
+          "Chain of LangGraph agents",
+          "Courses from your own documents",
+          "Credits at real AI cost"
         ]
       },
       "withinly": {
         "INDUSTRY": "HealthTech",
-        "DESCRIPTION": "Mental wellness companion that helps you understand yourself and your relationships. Take personality assessments, chat with an AI that remembers your journey, and receive beautifully crafted psychological insights.",
+        "DESCRIPTION": "A relationship and self-insight companion. Chat with an AI that remembers your history, take psychometric assessments, and get AI-written reports — an Inner Portrait for you, and a Relational Portrait once you sync with your partner.",
         "HIGHLIGHTS": [
           "RAG-powered companion agent",
-          "4 personality assessments",
-          "AI-generated Inner & Relational Portraits"
+          "4 psychometric assessments",
+          "Partner-sync Relational Portraits"
         ]
       },
       "mcr": {
         "INDUSTRY": "Lifestyle",
-        "DESCRIPTION": "Mobile app for discovering local hotspots and exclusive perks. Browse curated places, save favorites, and let the randomizer surprise you with your next adventure—all with member-only benefits.",
-        "HIGHLIGHTS": ["Place randomizer feature", "RevenueCat subscriptions", "WordPress CMS integration"]
+        "DESCRIPTION": "Manchester place-discovery app. Browse curated venues synced daily from a WordPress CMS, save favorites, and hit 'surprise me' — an AI pipeline embeds your query, vector-searches the directory, and picks your next spot. Perk redemption and booking are built in.",
+        "HIGHLIGHTS": ["AI vector-search randomiser", "Daily WordPress content sync", "RevenueCat subscriptions"]
       },
       "dara": {
         "INDUSTRY": "SaaS",
-        "DESCRIPTION": "Turn your content into clean, professional PDFs. Pick a template, customise it, and use AI to help with the writing. Reports, proposals, branded docs — it handles all of them.",
-        "HIGHLIGHTS": ["JSX-to-PDF rendering", "Multiple template types", "AI content enhancement"]
+        "DESCRIPTION": "Drop in a candidate's raw CV — and the job spec, if you have it — and an AI agent restructures it into a polished, agency-branded PDF. Output is schema-locked to each template, rendered from JSX, and printed by headless Chrome. Refine it over chat until it's client-ready.",
+        "HIGHLIGHTS": ["Schema-locked LLM output", "JSX to headless-Chrome PDF", "Chat-driven CV refinement"]
       },
       "uk-tax": {
         "INDUSTRY": "FinTech",
-        "DESCRIPTION": "Financial guidance platform helping UK businesses and sole traders keep more of what they earn. Get confidential, jargon-free advice on tax savings, smarter pay strategies, and hidden government benefits—all FCA-compliant.",
+        "DESCRIPTION": "AI tax adviser for UK businesses and sole traders. Upload your financial documents — the agent interprets them and gives step-by-step, jargon-free guidance on tax savings and pay strategy.",
         "HIGHLIGHTS": ["AI tax advice agent", "Document file processing", "Multi-step onboarding flow"]
       },
       "circle-of-trust": {
@@ -231,6 +238,7 @@
         "HIGHLIGHTS": ["4-tier role system", "Payment cycle & bonus tracking", "Real-time project updates"]
       }
     },
+    "TEAM_OF": "Team of {count}",
     "LINK": {
       "VISIT_SITE": "Visit Site",
       "VIEW_PROJECT": "View Project"
@@ -247,7 +255,7 @@
         { "text": " together", "type": "muted" }
       ]
     ],
-    "DESCRIPTION": "Have a project in mind or want to discuss an opportunity? I'm always open to new challenges. Drop me a message or reach out directly.",
+    "DESCRIPTION": "Have a project in mind, or still figuring out what it needs? Either works. Drop me a message or reach out directly.",
     "FORM": {
       "NAME_LABEL": "Name",
       "NAME_PLACEHOLDER": "Your name",
@@ -256,10 +264,11 @@
       "MESSAGE_LABEL": "Message",
       "MESSAGE_PLACEHOLDER": "Tell me about your project...",
       "SUBMIT": "Send Message",
-      "SUBMIT_LOADING": "Send Message",
+      "SUBMIT_LOADING": "Sending...",
       "SUBMIT_SUCCESS": "Sent!",
       "SUBMIT_ERROR": "Try Again",
       "SUCCESS_MESSAGE": "Thank you! I'll get back to you soon.",
+      "GENERIC_ERROR": "Something went wrong. Please try again or email me directly.",
       "RECAPTCHA_NOT_READY": "reCAPTCHA not loaded. Please refresh the page.",
       "REPLY_TIME": "Typical reply within 24h"
     },
@@ -281,6 +290,7 @@
   "ImageSlider": {
     "IMAGES_COMING_SOON": "Images coming soon",
     "EXPAND_IMAGE": "Expand image",
-    "CLOSE_ESC": "Close (Esc)"
+    "CLOSE_ESC": "Close (Esc)",
+    "GO_TO_SLIDE": "Go to slide {num}"
   }
 }

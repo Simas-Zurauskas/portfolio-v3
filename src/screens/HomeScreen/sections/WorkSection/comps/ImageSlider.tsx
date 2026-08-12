@@ -62,6 +62,11 @@ const ExpandButton = styled.button`
   height: 32px;
   min-height: unset;
   min-width: unset;
+
+  @media (pointer: coarse) {
+    width: 40px;
+    height: 40px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,15 +84,19 @@ const ExpandButton = styled.button`
     display: none;
   }
 
-  ${SliderContainer}:hover & {
-    opacity: 1;
+  @media (hover: hover) {
+    ${SliderContainer}:hover & {
+      opacity: 1;
+    }
   }
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.accent};
-    border-color: ${({ theme }) => theme.colors.accent};
-    color: ${({ theme }) => theme.colors.background};
-    transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.accent};
+      border-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
+      transform: scale(1.05);
+    }
   }
 
   svg {
@@ -98,30 +107,46 @@ const ExpandButton = styled.button`
 
 const Dots = styled.div`
   position: absolute;
-  bottom: 12px;
+  bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0; /* the 24px hit areas provide the visual spacing */
   z-index: 10;
 `;
 
 const Dot = styled.button<{ $active: boolean }>`
-  width: 6px;
-  height: 6px;
+  /* 24px hit area; the visible 6px dot is drawn by ::before */
+  position: relative;
+  width: 24px;
+  height: 24px;
   min-height: unset;
   min-width: unset;
   padding: 0;
-  border: 1px solid ${({ theme, $active }) => ($active ? theme.colors.foreground : theme.colors.muted)};
-  border-radius: 50%;
-  background: ${({ theme, $active }) => ($active ? theme.colors.foreground : 'transparent')};
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
 
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.foreground};
-    background: ${({ theme }) => theme.hex.foreground}40;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    border: 1px solid ${({ theme, $active }) => ($active ? theme.colors.foreground : theme.colors.muted)};
+    border-radius: 50%;
+    background: ${({ theme, $active }) => ($active ? theme.colors.foreground : 'transparent')};
+    transition: all 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      border-color: ${({ theme }) => theme.colors.foreground};
+      background: ${({ theme }) => theme.hex.foreground}40;
+    }
   }
 `;
 
@@ -134,6 +159,11 @@ const Arrow = styled.button<{ $direction: 'left' | 'right' }>`
   height: 28px;
   min-height: unset;
   min-width: unset;
+
+  @media (pointer: coarse) {
+    width: 40px;
+    height: 40px;
+  }
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,15 +176,19 @@ const Arrow = styled.button<{ $direction: 'left' | 'right' }>`
   transition: all 0.2s ease;
   backdrop-filter: blur(8px);
 
-  ${SliderContainer}:hover & {
-    opacity: 1;
+  @media (hover: hover) {
+    ${SliderContainer}:hover & {
+      opacity: 1;
+    }
   }
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.accent};
-    border-color: ${({ theme }) => theme.colors.accent};
-    color: ${({ theme }) => theme.colors.background};
-    transform: translateY(-50%) scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.accent};
+      border-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
+      transform: translateY(-50%) scale(1.05);
+    }
   }
 
   &:disabled {
@@ -174,7 +208,7 @@ const LightboxOverlay = styled.div<{ $isOpen: boolean }>`
   inset: 0;
   background: ${({ theme }) => theme.hex.background}f5;
   backdrop-filter: blur(20px);
-  z-index: 10000;
+  z-index: 10050; /* above the nav (10001) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,11 +255,13 @@ const LightboxClose = styled.button`
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.accent};
-    border-color: ${({ theme }) => theme.colors.accent};
-    color: ${({ theme }) => theme.colors.background};
-    transform: rotate(90deg);
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.accent};
+      border-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
+      transform: rotate(90deg);
+    }
   }
 
   svg {
@@ -303,11 +339,13 @@ const LightboxArrow = styled.button<{ $direction: 'left' | 'right' }>`
   transition: all 0.2s ease;
   backdrop-filter: blur(8px);
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.accent};
-    border-color: ${({ theme }) => theme.colors.accent};
-    color: ${({ theme }) => theme.colors.background};
-    transform: translateY(-50%) scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      background: ${({ theme }) => theme.colors.accent};
+      border-color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.background};
+      transform: translateY(-50%) scale(1.05);
+    }
   }
 
   &:disabled {
@@ -342,19 +380,37 @@ const LightboxDots = styled.div`
 `;
 
 const LightboxDot = styled.button<{ $active: boolean }>`
-  width: 8px;
-  height: 8px;
+  /* 28px hit area; the visible 8px dot is drawn by ::before */
+  position: relative;
+  width: 28px;
+  height: 28px;
+  min-height: unset;
+  min-width: unset;
   padding: 0;
-  border: 1px solid ${({ theme, $active }) => ($active ? theme.colors.foreground : theme.colors.muted)};
-  border-radius: 50%;
-  background: ${({ theme, $active }) => ($active ? theme.colors.foreground : 'transparent')};
+  border: none;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
 
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.foreground};
-    background: ${({ theme }) => theme.hex.foreground}60;
-    transform: scale(1.2);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border: 1px solid ${({ theme, $active }) => ($active ? theme.colors.foreground : theme.colors.muted)};
+    border-radius: 50%;
+    background: ${({ theme, $active }) => ($active ? theme.colors.foreground : 'transparent')};
+    transition: all 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      border-color: ${({ theme }) => theme.colors.foreground};
+      background: ${({ theme }) => theme.hex.foreground}60;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
   }
 `;
 
@@ -433,7 +489,12 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
         <div ref={sliderRef} className="keen-slider">
           {images.map((src, idx) => (
             <div key={idx} className="keen-slider__slide">
-              <SlideImage src={src} alt={`${alt} - slide ${idx + 1}`} fill />
+              <SlideImage
+                src={src}
+                alt={`${alt} - slide ${idx + 1}`}
+                fill
+                sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 75vw, 712px"
+              />
             </div>
           ))}
         </div>
@@ -444,6 +505,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
             openLightbox(e);
           }}
           title={t('EXPAND_IMAGE')}
+          aria-label={t('EXPAND_IMAGE')}
         >
           <Maximize2 />
         </ExpandButton>
@@ -474,6 +536,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images, alt }) => {
                 <Dot
                   key={idx}
                   $active={currentSlide === idx}
+                  aria-label={t('GO_TO_SLIDE', { num: idx + 1 })}
                   onClick={(e) => {
                     e.stopPropagation();
                     instanceRef.current?.moveToIdx(idx);
@@ -529,6 +592,7 @@ const LightboxSliderContent: React.FC<LightboxSliderContentProps> = ({
   onSlideChange,
   currentSlide,
 }) => {
+  const t = useTranslations('ImageSlider');
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: initialSlide,
     loop: true,
@@ -589,6 +653,7 @@ const LightboxSliderContent: React.FC<LightboxSliderContentProps> = ({
             <LightboxDot
               key={idx}
               $active={currentSlide === idx}
+              aria-label={t('GO_TO_SLIDE', { num: idx + 1 })}
               onClick={(e) => {
                 e.stopPropagation();
                 instanceRef.current?.moveToIdx(idx);

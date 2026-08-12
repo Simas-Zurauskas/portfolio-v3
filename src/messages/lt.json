@@ -1,4 +1,8 @@
 {
+  "Meta": {
+    "TITLE": "Simas Žurauskas | AI inžinierius ir full-stack programuotojas",
+    "DESCRIPTION": "Kuriu produkcijai paruoštas AI funkcijas — RAG, LLM agentus, pokalbių robotus — bei web ir mobiliąsias aplikacijas (TypeScript, Next.js, Node.js, React Native). Priimu projektinius ir freelance užsakymus."
+  },
   "Nav": {
     "SERVICES": "Paslaugos",
     "PROCESS": "Procesas",
@@ -14,43 +18,46 @@
     "CLOSE_MENU": "Uždaryti meniu",
     "THEME_LIGHT": "Šviesi tema",
     "THEME_DARK": "Tamsi tema",
-    "THEME_SYSTEM": "Sistemos tema"
+    "THEME_SYSTEM": "Sistemos tema",
+    "SWITCH_TO_EN": "Perjungti į anglų kalbą",
+    "SWITCH_TO_LT": "Perjungti į lietuvių kalbą"
   },
   "Hero": {
     "AVAILABLE_FOR_PROJECTS": "Laisvas naujiems projektams",
-    "DESCRIPTION": "Projektai nuo pirmo pokalbio iki produkcijos — web aplikacijos, mobiliosios programėlės ir AI sprendimai. Pilno ciklo kūrimas nuo architektūros iki paleidimo.",
+    "TITLE_LINE1": "Kuriu AI",
+    "TITLE_ACCENT": "Sprend",
+    "TITLE_SKETCH": "imus",
+    "DESCRIPTION": "AI inžinerija, kuri pasiekia produkciją: RAG sistemos, LLM agentai ir pokalbių robotai su realia sąnaudų kontrole. Be to — pilno ciklo patirtis: web ir mobiliosios aplikacijos nuo architektūros iki paleidimo.",
     "CTA_PRIMARY": "Pradėti projektą",
     "CTA_SECONDARY": "Peržiūrėti paslaugas",
     "MORE": "Daugiau →",
     "MARQUEE": {
       "ITEMS": [
-        "Web aplikacijos",
-        "Mobiliosios programėlės",
         "AI integracija",
         "AI agentai",
+        "RAG sistemos",
+        "Web aplikacijos",
+        "Mobiliosios programėlės",
         "SaaS produktai",
         "MVP kūrimas",
-        "Verslo sprendimai",
-        "RAG sprendimai",
+        "Enterprise sprendimai",
         "Realaus laiko funkcijos",
         "API kūrimas",
-        "Techninės konsultacijos",
-        "Masteliuojama architektūra"
+        "AI strategija",
+        "Plečiama architektūra"
       ],
-      "PRODUCTS_DELIVERED": "{count}+ pristatytų produktų",
+      "PRODUCTS_DELIVERED": "{count}+ išleistų produktų",
       "YEARS_EXPERIENCE": "{count}+ metų patirties",
-      "DOMAINS": "{count}+ sričių",
-      "CLIENTS": "{count}+ klientų"
+      "DOMAINS": "{count}+ sričių"
     },
     "METRICS": {
       "YEARS": "Metai",
-      "PROJECTS": "Projektai",
-      "CLIENTS": "Klientai",
+      "PROJECTS": "Produktai",
       "DOMAINS": "Sritys"
     }
   },
   "Services": {
-    "LABEL": "Galimybės",
+    "LABEL": "Kompetencijos",
     "SIDEBAR_LEFT": "Paslaugos",
     "SIDEBAR_RIGHT": "Ką darau",
     "TITLE": [
@@ -63,19 +70,19 @@
     "ITEMS": {
       "WEB": {
         "TITLE": "Web aplikacijos",
-        "DESCRIPTION": "Pilno ciklo web produktai — nuo architektūros iki paleidimo. Dashboard’ai, SaaS platformos, e. prekyba — kuriama masteliui."
+        "DESCRIPTION": "Pilno ciklo web produktai — nuo architektūros iki paleidimo. Dashboardai, SaaS platformos, e. prekyba — pasiruošę augti."
       },
       "MOBILE": {
         "TITLE": "Mobiliųjų aplikacijų kūrimas",
-        "DESCRIPTION": "Kryžminės platformos iOS ir Android aplikacijos. Nuo idėjos iki App Store — natyvus našumas su bendra kodų baze."
+        "DESCRIPTION": "iOS ir Android aplikacijos iš vienos kodo bazės. Nuo idėjos iki App Store — su natyviu našumu."
       },
       "AI": {
         "TITLE": "AI & LLM integracija",
-        "DESCRIPTION": "Produkcijai paruošti AI sprendimai — individualūs agentai, RAG chatbot’ai, dokumentų analizė ir daugiaagenčių darbo eigos automatizavimas."
+        "DESCRIPTION": "Produkcijai paruošti AI sprendimai — LLM agentai, RAG pokalbių robotai, dokumentų analizė ir daugiaagentė procesų automatizacija su integruota sąnaudų apskaita ir kokybės vertinimu. Kuriama realioms problemoms spręsti, ne tik demonstracijai."
       },
       "BACKEND": {
         "TITLE": "Backend & infrastruktūra",
-        "DESCRIPTION": "Mastelį palaikančios API, duomenų bazės, cloud infrastruktūra ir CI/CD pipeline’ai. Produkcijai paruošta architektūra augimui."
+        "DESCRIPTION": "API, duomenų bazės, cloud infrastruktūra ir CI/CD pipeline’ai. Sutvarkyta taip, kad diegimai būtų rutina, o augant nereikėtų nieko perrašyti."
       },
       "DESIGN": {
         "TITLE": "UI/UX dizainas",
@@ -86,8 +93,8 @@
         "DESCRIPTION": "Dizainus paverčiu produkcijai paruoštomis sąsajomis. Dizaino sistemos, responsive UI, animacijos ir prieinamumas."
       },
       "CONSULTING": {
-        "TITLE": "Techninės konsultacijos",
-        "DESCRIPTION": "Architektūros peržiūros, AI strategija, našumo optimizavimas ir technologiniai sprendimai. Padedu komandoms pristatyti geresnę programinę įrangą."
+        "TITLE": "AI strategija ir konsultacijos",
+        "DESCRIPTION": "Architektūros peržiūros, našumo optimizavimas ir technologijų pasirinkimas — taip pat AI diegimas komandoms: kūrimo politikos, agentų darbo eigos ir standartai, išlaikantys kokybę, kai vis daugiau kodo rašo AI."
       },
       "EXISTING": {
         "TITLE": "Esami projektai",
@@ -104,7 +111,7 @@
     "PHASES": {
       "DISCOVERY": {
         "TITLE": "Analizė",
-        "DESCRIPTION": "Suprantu jūsų tikslus, vartotojus ir apribojimus. Suderinamas apimtis, prioritetai ir sėkmės kriterijai.",
+        "DESCRIPTION": "Išsiaiškinu jūsų tikslus, naudotojus ir apribojimus. Suderiname apimtį, prioritetus ir sėkmės kriterijus.",
         "DURATION": "1–2 dienos"
       },
       "DESIGN": {
@@ -114,7 +121,7 @@
       },
       "BUILD": {
         "TITLE": "Kūrimas",
-        "DESCRIPTION": "Iteratyvus vystymas su reguliariomis demonstracijomis. Progresą matote kas savaitę, ne tik pabaigoje.",
+        "DESCRIPTION": "Kuriu iteracijomis ir reguliariai rodau demo. Progresą matote kas savaitę, ne tik pabaigoje.",
         "DURATION": "2–12 savaičių"
       },
       "LAUNCH": {
@@ -125,6 +132,8 @@
     },
     "EXPECTATIONS": {
       "LABEL": "Ko tikėtis",
+      "TAGLINE_LINE1": "Aiškios sąlygos,",
+      "TAGLINE_LINE2": "jokių netikėtumų.",
       "FLEXIBLE": {
         "TITLE": "Lankstus bendradarbiavimas",
         "DESCRIPTION": "Valandinis, fiksuotas arba retaineris"
@@ -138,16 +147,16 @@
         "DESCRIPTION": "Tiesioginis Slack ar el. paštas, greiti atsakymai"
       },
       "OWNERSHIP": {
-        "TITLE": "Pilna nuosavybė",
+        "TITLE": "Visiška nuosavybė",
         "DESCRIPTION": "Jūsų kodas, jūsų repo, švarus perdavimas"
       },
       "TRANSPARENT": {
         "TITLE": "Skaidri apimtis",
-        "DESCRIPTION": "Aiški kainodara, jokių netikėtumų"
+        "DESCRIPTION": "Kaina ir apimtis sutariamos iš anksto"
       },
       "SUPPORT": {
         "TITLE": "Palaikymas po paleidimo",
-        "DESCRIPTION": "Papildomas klaidų taisymas ir tobulinimai"
+        "DESCRIPTION": "Klaidų taisymas ir patobulinimai pagal poreikį"
       }
     }
   },
@@ -162,79 +171,78 @@
         { "text": " išspręstos", "type": "muted" }
       ]
     ],
-    "DISCLAIMER": "Dalis stipriausių darbų yra po NDA su agentūromis ir klientais, todėl ne viską galima viešinti. Žemiau pateikta atranka yra reprezentatyvi, o patirties spektras platesnis nei šie pavyzdžiai.",
+    "DISCLAIMER": "Dalis stipriausių darbų — po NDA su agentūromis ir klientais, todėl ne viską galiu rodyti viešai. Žemiau — tai, ką galiu parodyti. Apie visa kita klauskite manęs.",
     "INDUSTRIES": {
-      "TITLE": "Industrijų patirtis",
-      "DESCRIPTION": "Tiek viešuose, tiek privačiuose projektuose esu kūręs sprendimus šiose srityse:",
+      "TITLE": "Patirtis įvairiose srityse",
+      "DESCRIPTION": "Tiek viešuose, tiek privačiuose projektuose esu kūręs produktus šiose srityse:",
       "ITEMS": [
         { "label": "Kibernetinis saugumas", "featured": true },
         { "label": "Bankininkystė ir finansinės paslaugos", "featured": true },
         { "label": "Draudimas", "featured": true },
         { "label": "FinTech", "featured": true },
-        { "label": "InsurTech / rizikų valdymas", "featured": true },
+        { "label": "InsurTech / rizikos valdymas", "featured": true },
         { "label": "Logistika", "featured": true },
         { "label": "Transporto parko valdymas", "featured": true },
         { "label": "Sveikata / gerovė" },
         { "label": "EdTech" },
-        { "label": "Nekilnojamasis turtas" },
         { "label": "HR / talentų valdymas" },
         { "label": "B2B SaaS" },
         { "label": "Socialiniai / bendruomenės sprendimai" },
         { "label": "Statybos" },
-        { "label": "Vartotojų / lifestyle" },
-        { "label": "Žaidimai / pramogos" },
-        { "label": "Teisė" }
+        { "label": "B2C / lifestyle" },
+        { "label": "Pramogos" }
       ]
     },
     "PROJECTS": {
       "strive": {
         "INDUSTRY": "EdTech",
-        "DESCRIPTION": "Personalizuoto mokymosi platforma, kuri bet kurią temą paverčia pilnu kursu. AI sugeneruoja struktūruotas gaires, modulius ir interaktyvias pamokas, o integruotas tutorius veda besimokančiuosius per visą kelionę.",
+        "DESCRIPTION": "Pasakykite, ko norite išmokti — arba įkelkite savo medžiagą — ir LangGraph agentų grandinė suprojektuoja kursą bei sugeneruoja kiekvieną pamoką. Kiekvienoje pamokoje laukia AI mentorius, o intervalinis kartojimas padeda įsiminti ilgam. Šitą pasidariau sau.",
         "HIGHLIGHTS": [
-          "4 AI agentai (gairės, moduliai, pamokos, chat)",
-          "Vizualus kurso gairių redaktorius",
-          "Prenumeratos pagal kreditus"
+          "LangGraph agentų grandinė",
+          "Kursai iš jūsų dokumentų",
+          "Kreditai pagal realią savikainą"
         ]
       },
       "withinly": {
         "INDUSTRY": "HealthTech",
-        "DESCRIPTION": "Psichologinės gerovės asistentas, padedantis geriau suprasti save ir santykius. Atlikite asmenybės testus, bendraukite su AI, kuris prisimena jūsų kelionę, ir gaukite kruopščiai parengtas įžvalgas.",
-        "HIGHLIGHTS": ["RAG paremtas asistentas", "4 asmenybės testai", "AI sugeneruoti vidiniai ir santykių portretai"]
+        "DESCRIPTION": "Santykių ir savivokos asistentas. Kalbėkitės su AI, kuris prisimena jūsų istoriją, atlikite psichometrinius testus ir gaukite AI parengtus portretus — jūsų Vidinį portretą, o susiejus paskyras su partneriu — ir Santykių portretą.",
+        "HIGHLIGHTS": ["RAG paremtas asistentas", "4 psichometriniai testai", "Santykių portretas porai"]
       },
       "mcr": {
         "INDUSTRY": "Lifestyle",
-        "DESCRIPTION": "Mobilioji programėlė vietiniams taškams ir išskirtinėms privilegijoms atrasti. Naršykite atrinktas vietas, žymėkite mėgstamas ir leiskite „randomizer“ pasiūlyti kitą nuotykį — su nariams skirtais privalumais.",
-        "HIGHLIGHTS": ["Atsitiktinio vietos parinkimo funkcija", "RevenueCat prenumeratos", "WordPress CMS integracija"]
+        "DESCRIPTION": "Mančesterio vietų atradimo programėlė. Naršykite kasdien iš WordPress atnaujinamą vietų katalogą, žymėkite mėgstamas ir spauskite „nustebink“ — AI grandinė paverčia jūsų užklausą vektoriumi, atlieka vektorinę paiešką ir parenka jums vietą. Programėlėje veikia ir privilegijų bei rezervacijų sistema.",
+        "HIGHLIGHTS": ["AI vektorinė vietų paieška", "Kasdienė WordPress sinchronizacija", "RevenueCat prenumeratos"]
       },
       "dara": {
         "INDUSTRY": "SaaS",
-        "DESCRIPTION": "Dokumentų kūrimo platforma, paverčianti turinį profesionaliais PDF. Rinkitės dizaino šablonus, lengvai pritaikykite detales ir pasitelkite AI įtikinamam tekstui kurti.",
-        "HIGHLIGHTS": ["JSX → PDF generavimas", "Keli šablonų tipai", "AI turinio patobulinimai"]
+        "DESCRIPTION": "Įkelkite kandidato CV — ir, jei turite, darbo aprašymą — o AI agentas pertvarko jį į tvarkingą agentūros stiliaus PDF. Rezultatas griežtai atitinka šablono schemą, o PDF sugeneruojamas iš JSX per „headless“ Chrome. Tobulinkite susirašinėdami, kol dokumentas bus paruoštas klientui.",
+        "HIGHLIGHTS": ["LLM išvestis pagal schemą", "JSX → headless Chrome PDF", "CV tobulinimas pokalbiu"]
       },
       "uk-tax": {
         "INDUSTRY": "FinTech",
-        "DESCRIPTION": "Finansinių rekomendacijų platforma, padedanti JK verslams ir individualiai dirbantiems išsaugoti daugiau pajamų. Konfidenciali, aiški pagalba mokesčių taupymui, atlygio strategijoms ir valstybės paramoms — laikantis FCA reikalavimų.",
+        "DESCRIPTION": "AI mokesčių patarėjas JK įmonėms ir individualią veiklą vykdantiems. Įkelkite finansinius dokumentus ir klauskite savais žodžiais — agentas perskaito tikrus skaičius ir be žargono pataria dėl mokesčių taupymo ir atlygio strategijos.",
         "HIGHLIGHTS": ["AI mokesčių konsultavimo agentas", "Dokumentų apdorojimas", "Daugiapakopis onboarding procesas"]
       },
       "circle-of-trust": {
         "INDUSTRY": "Social",
-        "DESCRIPTION": "Profesinio tinklaveikos sprendimas, paremtas pasitikėjimu. Kurkite prasmingus ryšius per „circles“, gaukite rekomendacijas iš patikimų žmonių ir auginkite tinklą iOS ir Android platformose.",
+        "DESCRIPTION": "Tinklaveikos programėlė, kurioje pažintys turi vertę. Žmonės laiduoja vieni už kitus, rekomendacijos ateina iš tikrų santykių, o tinklas auga per pasitikėjimą — ne per šaltus kvietimus. iOS ir Android.",
         "HIGHLIGHTS": [
           "Rekomendacijų sistema, paremta pasitikėjimu",
-          "QR kodo prisijungimo sistema",
+          "Kontaktų užmezgimas QR kodu",
           "52 MJML el. laiškų šablonai"
         ]
       },
       "pp-platforma": {
         "INDUSTRY": "Construction",
-        "DESCRIPTION": "Statybos projektų valdymo sistema, padedanti komandai išlikti vienoje linijoje. Sekite projektus nuo pradžios iki pabaigos, valdykite mokėjimus ir premijas, o kiekvienam vaidmeniui — nuo inžinierių iki buhalterių — suteikite tik jam reikalingą prieigą.",
+        "DESCRIPTION": "Statybos projektų valdymo sistema, padedanti komandai dirbti sutartinai. Sekite projektus nuo pradžios iki pabaigos, valdykite mokėjimus ir premijas, o kiekvienam vaidmeniui — nuo inžinierių iki buhalterių — suteikite tik jam reikalingą prieigą.",
         "HIGHLIGHTS": [
-          "4 lygių rolėmis paremta prieiga",
+          "4 lygių prieigos sistema",
           "Mokėjimų ciklai ir premijų apskaita",
           "Realaus laiko projekto atnaujinimai"
         ]
       }
     },
+    "TEAM_OF": "{count} žmonių komanda",
     "LINK": {
       "VISIT_SITE": "Apsilankyti",
       "VIEW_PROJECT": "Peržiūrėti projektą"
@@ -245,13 +253,13 @@
     "SIDEBAR_LEFT": "Kontaktai",
     "SIDEBAR_RIGHT": "Rašykite",
     "TITLE": [
-      [{ "text": "Susisiekime" }],
+      [{ "text": "Dirbkime" }],
       [
-        { "text": "dėl projekto", "type": "accent" },
-        { "text": " šiandien", "type": "muted" }
+        { "text": "kartu", "type": "accent" },
+        { "text": " nuo šiandien", "type": "muted" }
       ]
     ],
-    "DESCRIPTION": "Turite idėją ar norite aptarti galimybę? Esu atviras naujiems iššūkiams. Parašykite žinutę arba susisiekite tiesiogiai.",
+    "DESCRIPTION": "Turite projekto idėją, o gal dar tik aiškinatės, ko reikėtų? Tinka abu variantai. Parašykite žinutę arba susisiekite tiesiogiai.",
     "FORM": {
       "NAME_LABEL": "Vardas",
       "NAME_PLACEHOLDER": "Jūsų vardas",
@@ -264,8 +272,9 @@
       "SUBMIT_SUCCESS": "Išsiųsta!",
       "SUBMIT_ERROR": "Bandyti dar kartą",
       "SUCCESS_MESSAGE": "Ačiū! Netrukus susisieksiu.",
+      "GENERIC_ERROR": "Nepavyko išsiųsti. Bandykite dar kartą arba parašykite man el. paštu.",
       "RECAPTCHA_NOT_READY": "reCAPTCHA neįkelta. Prašau atnaujinti puslapį.",
-      "REPLY_TIME": "Atsakau per 24 val."
+      "REPLY_TIME": "Paprastai atsakau per 24 val."
     },
     "RECAPTCHA": {
       "PROTECTED_BY": "Apsaugota „reCAPTCHA“.",
@@ -285,6 +294,7 @@
   "ImageSlider": {
     "IMAGES_COMING_SOON": "Nuotraukos jau netrukus",
     "EXPAND_IMAGE": "Išdidinti",
-    "CLOSE_ESC": "Uždaryti (Esc)"
+    "CLOSE_ESC": "Uždaryti (Esc)",
+    "GO_TO_SLIDE": "Rodyti {num} skaidrę"
   }
 }

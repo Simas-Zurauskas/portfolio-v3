@@ -282,9 +282,9 @@ export const ProcessSection: React.FC = () => {
           <CommitmentsIntro>
             <CommitmentsLabel>{t('EXPECTATIONS.LABEL')}</CommitmentsLabel>
             <CommitmentsTagline>
-              Clear terms,
+              {t('EXPECTATIONS.TAGLINE_LINE1')}
               <br />
-              <span>no surprises.</span>
+              <span>{t('EXPECTATIONS.TAGLINE_LINE2')}</span>
             </CommitmentsTagline>
           </CommitmentsIntro>
 

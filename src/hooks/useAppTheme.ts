@@ -31,7 +31,7 @@ const getComputedCSSColors = (): ColorsSet => {
 };
 
 export const useAppTheme = (): DefaultTheme => {
-  const { theme: scheme } = useTheme();
+  const { theme: scheme, resolvedTheme } = useTheme();
   const resolvedScheme = (scheme as ColorScheme) || 'system';
   const [colors, setColors] = useState(() => getComputedCSSColors());
 
@@ -62,6 +62,6 @@ export const useAppTheme = (): DefaultTheme => {
     colors,
     colorsLib,
     scheme: resolvedScheme,
-    hex: themeColors[resolvedScheme === 'dark' ? 'dark' : 'light'],
+    hex: themeColors[resolvedTheme === 'dark' ? 'dark' : 'light'],
   };
 };

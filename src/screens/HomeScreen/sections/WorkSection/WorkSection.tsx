@@ -68,7 +68,11 @@ const Industries = styled.div`
       border: 1px solid ${({ theme }) => theme.colors.border};
       border-radius: 2px;
       white-space: nowrap;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease,
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
         box-shadow 0.2s ease;
 
       @media (hover: hover) {
@@ -120,27 +124,27 @@ const projectRoles: Record<ProjectId, ProjectRole> = {
   withinly: {
     title: 'Tech Lead',
     scope: ['Frontend', 'Backend', 'AI', 'DevOps'],
-    teamSize: 4,
+    teamSize: 2,
   },
   mcr: {
-    title: 'Tech Lead',
+    title: 'Solo',
     scope: ['Mobile', 'Backend', 'CMS', 'App Store'],
-    teamSize: 4,
+    teamSize: 1,
   },
   dara: {
-    title: 'Tech Lead',
+    title: 'Solo',
     scope: ['Frontend', 'AI Integration'],
-    teamSize: 3,
+    teamSize: 1,
   },
   'uk-tax': {
     title: 'AI Engineer',
     scope: ['Frontend AI', 'Backend AI'],
-    teamSize: 6,
+    teamSize: 1,
   },
   'circle-of-trust': {
     title: 'Mobile Lead',
     scope: ['Mobile Frontend'],
-    teamSize: 8,
+    teamSize: 2,
   },
   'pp-platforma': {
     title: 'Solo',
@@ -158,11 +162,12 @@ const projectsBase: ProjectBase[] = [
     size: 'large',
     link: 'https://www.strive-learning.com',
     images: [
-      '/images/proj/strive_5.png',
       '/images/proj/strive_1.png',
       '/images/proj/strive_2.png',
       '/images/proj/strive_3.png',
       '/images/proj/strive_4.png',
+      '/images/proj/strive_5.png',
+      '/images/proj/strive_6.png',
     ],
   },
   {

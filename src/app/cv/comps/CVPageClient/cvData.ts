@@ -4,14 +4,14 @@ import type { CV, CVVariant, VariantId } from './types';
 
 const contact: CV['contact'] = {
   location: 'Klaipeda, Lithuania',
-  email: 'simaszurauskas@gmail.com',
+  email: 'hello@simaszurauskas.com',
   phone: '+370 666 97781',
   websiteLabel: 'simaszurauskas.com',
   websiteUrl: 'https://simaszurauskas.com',
   linkedinLabel: 'linkedin.com/in/simas-zurauskas',
   linkedinUrl: 'https://www.linkedin.com/in/simas-zurauskas',
-  githubLabel: 'github.com/simaszurauskas',
-  githubUrl: 'https://github.com/simaszurauskas',
+  githubLabel: 'github.com/Simas-Zurauskas',
+  githubUrl: 'https://github.com/Simas-Zurauskas',
 };
 
 const languages: CV['languages'] = [
@@ -27,8 +27,9 @@ const education: CV['education'] = [
 ];
 
 const skills: CV['skills'] = [
-  { category: 'AI & LLM', items: ['LangChain', 'LangGraph', 'OpenAI', 'RAG Pipelines', 'Multi-Agent Systems'] },
-  { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'styled-components'] },
+  { category: 'AI & LLM', items: ['LangGraph', 'LangChain', 'OpenAI & Anthropic APIs', 'RAG Pipelines', 'Multi-Agent Systems', 'Evals & Cost Metering'] },
+  { category: 'AI Enablement', items: ['AI Dev Policies', 'Team Agent Workflows', 'Standards & Audits'] },
+  { category: 'Frontend', items: ['TypeScript', 'React', 'Next.js', 'styled-components'] },
   { category: 'Mobile', items: ['React Native', 'Expo'] },
   { category: 'Backend', items: ['Node.js', 'GraphQL', 'MongoDB', 'Socket.IO', 'Stripe'] },
   { category: 'Infrastructure', items: ['AWS (S3, EC2)', 'Docker', 'CI/CD', 'Vercel'] },
@@ -70,7 +71,7 @@ const striveLearning: CV['projects'][number] = {
   name: 'Strive Learning',
   meta: 'Founder · EdTech',
   description:
-    'AI-powered learning platform with four LangGraph agents that generate personalised course roadmaps, modules, and lessons on demand. Users select a topic and receive a complete structured curriculum adapted to their pace. Built end-to-end: Next.js, Stripe subscriptions, MongoDB. Sole owner of product, engineering, and infrastructure.',
+    'AI learning platform where LangGraph agents generate complete courses on demand — roadmap, lessons, quizzes, narration. Every generation is metered in microcents against its measured per-provider cost, so pricing holds through model migrations. Credits sold via Stripe. Built end-to-end: Next.js, MongoDB. Sole owner of product, engineering, and infrastructure.',
   featured: true,
 };
 
@@ -78,14 +79,14 @@ const withinly: CV['projects'][number] = {
   name: 'Withinly',
   meta: 'Tech Lead · HealthTech',
   description:
-    'Mental wellness application featuring a RAG-powered companion chat grounded in psychology literature, four personality assessments, and AI-generated psychological portraits. Led a team of four. Owned architecture decisions, infrastructure setup, and the full AI integration layer.',
+    'Mental wellness application featuring a RAG-powered companion chat grounded in psychology literature, four personality assessments, and AI-generated psychological portraits. Built with a co-founder engineer. Owned architecture decisions, infrastructure setup, and the full AI integration layer.',
 };
 
 const circleOfTrust: CV['projects'][number] = {
   name: 'Circle of Trust',
   meta: 'Mobile Lead · Social',
   description:
-    'Professional networking app built on trust-based recommendations — users vouch for connections, growing the network through verified relationships. Built cross-platform iOS and Android apps in React Native with QR-based in-person connections and Branch.io deep linking. Team of eight, GraphQL API.',
+    'Professional networking app built on trust-based recommendations — users vouch for connections, growing the network through verified relationships. Built cross-platform iOS and Android apps in React Native with QR-based in-person connections, Branch.io deep linking, and a GraphQL API.',
 };
 
 const ukTaxAdviser: CV['projects'][number] = {
@@ -106,14 +107,14 @@ const mcrPerks: CV['projects'][number] = {
   name: "Manchester's Finest",
   meta: 'Tech Lead · Lifestyle',
   description:
-    'Local venue discovery app for Manchester with a randomiser feature, favourites, and RevenueCat-powered subscriptions. Led a mobile team of four. Managed App Store releases and integrated WordPress CMS for editorial content. React Native.',
+    'Local venue discovery app for Manchester with an AI-powered randomiser, favourites, and RevenueCat subscriptions. Sole engineer across all four repos. Managed App Store releases and integrated WordPress CMS for editorial content. React Native.',
 };
 
 const daraIntellitech: CV['projects'][number] = {
   name: 'Dara Intellitech',
   meta: 'Tech Lead · SaaS',
   description:
-    'Document creation platform that transforms content into polished PDFs via a custom JSX-to-PDF rendering engine (Puppeteer). Integrated LangGraph-powered AI content enhancement. Led a team of three. Supports reports, proposals, and branded documents. Next.js, TypeScript.',
+    'Document platform that restructures raw CVs into polished, agency-branded PDFs via a schema-locked LLM agent and a custom JSX-to-PDF rendering engine (headless Chromium). Chat-driven refinement until client-ready. Next.js, TypeScript.',
 };
 
 // ─── Variants ──────────────────────────────────────────────────
@@ -130,17 +131,17 @@ export const cvVariants: Record<VariantId, CV> = {
   general: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'AI & Full-Stack Engineer',
+      title: 'AI Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      'Full-stack engineer with five years of production experience across web, mobile, and AI. I build end-to-end — from RAG pipelines and multi-agent systems (LangChain, LangGraph) to React/Next.js frontends and Node.js backends. Shipped products across banking, insurance, cybersecurity, logistics, healthcare, and edtech, typically owning architecture through deployment.\n\nMost effective where projects require someone who operates across the full stack and makes independent technical decisions. Equally comfortable leading small teams, mentoring developers, and shipping as a sole engineer.',
+      'AI engineer with five years of production experience across web, mobile, and AI — now focused on LLM and agent systems in TypeScript. I build end-to-end: RAG pipelines, multi-agent orchestration with LangGraph, and the React/Next.js and Node.js layers around them. Shipped products across banking, insurance, cybersecurity, logistics, healthcare, and edtech.\n\nFounder of Strive, a live AI learning platform that meters every generation in microcents against its measured per-provider cost. And I treat agent output as untrusted — in a recent multi-agent codebase audit, independent verification revised down three of my four Critical findings before anything was reported.',
     experience: [
       radicalSenior([
-        'Lead technical delivery across engineering teams — architecture decisions, CI/CD pipelines, code reviews, and developer mentorship.',
+        'Lead technical delivery across engineering teams — architecture decisions, CI/CD, code reviews, mentorship, and the company’s AI development policy and standards.',
         'Delivered production AI systems: RAG chatbots for domain-specific Q&A, psychological assessment tools, and multi-agent workflows coordinating complex business processes.',
         'Served clients in banking, cyber risk management, and insurance — translating complex domain requirements into reliable technical solutions.',
       ]),
@@ -165,14 +166,14 @@ export const cvVariants: Record<VariantId, CV> = {
   freelance: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'AI & Full-Stack Engineer',
+      title: 'AI Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      'Full-stack AI engineer who takes products from concept to production without requiring a team of specialists. Five years, 35+ projects across a dozen industries — web, mobile, and AI. Experienced in both building and leading: architecture decisions, hands-on development, deployment, and ongoing support.\n\nWork directly with founders and stakeholders. Specialise in projects that need end-to-end ownership — AI-powered features (RAG, multi-agent systems), full-stack web applications, and cross-platform mobile apps — delivered with fast turnaround and long-term reliability.',
+      'AI and full-stack engineer who takes products from concept to production without needing a team of specialists. Five years, 25+ products across 10+ industries — web, mobile, and AI. Experienced in both building and leading: architecture decisions, hands-on development, deployment, and ongoing support.\n\nWork directly with founders and stakeholders on projects that need end-to-end ownership — AI features (RAG, agents), full-stack web apps, and cross-platform mobile apps. I also run Strive, my own AI SaaS, where every generation is metered against its real provider cost — I know what AI costs to run because I pay for mine.',
     experience: [
       freelance([
         'End-to-end delivery for founders and small companies — requirements, architecture, development, deployment, and ongoing support.',
@@ -199,19 +200,19 @@ export const cvVariants: Record<VariantId, CV> = {
   fulltime: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'Senior AI & Full-Stack Engineer',
+      title: 'Senior AI Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      'Full-stack engineer with five years building production software across web, mobile, and AI. Led small engineering teams with combined architecture ownership, mentorship, and hands-on delivery. Operate across every layer of the stack without ramp-up.\n\nBring production AI integration experience (RAG pipelines, multi-agent systems, LLM-powered features) alongside deep full-stack proficiency. Write maintainable code, ship reliably, and focus on working systems over clever abstractions.',
+      'AI engineer with five years building production software across web, mobile, and AI — now focused on LLM and agent systems in TypeScript. Led small engineering teams with combined architecture ownership, mentorship, and hands-on delivery. Operate across every layer of the stack without ramp-up.\n\nProduction AI experience covers RAG pipelines, LangGraph agents, and the unglamorous parts — cost metering, evals, and verifying that agent-written code is safe to ship. Favour working systems over clever abstractions.',
     experience: [
       radicalSenior([
         'Lead technical delivery across engineering teams — architecture ownership, CI/CD pipelines, code reviews, and mentoring junior and mid-level developers.',
-        'Delivered production AI systems for client projects: RAG chatbots, document processing, psychological assessment tools, and multi-agent coordination.',
-        'Served banking, cyber risk management, and insurance sectors — adapting technical approaches to domain-specific compliance constraints.',
+        'Delivered production AI systems for banking, cyber-risk, and insurance clients: RAG chatbots, document processing, psychological assessment tools, and multi-agent coordination.',
+        'Lead the team’s adoption of AI-assisted development — authoring the company’s AI development policy: agent workflows, verified documentation, and standards anchored to OWASP ASVS and NIST. Ran a multi-agent codebase audit where independent verification revised down three of my own four Critical findings before reporting.',
       ]),
       radicalJunior([
         'Delivered web and mobile apps in React, Next.js, and React Native. Progressed from feature implementation to full project ownership — architecture, client communication, sprint planning.',
@@ -226,24 +227,24 @@ export const cvVariants: Record<VariantId, CV> = {
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',
-    projects: [withinly, circleOfTrust, daraIntellitech, striveLearning],
+    projects: [striveLearning, withinly, daraIntellitech, circleOfTrust],
   },
 
   // ── Contract / B2B ─────────────────────────────────────────
   contract: {
     header: {
       name: 'Simas Žurauskas',
-      title: 'AI & Full-Stack Engineer',
+      title: 'AI Engineer',
     },
     contact,
     skills,
     languages,
     education,
     summary:
-      'Five years delivering production software across web, mobile, and AI — spanning banking, insurance, cybersecurity, logistics, healthcare, edtech, construction, and fintech. Rapid domain context acquisition. Effective both embedded in client teams and as a sole engineer.\n\nFull ownership of delivery end-to-end. Stack covers React/Next.js, Node.js, React Native, and AI integration via LangChain/LangGraph (RAG pipelines, multi-agent systems, document intelligence). Comfortable with architecture decisions, team leadership, and independent execution.',
+      'Five years delivering production software across web, mobile, and AI — banking, insurance, cybersecurity, logistics, healthcare, edtech, construction, fintech. I pick up domain context fast, and work equally well embedded in a client team or as a sole engineer.\n\nTypeScript end-to-end: React/Next.js, Node.js, React Native, and LLM/agent systems via LangGraph (RAG, multi-agent workflows, document intelligence). I verify what agents write before it ships — in a recent multi-agent codebase audit, independent verification revised down three of my own four Critical findings before anything was reported.',
     experience: [
       radicalSenior([
-        'Technical lead on client projects across banking, cyber risk, and insurance — owning architecture, CI/CD, code quality, and delivery timelines.',
+        'Technical lead on client projects across banking, cyber risk, and insurance — owning architecture, CI/CD, code quality, delivery timelines, and the company’s AI development standards.',
         'Delivered production AI systems: RAG chatbots for domain-specific Q&A, document processing pipelines, assessment tools, and multi-agent workflows.',
         "Rapid context-switching between domains, adapting to each client's regulatory, technical, and organisational constraints.",
       ]),
@@ -259,7 +260,7 @@ export const cvVariants: Record<VariantId, CV> = {
       ]),
     ],
     projectsNote: 'Additional enterprise client work under NDA.',
-    projects: [withinly, ukTaxAdviser, striveLearning, circleOfTrust],
+    projects: [striveLearning, ukTaxAdviser, withinly, circleOfTrust],
   },
 };
 
